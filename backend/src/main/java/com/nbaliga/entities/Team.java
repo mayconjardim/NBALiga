@@ -1,10 +1,13 @@
 package com.nbaliga.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -90,5 +93,8 @@ public class Team implements Serializable {
     private Integer divRank;
     private Integer confRank;
     private String arenaName;
+
+    @OneToMany(mappedBy = "currentTeamId")
+    private Set<Player> players = new HashSet<>();
 
 }

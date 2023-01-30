@@ -22,7 +22,7 @@ public class PlayerService {
     @Transactional(readOnly = true)
     public PlayerDTO findById(Long id) throws Exception {
         Optional<Player> obj = PlayerRepository.findById(id);
-        Player entity = obj.orElseThrow(() -> new Exception("Time não encontrado"));
+        Player entity = obj.orElseThrow(() -> new Exception("Jogador não encontrado!"));
         return new PlayerDTO(entity);
     }
 
