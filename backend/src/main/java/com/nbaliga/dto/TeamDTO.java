@@ -1,17 +1,14 @@
 package com.nbaliga.dto;
 
+import com.nbaliga.entities.Team;
+import lombok.*;
+
 import java.io.Serializable;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @EqualsAndHashCode
 public class TeamDTO implements Serializable {
 
@@ -146,5 +143,74 @@ public class TeamDTO implements Serializable {
     private Integer confRank;
 
     private String arenaName;
+
+    public TeamDTO(Team entity) {
+        id = entity.getId();
+        league = entity.getLeague();
+        cityName = entity.getCityName();
+        name = entity.getName();
+        city = entity.getCity();
+        state = entity.getState();
+        conference = entity.getConference();
+        division = entity.getDivision();
+        teamRating = entity.getTeamRating();
+        championships = entity.getChampionships();
+        playoffs = entity.getPlayoffs();
+        totalSalary = entity.getTotalSalary();
+        numPlayers = entity.getNumPlayers();
+        oldWinRating = entity.getOldWinRating();
+        streak = entity.getStreak();
+        homeWins = entity.getHomeWins();
+        homeLosses = entity.getHomeLosses();
+        roadWins = entity.getRoadWins();
+        roadLosses = entity.getRoadLosses();
+        winPct = entity.getWinPct();
+        totalWins = entity.getTotalWins();
+        totalLosses = entity.getTotalLosses();
+        playoffWins = entity.getPlayoffWins();
+        playoffLosses = entity.getPlayoffLosses();
+        finalsAppearances = entity.getFinalsAppearances();
+        points = entity.getPoints();
+        allowedPoints = entity.getAllowedPoints();
+        steals = entity.getSteals();
+        allowedSteals = entity.getAllowedSteals();
+        rebounds = entity.getRebounds();
+        allowedRebounds = entity.getAllowedRebounds();
+        assists = entity.getAssists();
+        allowedAssists = entity.getAllowedAssists();
+        blocks = entity.getBlocks();
+        allowedBlocks = entity.getAllowedBlocks();
+        turnovers = entity.getTurnovers();
+        allowedTurnovers = entity.getAllowedTurnovers();
+        fga = entity.getFga();
+        fgm = entity.getFgm();
+        allowedFga = entity.getAllowedFga();
+        allowedFgm = entity.getAllowedFgm();
+        threePa = entity.getThreePa();
+        threePm = entity.getThreePm();
+        allowed3pa = entity.getAllowed3pa();
+        allowed3pm = entity.getAllowed3pm();
+        ftm = entity.getFtm();
+        fta = entity.getFta();
+        allowedFtm = entity.getAllowedFtm();
+        allowedFta = entity.getAllowedFta();
+        lastPlayoffYear = entity.getLastPlayoffYear();
+        isHuman = entity.getIsHuman();
+        cutSalary = entity.getCutSalary();
+        cutSalary2 = entity.getCutSalary2();
+        cutSalary3 = entity.getCutSalary3();
+        cutSalary4 = entity.getCutSalary4();
+        cutSalary5 = entity.getCutSalary5();
+        cutSalary6 = entity.getCutSalary6();
+        cutSalary7 = entity.getCutSalary7();
+        cutSalary8 = entity.getCutSalary8();
+        usedMidException = entity.getUsedMidException();
+        usedLowException = entity.getUsedLowException();
+        gb = entity.getGb();
+        confGb = entity.getConfGb();
+        divRank = entity.getDivRank();
+        confRank = entity.getConfRank();
+        arenaName = entity.getArenaName();
+    }
 
 }

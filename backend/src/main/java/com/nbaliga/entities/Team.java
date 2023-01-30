@@ -12,11 +12,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 public class Team implements Serializable {
 
@@ -59,7 +59,7 @@ public class Team implements Serializable {
 
     private Integer roadLosses;
 
-    @Column(name = "Win%")
+    @Column(name = "Win_")
     private Double winPct;
 
     private Integer totalWins;
