@@ -27,9 +27,9 @@ public class Player implements Serializable {
     private Integer birthDay;
     private Integer birthYear;
     private String currentLeague;
-    private Integer currentLeagueid;
+    private Integer currentLeagueId;
     private String currentTeam;
-    private Integer currentTeamid;
+    private Integer currentTeamId;
     private String contractTeam;
     private Integer contractTeamId;
     private String injury;
