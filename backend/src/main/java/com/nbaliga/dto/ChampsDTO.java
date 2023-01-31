@@ -1,5 +1,6 @@
 package com.nbaliga.dto;
 
+import com.nbaliga.entities.Champs;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -20,4 +21,12 @@ public class ChampsDTO implements Serializable {
     private Integer champWins;
     private Integer loserWins;
 
+    public ChampsDTO(Champs entity) {
+        this.season = entity.getSeason();
+        this.league = entity.getLeague();
+        this.champ = entity.getChamp();
+        this.loser = entity.getLoser();
+        this.champWins = entity.getChampWins();
+        this.loserWins = entity.getLoserWins();
+    }
 }

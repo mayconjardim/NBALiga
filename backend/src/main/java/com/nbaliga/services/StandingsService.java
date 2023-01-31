@@ -12,8 +12,8 @@ import java.util.stream.Collectors;
 @Service
 public class StandingsService {
     private final StandingsRepository StandingsRepository;
-    public StandingsService(StandingsRepository StandingsRepository) {
-        this.StandingsRepository = StandingsRepository;
+    public StandingsService(StandingsRepository standingsRepository) {
+        this.StandingsRepository = standingsRepository;
     }
     @Transactional(readOnly = true)
     public List<StandingsDTO> findAllStandings() {

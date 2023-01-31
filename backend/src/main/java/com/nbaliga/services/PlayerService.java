@@ -13,22 +13,22 @@ import java.util.Optional;
 @Service
 public class PlayerService {
 
-    private final PlayerRepository PlayerRepository;
+    private final PlayerRepository playerRepository;
 
-    public PlayerService(PlayerRepository PlayerRepository) {
-        this.PlayerRepository = PlayerRepository;
+    public PlayerService(PlayerRepository playerRepository) {
+        this.playerRepository = playerRepository;
     }
 
     @Transactional(readOnly = true)
     public PlayerDTO findById(Long id) throws Exception {
-        Optional<Player> obj = PlayerRepository.findById(id);
+        Optional<Player> obj = playerRepository.findById(id);
         Player entity = obj.orElseThrow(() -> new Exception("Jogador não encontrado!"));
         return new PlayerDTO(entity);
     }
 
     @Transactional(readOnly = true)
     public Page<PlayerDTO> findAllPaged(Pageable pageable) {
-        Page<Player> page = PlayerRepository.findAll(pageable);
+        Page<Player> page = playerRepository.findAll(pageable);
         return page.map(Player -> new PlayerDTO(Player));
     }
 }
