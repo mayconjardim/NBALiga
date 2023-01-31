@@ -1,6 +1,10 @@
 .sidenav {
   height: 100%;
 
+  &-toolbar {
+    position: fixed;
+  }
+
   &-logo {
     justify-content: center;
     span {
