@@ -1,3 +1,8 @@
+import {
+  BreakpointObserver,
+  Breakpoints,
+  BreakpointState,
+} from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -5,11 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {
-  BreakpointObserver,
-  Breakpoints,
-  BreakpointState,
-} from '@angular/cdk/layout';
+import { RouterModule } from '@angular/router';
 import { map, Observable } from 'rxjs';
 
 @Component({
@@ -17,6 +18,7 @@ import { map, Observable } from 'rxjs';
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule,
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
