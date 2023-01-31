@@ -10,10 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   east: Standings[] = [];
   west: Standings[] = [];
-  constructor(private service: StandingsService) {}
+  constructor(private standingsService: StandingsService) {}
 
   ngOnInit(): void {
-    this.service
+    this.standingsService
       .read()
       .subscribe(
         (standings: Standings[]) => (

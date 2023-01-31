@@ -1,12 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { Component, Input } from '@angular/core';
 
 import { Standings } from './../../models/standings';
-import { Observable, map } from 'rxjs';
-import {
-  BreakpointObserver,
-  BreakpointState,
-  Breakpoints,
-} from '@angular/cdk/layout';
 
 @Component({
   selector: 'home-standings',
