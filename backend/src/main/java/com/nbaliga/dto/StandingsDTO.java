@@ -1,12 +1,9 @@
 package com.nbaliga.dto;
 
-import com.nbaliga.entities.Player;
 import com.nbaliga.entities.Team;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -46,5 +43,49 @@ public class StandingsDTO implements Serializable {
         isHuman = entity.getIsHuman();
         confGb = entity.getConfGb();
     }
+
+    public String getTeamName() {
+        return cityName + " " + name;
+    }
+
+    public Integer getTotalWins() {
+        return homeWins + roadWins;
+    }
+
+    public Integer getTotalLosses() {
+        return homeLosses + roadLosses;
+    }
+
+    public Integer getTotalGames() {
+        return  homeWins + roadWins + homeLosses + roadLosses;
+    }
+
+    public Double getPointsFor() {
+        return Math.round((points.doubleValue() / getTotalGames()) * 10.0) / 10.0;
+    }
+
+    public Double getPointsAgainst() {
+        return Math.round((allowedPoints.doubleValue() / getTotalGames()) * 10.0) / 10.0;
+    }
+
+    public Double getPointsDiff() {
+        return Math.round((getPointsFor() - getPointsAgainst()) * 10.0) / 10.0;
+    }
+
+    public String getGamesBehind() {
+        if (confGb > 0) {
+            return confGb.toString();
+        }
+        return "-";
+
+    }
+    public String getSTRK() {
+        if (streak > 0) {
+            return "W" +  streak;
+        }
+            return "L" + Math.abs(streak);
+
+    }
+
 
 }
