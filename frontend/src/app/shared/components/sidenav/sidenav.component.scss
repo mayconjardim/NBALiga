@@ -1,0 +1,21 @@
+.sidenav {
+  height: 100%;
+
+  &-logo {
+    justify-content: center;
+    span {
+      margin-left: 0.5rem;
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+  &-list {
+    width: 13rem;
+
+    .mat-icon {
+      margin-right: 10px;
+      vertical-align: text-bottom;
+    }
+  }
+}
