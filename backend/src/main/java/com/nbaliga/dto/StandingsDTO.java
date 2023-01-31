@@ -43,7 +43,6 @@ public class StandingsDTO implements Serializable {
         isHuman = entity.getIsHuman();
         confGb = entity.getConfGb();
     }
-
     public String getTeamName() {
         return cityName + " " + name;
     }
