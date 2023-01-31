@@ -1,6 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Standings } from './../../models/standings';
+import { Observable, map } from 'rxjs';
+import {
+  BreakpointObserver,
+  BreakpointState,
+  Breakpoints,
+} from '@angular/cdk/layout';
 
 @Component({
   selector: 'home-standings',
@@ -8,8 +14,18 @@ import { Standings } from './../../models/standings';
   styleUrls: ['./home-standings.component.scss'],
 })
 export class HomeStandingsComponent {
-  @Input() standings!: Standings[];
-  imgLogo = 'assets/images/logos/';
+  @Input() east!: Standings[];
+  @Input() west!: Standings[];
+
+  logo = 'assets/images/logos/';
+
+  constructor(private breakpointObserver: BreakpointObserver) {
+    breakpointObserver.observe(['(max-width: 600px)']).subscribe((result) => {
+      this.displayedColumns = result.matches
+        ? ['teamName', 'wl', 'pct', 'strk']
+        : ['teamName', 'wl', 'pct', 'gb', 'pf', 'pa', 'diff', 'strk'];
+    });
+  }
 
   displayedColumns: string[] = [
     'teamName',

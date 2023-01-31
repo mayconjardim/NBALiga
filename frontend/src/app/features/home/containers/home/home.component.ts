@@ -8,16 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  standings: Standings[] = [];
+  east: Standings[] = [];
+  west: Standings[] = [];
   constructor(private service: StandingsService) {}
 
   ngOnInit(): void {
     this.service
       .read()
-      .subscribe((standings: Standings[]) => (this.standings = standings));
-  }
-
-  trackById(index: number, value: Standings) {
-    return value.id;
+      .subscribe(
+        (standings: Standings[]) => (
+          (this.east = standings.filter((team) => team.conference == 'East')),
+          (this.west = standings.filter((team) => team.conference == 'West'))
+        )
+      );
   }
 }
