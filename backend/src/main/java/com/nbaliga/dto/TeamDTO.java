@@ -66,16 +66,6 @@ public class TeamDTO implements Serializable {
     private Integer allowedFta;
     private Integer lastPlayoffYear;
     private Boolean isHuman;
-    private Double cutSalary;
-    private Double cutSalary2;
-    private Double cutSalary3;
-    private Double cutSalary4;
-    private Double cutSalary5;
-    private Double cutSalary6;
-    private Double cutSalary7;
-    private Double cutSalary8;
-    private Integer usedMidException;
-    private Integer usedLowException;
     private Double gb;
     private Double confGb;
     private Integer divRank;
@@ -134,16 +124,6 @@ public class TeamDTO implements Serializable {
         allowedFta = entity.getAllowedFta();
         lastPlayoffYear = entity.getLastPlayoffYear();
         isHuman = entity.getIsHuman();
-        cutSalary = entity.getCutSalary();
-        cutSalary2 = entity.getCutSalary2();
-        cutSalary3 = entity.getCutSalary3();
-        cutSalary4 = entity.getCutSalary4();
-        cutSalary5 = entity.getCutSalary5();
-        cutSalary6 = entity.getCutSalary6();
-        cutSalary7 = entity.getCutSalary7();
-        cutSalary8 = entity.getCutSalary8();
-        usedMidException = entity.getUsedMidException();
-        usedLowException = entity.getUsedLowException();
         gb = entity.getGb();
         confGb = entity.getConfGb();
         divRank = entity.getDivRank();
@@ -156,6 +136,73 @@ public class TeamDTO implements Serializable {
     public TeamDTO(Team entity, Set<Player> players) {
         this(entity);
         players.forEach(play -> this.players.add(new PlayerDTO(play)));
+    }
+
+    public String getTeamName() {
+        return cityName + " " + name;
+    }
+
+    public Integer getTotalWins() {
+        return homeWins + roadWins;
+    }
+
+    public Integer getTotalLosses() {
+        return homeLosses + roadLosses;
+    }
+
+    public Integer getTotalGames() {
+        return  homeWins + roadWins + homeLosses + roadLosses;
+    }
+
+    public Double getPointsFor() {
+        return Math.round((points.doubleValue() / getTotalGames()) * 10.0) / 10.0;
+    }
+
+    public Double getPointsAgainst() {
+        return Math.round((allowedPoints.doubleValue() / getTotalGames()) * 10.0) / 10.0;
+    }
+
+    public Double getPointsDiff() {
+        return Math.round((getPointsFor() - getPointsAgainst()) * 10.0) / 10.0;
+    }
+
+    public Double getPpg() {
+        if (points > 0) {
+            return Math.round((points.doubleValue() / getTotalGames()) * 10.0) / 10.0;
+        } else {
+            return 0.0;
+        }
+    }
+
+    public Double getOppg() {
+        if (allowedPoints > 0) {
+            return Math.round((allowedPoints.doubleValue() / getPointsAgainst()) * 10.0) / 10.0;
+        } else {
+            return 0.0;
+        }
+    }
+
+    public Double getRpg() {
+        if (rebounds > 0) {
+            return Math.round((rebounds.doubleValue() / getTotalGames().doubleValue()) * 10.0) / 10.0 ;
+        } else {
+            return 0.0;
+        }
+    }
+
+    public Double getApg() {
+        if (assists > 0) {
+            return Math.round((assists.doubleValue() / getTotalGames()) * 10.0) / 10.0;
+        } else {
+            return 0.0;
+        }
+    }
+
+    public String getSTRK() {
+        if (streak > 0) {
+            return "W" +  streak;
+        }
+        return "L" + Math.abs(streak);
     }
 
 

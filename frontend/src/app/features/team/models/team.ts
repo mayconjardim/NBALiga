@@ -55,5 +55,15 @@ export interface Team {
   divRank: number;
   confRank: number;
   arenaName: string;
+  pointsFor: number;
+  teamName: string;
+  totalGames: number;
+  pointsDiff: number;
+  strk: string;
+  pointsAgainst: 107.3;
+  ppg: number;
+  oppg: number;
+  apg: number;
+  rpg: number;
   players: any[];
 }

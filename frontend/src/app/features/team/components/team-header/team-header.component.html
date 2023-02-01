@@ -7,10 +7,9 @@
         'background-image': 'url(' + logo + team.name + '.svg' + ')'
       }"
     ></div>
-    <mat-card-title>{{ team.cityName }} {{ team.name }}</mat-card-title>
+    <mat-card-title>{{ team.teamName }}</mat-card-title>
     <mat-card-subtitle
-      >{{ team.homeWins + team.roadWins }} -
-      {{ team.roadLosses + team.roadLosses }} | {{ team.confRank }}th in
+      >{{ team.totalWins }} - {{ team.totalLosses }} | {{ team.confRank }}th in
       {{ team.conference }} Conf.</mat-card-subtitle
     >
   </mat-card-header>
@@ -20,22 +19,22 @@
     <table>
       <tbody>
         <td>
-          <p>99.5</p>
+          <p>{{ team.pointsFor | number : "1.1-1" }}</p>
           <span>20th</span>
           <p>PPG</p>
         </td>
         <td>
-          <p>99.5</p>
+          <p>{{ team.pointsAgainst | number : "1.1-1" }}</p>
           <span>20th</span>
           <p>OPPG</p>
         </td>
         <td>
-          <p>99.5</p>
+          <p>{{ team.rpg | number : "1.1-1" }}</p>
           <span>20th</span>
           <p>RPG</p>
         </td>
         <td>
-          <p>99.5</p>
+          <p>{{ team.apg | number : "1.1-1" }}</p>
           <span>20th</span>
           <p>APG</p>
         </td>

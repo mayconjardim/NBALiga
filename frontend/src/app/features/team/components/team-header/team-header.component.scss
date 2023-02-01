@@ -69,5 +69,13 @@
         font-size: 20px;
       }
     }
+
+    mat-card-actions {
+      table {
+        td:nth-child(5) {
+          display: none;
+        }
+      }
+    }
   }
 }
