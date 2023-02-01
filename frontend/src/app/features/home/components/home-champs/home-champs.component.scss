@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  margin-top: 4rem;
+
+  &-table {
+    width: 100%;
+    table-layout: fixed;
+    background-color: #ffffff;
+    border-spacing: 0;
+    padding: 0.2rem;
+    font-size: 12px;
+
+    text-align: center;
+
+    caption {
+      background-color: #ffffff;
+    }
+
+    td {
+      padding: 0.5rem;
+      color: white;
+      border-bottom: 5px solid #ffff;
+
+      &:nth-child(2) {
+        width: 7rem;
+      }
+
+      &:nth-child(5) {
+        width: 7rem;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+      }
+    }
+  }
+}

@@ -1,6 +1,9 @@
-import { StandingsService } from './../../services/standings.service';
-import { Standings } from './../../models/standings';
 import { Component, OnInit } from '@angular/core';
+
+import { Champs } from '../../models/champs';
+import { ChampsService } from '../../services/champs.service';
+import { Standings } from './../../models/standings';
+import { StandingsService } from './../../services/standings.service';
 
 @Component({
   selector: 'home',
@@ -10,7 +13,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   east: Standings[] = [];
   west: Standings[] = [];
-  constructor(private standingsService: StandingsService) {}
+  champs: Champs[] = [];
+  constructor(
+    private standingsService: StandingsService,
+    private champsService: ChampsService
+  ) {}
 
   ngOnInit(): void {
     this.standingsService
@@ -21,5 +28,9 @@ export class HomeComponent implements OnInit {
           (this.west = standings.filter((team) => team.conference == 'West'))
         )
       );
+
+    this.champsService
+      .read()
+      .subscribe((champs: Champs[]) => (this.champs = champs));
   }
 }

@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, of, retry, tap, throwError } from 'rxjs';
 
-import { Champs } from '../models/Champs';
+import { Champs } from '../models/champs';
 import { API_CONFIG } from './../../../config/api.config';
 
 @Injectable({

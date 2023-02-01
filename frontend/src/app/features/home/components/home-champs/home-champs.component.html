@@ -1,1 +1,24 @@
-<p>home-champs works!</p>
+<div class="container">
+  <table class="container-table">
+    <caption>
+      FINALS HISTORY
+    </caption>
+    <tr *ngFor="let champ of champs">
+      <td bgcolor="red">{{ champ.season }}</td>
+      <td bgcolor="red">
+        {{ champ.champ }}
+        <span style="float: right"
+          ><img [src]="logo + [champ.champ] + '.png'"
+        /></span>
+      </td>
+      <td bgcolor="red">{{ champ.champWins }}</td>
+      <td bgcolor="black">{{ champ.loserWins }}</td>
+      <td bgcolor="black">
+        <span style="float: left">
+          <img [src]="logo + [champ.loser] + '.png'" /></span
+        >{{ champ.loser }}
+      </td>
+      <td bgcolor="black"></td>
+    </tr>
+  </table>
+</div>

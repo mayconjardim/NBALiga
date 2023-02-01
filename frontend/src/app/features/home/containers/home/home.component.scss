@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+
+  home-standings {
+    width: 62%;
+  }
+
+  home-champs {
+    width: 33%;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 480px), (max-width: 1114px) {
+  .container {
+    home-standings {
+      width: 100%;
+    }
+
+    home-champs {
+      display: none;
+      visibility: hidden;
+    }
+  }
+}
