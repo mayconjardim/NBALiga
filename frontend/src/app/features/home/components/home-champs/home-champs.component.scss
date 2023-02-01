@@ -1,3 +1,6 @@
+@import "../../../../../assets/scss/variables.scss";
+@import "../../../../../assets/scss/teamsColors.scss";
+
 .container {
   width: 100%;
   margin-top: 4rem;
@@ -5,7 +8,7 @@
   &-table {
     width: 100%;
     table-layout: fixed;
-    background-color: #ffffff;
+    background-color: $white;
     border-spacing: 0;
     padding: 0.2rem;
     font-size: 12px;
@@ -13,13 +16,17 @@
     text-align: center;
 
     caption {
-      background-color: #ffffff;
+      background-color: $white;
+      padding: 0.8rem;
+      text-align: left;
+      font-weight: 800;
     }
 
     td {
       padding: 0.5rem;
-      color: white;
-      border-bottom: 5px solid #ffff;
+      color: $white;
+      border-bottom: 1rem solid $white;
+      background-image: none;
 
       &:nth-child(2) {
         width: 7rem;

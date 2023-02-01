@@ -1,6 +1,6 @@
-import { Champs } from './../../models/champs';
-import { ChampsService } from './../../services/champs.service';
 import { Component, Input } from '@angular/core';
+
+import { Champs } from './../../models/champs';
 
 @Component({
   selector: 'home-champs',
@@ -11,4 +11,11 @@ export class HomeChampsComponent {
   @Input() champs!: Champs[];
 
   logo = 'assets/images/logos/';
+
+  teamColors(team: string) {
+    if (team == '76ers') {
+      return 'Sixers';
+    }
+    return team;
+  }
 }
