@@ -54,6 +54,10 @@
       border-right: 1px solid rgba(255, 255, 255, 0.1);
       width: calc(100% / 6);
       text-align: center;
+
+      &:nth-child(5) {
+        text-align: center;
+      }
     }
   }
 }
@@ -64,7 +68,7 @@
 
     mat-card-header {
       mat-card-title {
-        margin-top: 2rem;
+        margin-top: 2.6rem;
         color: $white;
         font-size: 20px;
       }

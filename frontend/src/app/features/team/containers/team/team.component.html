@@ -1,5 +1,16 @@
 <div class="container">
-  <ng-container *ngIf="team!">
-    <team-header [team]="team"></team-header>
-  </ng-container>
+  <div class="container-header">
+    <ng-container *ngIf="team!">
+      <team-header [team]="team"></team-header>
+    </ng-container>
+  </div>
+
+  <div class="container-tabs">
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Roster">Roster</mat-tab>
+      <mat-tab label="Contracts">Contracts</mat-tab>
+      <mat-tab label="Schedule">Schedule</mat-tab>
+      <mat-tab label="Draft Picks">Draft Picks</mat-tab>
+    </mat-tab-group>
+  </div>
 </div>

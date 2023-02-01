@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TeamHeaderComponent } from './components/team-header/team-header.component';
@@ -10,6 +11,11 @@ export const routes: Routes = [{ path: '', component: TeamComponent }];
 
 @NgModule({
   declarations: [TeamComponent, TeamHeaderComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), MatCardModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    MatCardModule,
+    MatTabsModule,
+  ],
 })
 export class TeamModule {}
