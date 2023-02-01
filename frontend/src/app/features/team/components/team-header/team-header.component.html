@@ -1,1 +1,50 @@
-<p>team-header works!</p>
+<mat-card class="card {{ teamColors(team.name) }}">
+  <mat-card-header>
+    <div
+      mat-card-avatar
+      class="card-logo"
+      [ngStyle]="{
+        'background-image': 'url(' + logo + team.name + '.svg' + ')'
+      }"
+    ></div>
+    <mat-card-title>{{ team.cityName }} {{ team.name }}</mat-card-title>
+    <mat-card-subtitle
+      >{{ team.homeWins + team.roadWins }} -
+      {{ team.roadLosses + team.roadLosses }} | {{ team.confRank }}th in
+      {{ team.conference }} Conf.</mat-card-subtitle
+    >
+  </mat-card-header>
+  <mat-card-content> </mat-card-content>
+
+  <mat-card-actions>
+    <table>
+      <tbody>
+        <td>
+          <p>99.5</p>
+          <span>20th</span>
+          <p>PPG</p>
+        </td>
+        <td>
+          <p>99.5</p>
+          <span>20th</span>
+          <p>OPPG</p>
+        </td>
+        <td>
+          <p>99.5</p>
+          <span>20th</span>
+          <p>RPG</p>
+        </td>
+        <td>
+          <p>99.5</p>
+          <span>20th</span>
+          <p>APG</p>
+        </td>
+        <td>
+          <p>Vasco</p>
+          <p>Vasco</p>
+          <p>Vasco</p>
+        </td>
+      </tbody>
+    </table>
+  </mat-card-actions>
+</mat-card>

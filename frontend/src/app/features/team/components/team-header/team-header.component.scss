@@ -1,0 +1,73 @@
+@import "../../../../../assets/scss/variables.scss";
+@import "../../../../../assets/scss/teamsColors.scss";
+
+.card {
+  width: 99%;
+  margin: 3.6rem auto;
+  height: 14.8rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: $white;
+
+  &-logo {
+    width: 100px;
+    height: 100px;
+    margin-top: 1rem;
+  }
+
+  mat-card-header {
+    mat-card-title {
+      margin-top: 2rem;
+      color: $white;
+      font-size: 24px;
+    }
+
+    mat-card-subtitle {
+      color: $white;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+  mat-card-content {
+    color: $white;
+  }
+
+  mat-card-actions {
+    padding: 0;
+    margin-bottom: 1rem;
+
+    table {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      table-layout: fixed;
+      font-size: 12px;
+
+      span {
+        font-size: 14px;
+        font-weight: 800;
+      }
+    }
+
+    td {
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      width: calc(100% / 6);
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .card {
+    margin: 3.1rem auto;
+
+    mat-card-header {
+      mat-card-title {
+        margin-top: 2rem;
+        color: $white;
+        font-size: 20px;
+      }
+    }
+  }
+}

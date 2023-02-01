@@ -1,1 +1,5 @@
-<div class="container"></div>
+<div class="container">
+  <ng-container *ngIf="team!">
+    <team-header [team]="team"></team-header>
+  </ng-container>
+</div>
