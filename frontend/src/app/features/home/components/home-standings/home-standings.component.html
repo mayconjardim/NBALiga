@@ -6,7 +6,7 @@
       <th mat-header-cell *matHeaderCellDef>TEAM</th>
       <td mat-cell *matCellDef="let team">
         <img [src]="logo + [team.name] + '.png'" />
-        {{ team.teamName }}
+        <a routerLink="/team/{{ team.id }}"> {{ team.teamName }}</a>
       </td>
     </ng-container>
 
@@ -71,7 +71,7 @@
       <th mat-header-cell *matHeaderCellDef>TEAM</th>
       <td mat-cell *matCellDef="let team">
         <img [src]="logo + [team.name] + '.png'" />
-        {{ team.teamName }}
+        <a routerLink="/team/{{ team.id }}"> {{ team.teamName }}</a>
       </td>
     </ng-container>
 

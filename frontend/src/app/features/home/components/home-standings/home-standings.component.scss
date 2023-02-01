@@ -6,6 +6,7 @@
   &-table {
     width: 100%;
     font-size: 12px;
+
     td:nth-child(1) {
       min-width: 15rem;
     }
@@ -15,6 +16,14 @@
       height: 22px;
       margin: 0.6rem 0.4rem;
       vertical-align: middle;
+    }
+
+    a {
+      color: #1565c0;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

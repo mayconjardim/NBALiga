@@ -18,22 +18,14 @@ export class TeamService {
     }
 
     return this.http.get<Team[]>(`${API_CONFIG.baseUrl}/teams`).pipe(
-      tap((teams) => {
-        this.teams = teams;
-      }),
+      tap((teams) => (this.teams = teams)),
       retry(2),
       catchError(this.handleError)
     );
   }
 
-  readOne(id: number) {
-    return this.read().pipe(
-      map((teams) => {
-        const team = teams.find((team: Team) => team.id === id);
-        return team;
-      }),
-      catchError(this.handleError)
-    );
+  readOne(id: any) {
+    return this.http.get<Team>(`${API_CONFIG.baseUrl}/teams/${id}`);
   }
 
   private handleError(err: HttpErrorResponse) {
