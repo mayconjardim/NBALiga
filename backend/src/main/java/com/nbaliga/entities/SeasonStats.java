@@ -3,6 +3,7 @@ package com.nbaliga.entities;
 import com.nbaliga.entities.keys.SeasonStatsKey;
 import lombok.*;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
@@ -27,13 +28,18 @@ public class SeasonStats implements Serializable {
     private Double mpg;
     private Integer fga;
     private Integer fgm;
-    private Double fg_;
-    private Integer _3pa;
-    private Integer _3pm;
-    private Double _3p_;
+    @Column(name = "FG_")
+    private Double fgPct;
+    @Column(name = "3PA")
+    private Integer threePa;
+    @Column(name = "3PM")
+    private Integer threePm;
+    @Column(name = "3P_")
+    private Double threePct;
     private Integer fta;
     private Integer ftm;
-    private Double ft_;
+    @Column(name = "FT_")
+    private Double ftPct;
     private Integer offensiveRebounds;
     @Id
     private Integer rebounds;
