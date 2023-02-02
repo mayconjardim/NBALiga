@@ -6,11 +6,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { TeamHeaderComponent } from './components/team-header/team-header.component';
 import { TeamComponent } from './containers/team/team.component';
+import { TeamRosterComponent } from './components/team-roster/team-roster.component';
 
 export const routes: Routes = [{ path: '', component: TeamComponent }];
 
 @NgModule({
-  declarations: [TeamComponent, TeamHeaderComponent],
+  declarations: [TeamComponent, TeamHeaderComponent, TeamRosterComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
