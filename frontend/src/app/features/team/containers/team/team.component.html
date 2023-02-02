@@ -7,7 +7,10 @@
 
   <div class="container-tabs">
     <mat-tab-group mat-align-tabs="center">
-      <mat-tab label="Roster">Roster</mat-tab>
+      <mat-tab label="Roster">
+        <ng-container *ngIf="team!">
+          <team-roster [team]="team"></team-roster> </ng-container
+      ></mat-tab>
       <mat-tab label="Contracts">Contracts</mat-tab>
       <mat-tab label="Schedule">Schedule</mat-tab>
       <mat-tab label="Draft Picks">Draft Picks</mat-tab>

@@ -3,7 +3,7 @@
 
 .card {
   width: 99%;
-  margin: 3.6rem auto;
+  margin: 0.1rem auto;
   height: 14.8rem;
   background-repeat: no-repeat;
   background-position: center;
@@ -64,8 +64,6 @@
 
 @media only screen and (max-width: 480px) {
   .card {
-    margin: 3.1rem auto;
-
     mat-card-header {
       mat-card-title {
         margin-top: 2.6rem;

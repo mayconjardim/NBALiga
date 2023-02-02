@@ -6,5 +6,8 @@
 
 @media only screen and (max-width: 480px) {
   .container {
+    &-header {
+      height: 14.8rem;
+    }
   }
 }

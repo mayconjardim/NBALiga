@@ -2,7 +2,10 @@
   height: 100%;
 
   &-toolbar {
-    position: fixed;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
   }
 
   &-logo {
