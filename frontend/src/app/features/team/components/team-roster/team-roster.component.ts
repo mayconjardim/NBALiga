@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Team } from '../../models/team';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'team-roster',
@@ -11,7 +12,8 @@ export class TeamRosterComponent implements OnInit {
   players!: any[];
 
   playerImg = 'assets/images/players/';
-  error = 'assets/images/players/blank.png';
+
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.players = this.team.players;
@@ -26,9 +28,11 @@ export class TeamRosterComponent implements OnInit {
   ];
 
   getPlayerPic(firstName: string, lastName: string) {
+    let imgLink = this.playerImg + firstName + '_' + lastName + '.png';
+    let error = 'assets/images/players/blank.png';
+
     return {
-      'background-image':
-        'url(' + this.playerImg + firstName + '_' + lastName + '.png' + ')',
+      'background-image': 'url(' + imgLink + ')',
     };
   }
 

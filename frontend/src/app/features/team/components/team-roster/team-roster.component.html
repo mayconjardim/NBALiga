@@ -1,5 +1,8 @@
 <div class="container">
-  <mat-card class="player-card" *ngFor="let player of players">
+  <mat-card
+    class="player-card {{ player.currentTeam }}"
+    *ngFor="let player of players"
+  >
     <mat-card-header>
       <div
         class="player-card-img"
@@ -15,8 +18,6 @@
       }}</mat-card-subtitle>
     </mat-card-header>
 
-    <mat-card-content>
-      <p></p>
-    </mat-card-content>
+    <mat-card-content> </mat-card-content>
   </mat-card>
 </div>
