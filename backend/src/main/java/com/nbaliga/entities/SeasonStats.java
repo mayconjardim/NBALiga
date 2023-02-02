@@ -1,9 +1,11 @@
 package com.nbaliga.entities;
 
+import com.nbaliga.entities.keys.SeasonStatsKey;
 import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
@@ -11,6 +13,7 @@ import java.io.Serializable;
 @Setter
 @EqualsAndHashCode
 @Entity
+@IdClass(SeasonStatsKey.class)
 public class SeasonStats implements Serializable {
 
     private Integer season;
