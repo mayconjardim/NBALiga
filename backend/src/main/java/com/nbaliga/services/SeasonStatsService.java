@@ -21,13 +21,6 @@ public class SeasonStatsService {
     }
 
     @Transactional(readOnly = true)
-    public SeasonStatsDTO findById(Long id) throws Exception {
-        Optional<SeasonStats> obj = seasonStatsRepository.findById(id);
-        SeasonStats entity = obj.orElseThrow(() -> new Exception("Stats não encontrada"));
-        return new SeasonStatsDTO(entity);
-    }
-
-    @Transactional(readOnly = true)
     public List<SeasonStatsDTO> findAll(Integer season) {
         List<SeasonStats> stats = seasonStatsRepository.findAllStats(season);
         return stats.stream().map(x -> new SeasonStatsDTO(x)).collect(Collectors.toList());

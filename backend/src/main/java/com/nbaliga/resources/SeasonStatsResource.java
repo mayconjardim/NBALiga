@@ -18,12 +18,6 @@ public class SeasonStatsResource {
         this.seasonStatsService = seasonStatsService;
     }
 
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<SeasonStatsDTO> findById(@PathVariable long id) throws Exception {
-        SeasonStatsDTO dto = seasonStatsService.findById(id);
-        return ResponseEntity.ok().body(dto);
-    }
-
     @GetMapping(value = "/season/{season}")
     public ResponseEntity<List<SeasonStatsDTO>> findAll(@PathVariable Integer season) {
         List<SeasonStatsDTO> stats = seasonStatsService.findAll(season);

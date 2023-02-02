@@ -1,10 +1,14 @@
 package com.nbaliga.dto;
 
 import com.nbaliga.entities.Player;
+import com.nbaliga.entities.SeasonStats;
 import lombok.*;
 
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -83,6 +87,8 @@ public class PlayerDTO implements Serializable {
     private Integer contract5;
     private Integer birdYears;
 
+    private List<SeasonStatsDTO> seasonStats = new ArrayList<>();
+
     public PlayerDTO(Player entity) {
         this.id = entity.getId();
         this.firstName = entity.getFirstName();
@@ -154,7 +160,14 @@ public class PlayerDTO implements Serializable {
         this.contract4 = entity.getContract4();
         this.contract5 = entity.getContract5();
 
+        List<SeasonStats> stats = entity.getSeasonStats();
+        if (!stats.isEmpty()) {
+            SeasonStats lastStat = stats.get(stats.size() - 1);
+            this.seasonStats.add(new SeasonStatsDTO(lastStat));
+        }
     }
+
+
 
     public Integer getContractLength() {
         int years = 0;

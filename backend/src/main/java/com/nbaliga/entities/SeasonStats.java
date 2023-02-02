@@ -1,5 +1,6 @@
 package com.nbaliga.entities;
 
+import com.nbaliga.dto.SeasonStatsDTO;
 import com.nbaliga.entities.keys.SeasonStatsKey;
 import lombok.*;
 
@@ -8,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -62,5 +66,7 @@ public class SeasonStats implements Serializable {
     private Integer dq;
     private Integer doubleDoubles;
     private Integer tripleDoubles;
+
+
 
 }
