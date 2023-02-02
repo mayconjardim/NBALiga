@@ -51,6 +51,38 @@ export class TeamRosterComponent implements OnInit {
     }
   }
 
+  ratingColors(rating: string) {
+    switch (rating) {
+      case 'A+':
+        return 'assets/images/utils/aa.png';
+      case 'A':
+        return 'assets/images/utils/a.png';
+      case 'B':
+        return 'assets/images/utils/b.png';
+      case 'C':
+        return 'assets/images/utils/c.png';
+      case 'D':
+        return 'assets/images/utils/d.png';
+      default:
+        return 'assets/images/utils/f.png';
+    }
+  }
+
+  getExp(xp: number) {
+    if (xp == 0) {
+      return 'Rookie';
+    } else if (xp == 1) {
+      return 'Sophomore';
+    }
+    return xp + ' years';
+  }
+
+  getHeight(height: any) {
+    const ft = Math.floor(height / 12);
+    const inc = height % 12;
+    return ft + "'" + inc;
+  }
+
   teamColors(team: string) {
     if (team == '76ers') {
       return 'Sixers';

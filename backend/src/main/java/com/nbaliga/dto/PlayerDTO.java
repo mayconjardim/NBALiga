@@ -156,4 +156,15 @@ public class PlayerDTO implements Serializable {
 
     }
 
+    public Integer getContractLength() {
+        int years = 0;
+        years += (this.contract1 > 0) ? 1 : 0;
+        years += (this.contract2 > 0) ? 1 : 0;
+        years += (this.contract3 > 0) ? 1 : 0;
+        years += (this.contract4 > 0) ? 1 : 0;
+        years += (this.contract5 > 0) ? 1 : 0;
+        return years;
+
+    }
+
 }
