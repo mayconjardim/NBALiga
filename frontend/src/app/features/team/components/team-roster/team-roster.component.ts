@@ -11,6 +11,7 @@ export class TeamRosterComponent implements OnInit {
   players!: any[];
 
   playerImg = 'assets/images/players/';
+  error = 'assets/images/players/blank.png';
 
   ngOnInit(): void {
     this.players = this.team.players;
@@ -23,6 +24,28 @@ export class TeamRosterComponent implements OnInit {
     'currentRating',
     'futureRating',
   ];
+
+  getPlayerPic(firstName: string, lastName: string) {
+    return {
+      'background-image':
+        'url(' + this.playerImg + firstName + '_' + lastName + '.png' + ')',
+    };
+  }
+
+  getPosition(position: number) {
+    switch (position) {
+      case 5:
+        return 'Point Guard';
+      case 4:
+        return 'Shooting guard';
+      case 3:
+        return 'Small forward';
+      case 2:
+        return 'Power forward';
+      default:
+        return 'Center';
+    }
+  }
 
   teamColors(team: string) {
     if (team == '76ers') {

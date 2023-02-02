@@ -1,21 +1,22 @@
 <div class="container">
-  <mat-card class="player-card">
+  <mat-card class="player-card" *ngFor="let player of players">
     <mat-card-header>
-      <div mat-card-avatar class="player-card-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <div
+        class="player-card-img"
+        mat-card-avatar
+        [ngStyle]="getPlayerPic(player.lastName, player.firstName)"
+      ></div>
+      <mat-card-title
+        ><span>{{ player.firstName }}</span>
+        <p>{{ player.lastName }}</p></mat-card-title
+      >
+      <mat-card-subtitle>{{
+        getPosition(player.positionNumber)
+      }}</mat-card-subtitle>
     </mat-card-header>
 
     <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz
-        breeds of dog from Japan. A small, agile dog that copes very well with
-        mountainous terrain, the Shiba Inu was originally bred for hunting.
-      </p>
+      <p></p>
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
   </mat-card>
 </div>

@@ -2,8 +2,30 @@
   width: 98%;
   margin: 0 auto;
 
-  table {
-    width: 100%;
-    font-size: 12px;
+  .player-card {
+    margin-top: 0.4rem;
+    width: 12rem;
+
+    &-img {
+      background-size: cover;
+      background-position: center;
+    }
+
+    mat-card-title {
+      line-height: 30%;
+
+      span {
+        font-size: 10px;
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 800;
+      }
+    }
+    mat-card-subtitle {
+      line-height: 30%;
+      font-size: 10px;
+    }
   }
 }
