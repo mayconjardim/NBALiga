@@ -13,9 +13,11 @@
     margin: 0.5rem;
     width: 12rem;
     background-repeat: no-repeat;
+    background-size: 30%;
+    background-position-x: 06%;
+    background-position-y: 06%;
 
     &-img {
-      border-right: 1px solid rgba(255, 255, 255, 0.3);
       background-size: cover;
       background-position: center;
     }

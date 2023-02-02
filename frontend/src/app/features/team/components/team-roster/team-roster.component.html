@@ -32,7 +32,11 @@
           >
         </p>
         <p>
-          <span>$ {{ player.contract1 | number }} (4)</span>
+          <span
+            >$ {{ player.contract1 | number }} ({{
+              player.contractLength
+            }})</span
+          >
         </p>
         <p><span>15.3 PPG - 15.3 APG - 11.4 RPG</span></p>
       </div>
