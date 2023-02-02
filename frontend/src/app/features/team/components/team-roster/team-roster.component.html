@@ -38,7 +38,13 @@
             }})</span
           >
         </p>
-        <p><span>15.3 PPG - 15.3 APG - 11.4 RPG</span></p>
+        <p>
+          <span
+            >{{ player.pointsPerGame | number : "1.1-1" }} PPG -
+            {{ player.assistsPerGame | number : "1.1-1" }} APG -
+            {{ player.rebsPerGame | number : "1.1-1" }} RPG</span
+          >
+        </p>
       </div>
     </mat-card-content>
   </mat-card>

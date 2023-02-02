@@ -65,5 +65,8 @@ export interface Team {
   oppg: number;
   apg: number;
   rpg: number;
+  rebsPerGame: number;
+  pointsPerGame: number;
+  assistsPerGame: number;
   players: any[];
 }

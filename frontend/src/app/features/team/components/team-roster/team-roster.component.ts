@@ -72,9 +72,11 @@ export class TeamRosterComponent implements OnInit {
     if (xp == 0) {
       return 'Rookie';
     } else if (xp == 1) {
-      return 'Sophomore';
+      return '2nd Season';
+    } else if (xp == 2) {
+      return '3rd Season';
     }
-    return xp + ' years';
+    return xp + 1 + 'th Season';
   }
 
   getHeight(height: any) {
