@@ -11,10 +11,6 @@ export class TeamRosterComponent implements OnInit {
   @Input() team!: Team;
   players!: any[];
 
-  playerImg = 'assets/images/players/';
-
-  constructor(private http: HttpClient) {}
-
   ngOnInit(): void {
     this.players = this.team.players;
   }
@@ -28,9 +24,8 @@ export class TeamRosterComponent implements OnInit {
   ];
 
   getPlayerPic(firstName: string, lastName: string) {
-    let imgLink = this.playerImg + firstName + '_' + lastName + '.png';
-    let error = 'assets/images/players/blank.png';
-
+    let imgLocation = 'assets/images/players/';
+    let imgLink = imgLocation + firstName + '_' + lastName + '.png';
     return {
       'background-image': 'url(' + imgLink + ')',
     };

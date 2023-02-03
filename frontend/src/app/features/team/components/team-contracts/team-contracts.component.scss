@@ -1,0 +1,37 @@
+@import "../../../../../assets/scss/variables.scss";
+@import "../../../../../assets/scss/teamsColors.scss";
+
+.container {
+  width: 98%;
+  margin: 0.5rem auto;
+
+  table {
+    font-size: 12px;
+    border: 1px solid #ececec;
+
+    td:nth-child(1) {
+      width: 12rem;
+      white-space: nowrap;
+    }
+
+    a {
+      color: #1565c0;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+    font-size: 5px;
+    table {
+      td:nth-child(1) {
+        width: 16rem;
+      }
+    }
+  }
+}

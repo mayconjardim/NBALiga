@@ -15,15 +15,18 @@ import { TeamContractsComponent } from './components/team-contracts/team-contrac
 export const routes: Routes = [{ path: '', component: TeamComponent }];
 
 @NgModule({
-  declarations: [TeamComponent, TeamHeaderComponent, TeamRosterComponent, TeamContractsComponent],
+  declarations: [
+    TeamComponent,
+    TeamHeaderComponent,
+    TeamRosterComponent,
+    TeamContractsComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     MatCardModule,
     MatTabsModule,
     MatTableModule,
-    MatDividerModule,
-    MatListModule,
   ],
 })
 export class TeamModule {}
