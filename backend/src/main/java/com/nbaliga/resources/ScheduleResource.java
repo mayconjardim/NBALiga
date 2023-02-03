@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/schedule")
+@RequestMapping(value = "/schedules")
 public class ScheduleResource {
 
     private final ScheduleService scheduleService;

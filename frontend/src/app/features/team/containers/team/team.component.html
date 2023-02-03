@@ -19,7 +19,12 @@
         </ng-container>
       </mat-tab>
 
-      <mat-tab label="Schedule">Schedule</mat-tab>
+      <mat-tab label="Schedule">
+        <ng-container *ngIf="team!">
+          <team-contracts [team]="team"></team-contracts>
+        </ng-container>
+      </mat-tab>
+
       <mat-tab label="Draft Picks">Draft Picks</mat-tab>
     </mat-tab-group>
   </div>

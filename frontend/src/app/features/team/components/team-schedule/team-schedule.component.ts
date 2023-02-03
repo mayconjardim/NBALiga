@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-team-schedule',
+  selector: 'team-schedule',
   templateUrl: './team-schedule.component.html',
-  styleUrls: ['./team-schedule.component.scss']
+  styleUrls: ['./team-schedule.component.scss'],
 })
-export class TeamScheduleComponent {
-
-}
+export class TeamScheduleComponent {}
