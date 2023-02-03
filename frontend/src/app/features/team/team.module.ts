@@ -12,6 +12,7 @@ import { TeamRosterComponent } from './components/team-roster/team-roster.compon
 import { TeamComponent } from './containers/team/team.component';
 import { TeamContractsComponent } from './components/team-contracts/team-contracts.component';
 import { TeamScheduleComponent } from './components/team-schedule/team-schedule.component';
+import { TeamDraftpicksComponent } from './components/team-draftpicks/team-draftpicks.component';
 
 export const routes: Routes = [{ path: '', component: TeamComponent }];
 
@@ -22,6 +23,7 @@ export const routes: Routes = [{ path: '', component: TeamComponent }];
     TeamRosterComponent,
     TeamContractsComponent,
     TeamScheduleComponent,
+    TeamDraftpicksComponent,
   ],
   imports: [
     CommonModule,
