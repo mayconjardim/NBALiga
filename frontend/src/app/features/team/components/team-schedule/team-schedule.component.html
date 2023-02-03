@@ -1,1 +1,47 @@
-<p>team-schedule works!</p>
+<div class="container">
+  <table mat-table [dataSource]="schedule">
+    <ng-container matColumnDef="day">
+      <th mat-header-cell *matHeaderCellDef>INFO</th>
+      <td mat-cell *matCellDef="let game">{{ getGameType(game.day) }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="opp">
+      <th mat-header-cell *matHeaderCellDef>OPP</th>
+      <td mat-cell *matCellDef="let game">
+        <img
+          [src]="teamLogo + [getPicHomeOrAway(game.away, game.home)] + '.svg'"
+          alt="team logo"
+        />
+        {{ getHomeOrAway(game.away, game.home) }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="playerOfGame">
+      <th mat-header-cell *matHeaderCellDef>PLAYER OF THE GAME</th>
+      <td mat-cell *matCellDef="let game">
+        <a routerLink="#">{{ game.playerOfGame }}</a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="result">
+      <th mat-header-cell *matHeaderCellDef>RESULT</th>
+      <td
+        mat-cell
+        *matCellDef="let game"
+        [ngStyle]="{
+          color:
+            getWinner(game.away, game.home, game.awayScore, game.homeScore) ==
+            'L '
+              ? 'red'
+              : 'green'
+        }"
+      >
+        {{ getWinner(game.away, game.home, game.awayScore, game.homeScore) }}
+        <a routerLink="#"> {{ game.awayScore }} - {{ game.homeScore }}</a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

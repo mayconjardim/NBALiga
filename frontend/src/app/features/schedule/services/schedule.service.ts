@@ -25,7 +25,7 @@ export class ScheduleService {
   }
 
   readOne(team: any) {
-    return this.http.get<Schedule>(`${API_CONFIG.baseUrl}/schedules/${team}`);
+    return this.http.get<Schedule[]>(`${API_CONFIG.baseUrl}/schedules/${team}`);
   }
 
   private handleError(err: HttpErrorResponse) {
