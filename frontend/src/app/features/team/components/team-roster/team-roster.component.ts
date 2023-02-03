@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { Team } from '../../models/team';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'team-roster',
@@ -11,21 +11,14 @@ export class TeamRosterComponent implements OnInit {
   @Input() team!: Team;
   players!: any[];
 
+  imgLocation = 'assets/images/players/';
+
   ngOnInit(): void {
     this.players = this.team.players;
   }
 
-  displayedColumns: string[] = [
-    'name',
-    'age',
-    'positionNumber',
-    'currentRating',
-    'futureRating',
-  ];
-
   getPlayerPic(firstName: string, lastName: string) {
-    let imgLocation = 'assets/images/players/';
-    let imgLink = imgLocation + firstName + '_' + lastName + '.png';
+    let imgLink = this.imgLocation + firstName + '_' + lastName + '.png';
     return {
       'background-image': 'url(' + imgLink + ')',
     };

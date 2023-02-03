@@ -11,6 +11,7 @@ export class TeamContractsComponent {
   @Input() team!: Team;
   players!: any[];
   capSpace: number = 101962352;
+  imgLocation = 'assets/images/players/';
 
   constructor(private breakpointObserver: BreakpointObserver) {
     breakpointObserver.observe(['(max-width: 600px)']).subscribe((result) => {

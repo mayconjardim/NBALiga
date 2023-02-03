@@ -3,7 +3,13 @@
     <ng-container matColumnDef="name" sticky>
       <th mat-header-cell *matHeaderCellDef>Player</th>
       <td mat-cell *matCellDef="let player">
-        <a href="#">{{ player.name }}</a>
+        <img
+          [src]="
+            imgLocation + [player.lastName] + '_' + [player.firstName] + '.png'
+          "
+          class="{{ teamColors(team.name) }}"
+        />
+        <a href="#"> {{ player.name }}</a>
       </td>
       <td mat-footer-cell *matFooterCellDef>Total</td>
     </ng-container>
