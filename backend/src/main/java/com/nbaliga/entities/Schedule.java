@@ -1,9 +1,11 @@
 package com.nbaliga.entities;
 
+import com.nbaliga.entities.keys.ScheduleKey;
 import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import java.io.Serializable;
 
 @NoArgsConstructor
@@ -12,6 +14,7 @@ import java.io.Serializable;
 @Setter
 @EqualsAndHashCode
 @Entity
+@IdClass(ScheduleKey.class)
 public class Schedule implements Serializable {
 
     @Id
