@@ -172,22 +172,6 @@ public class TeamDTO implements Serializable {
         return Math.round((getPointsFor() - getPointsAgainst()) * 10.0) / 10.0;
     }
 
-    public Double getPpg() {
-        if (points > 0) {
-            return Math.round((points.doubleValue() / getTotalGames()) * 10.0) / 10.0;
-        } else {
-            return 0.0;
-        }
-    }
-
-    public Double getOppg() {
-        if (allowedPoints > 0) {
-            return Math.round((allowedPoints.doubleValue() / getPointsAgainst()) * 10.0) / 10.0;
-        } else {
-            return 0.0;
-        }
-    }
-
     public Double getRpg() {
         if (rebounds > 0) {
             return Math.round((rebounds.doubleValue() / getTotalGames().doubleValue()) * 10.0) / 10.0 ;

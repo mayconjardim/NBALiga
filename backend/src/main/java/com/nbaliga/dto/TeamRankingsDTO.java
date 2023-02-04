@@ -23,29 +23,8 @@ public class TeamRankingsDTO implements Serializable {
     private Integer roadLosses;
     private Integer points;
     private Integer allowedPoints;
-    private Integer steals;
-    private Integer allowedSteals;
     private Integer rebounds;
-    private Integer allowedRebounds;
     private Integer assists;
-    private Integer allowedAssists;
-    private Integer blocks;
-    private Integer allowedBlocks;
-    private Integer turnovers;
-    private Integer allowedTurnovers;
-    private Integer fga;
-    private Integer fgm;
-    private Integer allowedFga;
-    private Integer allowedFgm;
-    private Integer threePa;
-    private Integer threePm;
-    private Integer allowed3pa;
-    private Integer allowed3pm;
-    private Integer ftm;
-    private Integer fta;
-    private Integer allowedFtm;
-    private Integer allowedFta;
-
 
     public TeamRankingsDTO(Team entity) {
         id = entity.getId();
@@ -58,28 +37,8 @@ public class TeamRankingsDTO implements Serializable {
         roadLosses = entity.getRoadLosses();
         points = entity.getPoints();
         allowedPoints = entity.getAllowedPoints();
-        steals = entity.getSteals();
-        allowedSteals = entity.getAllowedSteals();
         rebounds = entity.getRebounds();
-        allowedRebounds = entity.getAllowedRebounds();
         assists = entity.getAssists();
-        allowedAssists = entity.getAllowedAssists();
-        blocks = entity.getBlocks();
-        allowedBlocks = entity.getAllowedBlocks();
-        turnovers = entity.getTurnovers();
-        allowedTurnovers = entity.getAllowedTurnovers();
-        fga = entity.getFga();
-        fgm = entity.getFgm();
-        allowedFga = entity.getAllowedFga();
-        allowedFgm = entity.getAllowedFgm();
-        threePa = entity.getThreePa();
-        threePm = entity.getThreePm();
-        allowed3pa = entity.getAllowed3pa();
-        allowed3pm = entity.getAllowed3pm();
-        ftm = entity.getFtm();
-        fta = entity.getFta();
-        allowedFtm = entity.getAllowedFtm();
-        allowedFta = entity.getAllowedFta();
     }
 
     public String getTeamName() {
@@ -110,21 +69,6 @@ public class TeamRankingsDTO implements Serializable {
         return Math.round((getPointsFor() - getPointsAgainst()) * 10.0) / 10.0;
     }
 
-    public Double getPpg() {
-        if (points > 0) {
-            return Math.round((points.doubleValue() / getTotalGames()) * 10.0) / 10.0;
-        } else {
-            return 0.0;
-        }
-    }
-
-    public Double getOppg() {
-        if (allowedPoints > 0) {
-            return Math.round((allowedPoints.doubleValue() / getPointsAgainst()) * 10.0) / 10.0;
-        } else {
-            return 0.0;
-        }
-    }
 
     public Double getRpg() {
         if (rebounds > 0) {

@@ -2,11 +2,14 @@ package com.nbaliga.resources;
 
 
 import com.nbaliga.dto.TeamDTO;
+import com.nbaliga.dto.TeamRankingsDTO;
 import com.nbaliga.services.TeamService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @CrossOrigin(value = "*")
 @RestController
@@ -28,6 +31,12 @@ public class TeamResource {
     public ResponseEntity<Page<TeamDTO>> findAll(Pageable pageable) {
         Page<TeamDTO> page = teamService.findAllPaged(pageable);
         return ResponseEntity.ok().body(page);
+    }
+
+    @GetMapping(value = "rankings")
+    public ResponseEntity<List<TeamRankingsDTO>> findRanking() {
+        List<TeamRankingsDTO> list = teamService.findRanking();
+        return ResponseEntity.ok().body(list);
     }
 
 }
