@@ -1,11 +1,11 @@
-import { TeamRanking } from './../../models/teamRanking';
-import { Schedule } from './../../models/schedule';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Schedule } from 'src/app/features/league/schedule/models/schedule';
+import { ScheduleService } from 'src/app/features/league/schedule/services/schedule.service';
 
 import { Team } from '../../models/team';
+import { TeamRanking } from './../../models/teamRanking';
 import { TeamService } from './../../services/team.service';
-import { ScheduleService } from 'src/app/features/schedule/services/schedule.service';
 
 @Component({
   selector: 'team',

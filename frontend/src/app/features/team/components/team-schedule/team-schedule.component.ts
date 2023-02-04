@@ -1,7 +1,8 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Team } from '../../models/team';
-import { Schedule } from './../../models/schedule';
 import { Component, Input } from '@angular/core';
+import { Schedule } from 'src/app/features/league/schedule/models/schedule';
+
+import { Team } from '../../models/team';
 
 @Component({
   selector: 'team-schedule',
