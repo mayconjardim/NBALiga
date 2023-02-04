@@ -1,4 +1,5 @@
 export interface Team {
+  [index: string]: any;
   id?: number;
   league: number;
   cityName: string;

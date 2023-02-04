@@ -1,3 +1,4 @@
+import { TeamRanking } from './../models/teamRanking';
 import { Team } from './../models/team';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -9,6 +10,7 @@ import { API_CONFIG } from 'src/app/config/api.config';
 })
 export class TeamService {
   private teams: Team[] = [];
+  private teamsRank: TeamRanking[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -22,6 +24,20 @@ export class TeamService {
       retry(2),
       catchError(this.handleError)
     );
+  }
+
+  readRank() {
+    if (this.teamsRank.length) {
+      return of(this.teamsRank);
+    }
+
+    return this.http
+      .get<TeamRanking[]>(`${API_CONFIG.baseUrl}/teams/rankings`)
+      .pipe(
+        tap((teamsRank) => (this.teamsRank = teamsRank)),
+        retry(2),
+        catchError(this.handleError)
+      );
   }
 
   readOne(id: any) {

@@ -20,22 +20,22 @@
       <tbody>
         <td>
           <p>{{ team.pointsFor | number : "1.1-1" }}</p>
-          <span>20th</span>
+          <span>{{ findRank("pointsFor") }}</span>
           <p>PPG</p>
         </td>
         <td>
           <p>{{ team.pointsAgainst | number : "1.1-1" }}</p>
-          <span>20th</span>
+          <span>{{ findRank("pointsAgainst") }}</span>
           <p>OPPG</p>
         </td>
         <td>
           <p>{{ team.rpg | number : "1.1-1" }}</p>
-          <span>20th</span>
+          <span>{{ findRank("rpg") }}</span>
           <p>RPG</p>
         </td>
         <td>
           <p>{{ team.apg | number : "1.1-1" }}</p>
-          <span>20th</span>
+          <span>{{ findRank("apg") }}</span>
           <p>APG</p>
         </td>
         <td>

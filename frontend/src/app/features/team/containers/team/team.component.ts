@@ -1,3 +1,4 @@
+import { TeamRanking } from './../../models/teamRanking';
 import { Schedule } from './../../models/schedule';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -14,6 +15,7 @@ import { ScheduleService } from 'src/app/features/schedule/services/schedule.ser
 export class TeamComponent implements OnInit {
   team!: Team;
   schedule!: Schedule[];
+  rank!: TeamRanking[];
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +28,7 @@ export class TeamComponent implements OnInit {
     this.teamService.readOne(id).subscribe((team) => {
       this.team = team;
       this.getTeamSchedule();
+      this.getTeamRank();
     });
   }
 
@@ -35,5 +38,11 @@ export class TeamComponent implements OnInit {
         this.schedule = schedule;
       });
     }
+  }
+
+  getTeamRank() {
+    this.teamService
+      .readRank()
+      .subscribe((rank: TeamRanking[]) => (this.rank = rank));
   }
 }
