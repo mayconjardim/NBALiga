@@ -11,6 +11,10 @@
       min-width: 15rem;
     }
 
+    tr:nth-child(n + 9) {
+      background-color: rgba(255, 0, 0, 0.02);
+    }
+
     img {
       width: 22px;
       height: 22px;
