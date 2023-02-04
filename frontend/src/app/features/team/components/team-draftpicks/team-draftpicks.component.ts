@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-team-draftpicks',
+  selector: 'team-draftpicks',
   templateUrl: './team-draftpicks.component.html',
-  styleUrls: ['./team-draftpicks.component.scss']
+  styleUrls: ['./team-draftpicks.component.scss'],
 })
-export class TeamDraftpicksComponent {
-
-}
+export class TeamDraftpicksComponent {}

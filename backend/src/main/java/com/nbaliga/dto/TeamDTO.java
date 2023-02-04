@@ -1,5 +1,6 @@
 package com.nbaliga.dto;
 
+import com.nbaliga.entities.DraftPicks;
 import com.nbaliga.entities.Player;
 import com.nbaliga.entities.Team;
 import lombok.*;
@@ -72,6 +73,9 @@ public class TeamDTO implements Serializable {
     private Integer confRank;
     private String arenaName;
 
+    private Set<PlayerDTO> players = new HashSet<>();
+    private Set<DraftPicksDTO> picks = new HashSet<>();
+
     public TeamDTO(Team entity) {
         id = entity.getId();
         league = entity.getLeague();
@@ -131,11 +135,10 @@ public class TeamDTO implements Serializable {
         arenaName = entity.getArenaName();
     }
 
-    private Set<PlayerDTO> players = new HashSet<>();
-
-    public TeamDTO(Team entity, Set<Player> players) {
+    public TeamDTO(Team entity, Set<Player> players, Set<DraftPicks> picks) {
         this(entity);
         players.forEach(play -> this.players.add(new PlayerDTO(play)));
+        picks.forEach(pick -> this.picks.add(new DraftPicksDTO(pick)));
     }
 
     public String getTeamName() {

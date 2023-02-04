@@ -1,11 +1,10 @@
 package com.nbaliga.entities;
 
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -91,5 +90,10 @@ public class Team implements Serializable {
 
     @OneToMany(mappedBy = "currentTeamId")
     private Set<Player> players = new HashSet<>();
+
+    @OneToMany
+    @JoinColumn(name = "ownedby", referencedColumnName = "name")
+    @Fetch(FetchMode.JOIN)
+    private Set<DraftPicks> picks = new HashSet<>();
 
 }
