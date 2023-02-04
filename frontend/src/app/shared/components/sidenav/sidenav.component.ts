@@ -12,6 +12,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { map, Observable } from 'rxjs';
+import { SeasonInfoService } from '../../services/seasonInfo.service';
+import { SeasonInfo } from '../../models/seasonInfo';
 
 @Component({
   selector: 'sidenav',
@@ -30,6 +32,7 @@ import { map, Observable } from 'rxjs';
 })
 export class SidenavComponent implements OnInit {
   @ViewChild('drawer') drawer: any;
+  seasonInfo!: SeasonInfo[];
 
   public isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
@@ -37,10 +40,22 @@ export class SidenavComponent implements OnInit {
 
   public isMenuOpen = true;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private seasonInfoService: SeasonInfoService
+  ) {}
 
   ngOnInit(): void {
     this.isMenuOpen = true;
+    this.getSeason();
+  }
+
+  getSeason() {
+    this.seasonInfoService.read().subscribe((response) => {
+      this.seasonInfo = response;
+      const season = this.seasonInfo[0].season;
+      localStorage.setItem('season', season);
+    });
   }
 
   get isHandset(): boolean {

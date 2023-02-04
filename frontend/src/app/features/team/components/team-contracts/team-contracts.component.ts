@@ -58,6 +58,12 @@ export class TeamContractsComponent {
     'contract5',
   ];
 
+  getSeason(season: number) {
+    let seasonInfo = localStorage.getItem('season');
+    let number = Number(seasonInfo);
+    return number + season;
+  }
+
   getTotalSalary(contract: number) {
     let total;
 
