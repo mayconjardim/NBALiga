@@ -12,6 +12,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/team/team.module').then((m) => m.TeamModule),
   },
+  {
+    path: 'players/:id',
+    loadChildren: () =>
+      import('./features/player/player.module').then((m) => m.PlayerModule),
+  },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' },
 ];
