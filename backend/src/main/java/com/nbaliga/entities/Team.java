@@ -6,7 +6,9 @@ import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -89,11 +91,12 @@ public class Team implements Serializable {
     private String arenaName;
 
     @OneToMany(mappedBy = "currentTeamId")
-    private Set<Player> players = new HashSet<>();
+    private List<Player> players = new ArrayList<>();
 
     @OneToMany
     @JoinColumn(name = "ownedby", referencedColumnName = "name")
     @Fetch(FetchMode.JOIN)
-    private Set<DraftPicks> picks = new HashSet<>();
+    @OrderBy("year ASC, round")
+    private List<DraftPicks> picks = new ArrayList<>();
 
 }

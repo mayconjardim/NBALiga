@@ -26,8 +26,8 @@
       </mat-tab>
 
       <mat-tab label="Draft Picks">
-        <ng-container>
-          <team-draftpicks></team-draftpicks>
+        <ng-container *ngIf="team!">
+          <team-draftpicks [team]="team"></team-draftpicks>
         </ng-container>
       </mat-tab>
     </mat-tab-group>

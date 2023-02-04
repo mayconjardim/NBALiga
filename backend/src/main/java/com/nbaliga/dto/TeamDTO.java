@@ -6,7 +6,9 @@ import com.nbaliga.entities.Team;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -73,8 +75,8 @@ public class TeamDTO implements Serializable {
     private Integer confRank;
     private String arenaName;
 
-    private Set<PlayerDTO> players = new HashSet<>();
-    private Set<DraftPicksDTO> picks = new HashSet<>();
+    private List<PlayerDTO> players = new ArrayList<>();
+    private List<DraftPicksDTO> picks = new ArrayList<>();
 
     public TeamDTO(Team entity) {
         id = entity.getId();
@@ -135,7 +137,7 @@ public class TeamDTO implements Serializable {
         arenaName = entity.getArenaName();
     }
 
-    public TeamDTO(Team entity, Set<Player> players, Set<DraftPicks> picks) {
+    public TeamDTO(Team entity, List<Player> players, List<DraftPicks> picks) {
         this(entity);
         players.forEach(play -> this.players.add(new PlayerDTO(play)));
         picks.forEach(pick -> this.picks.add(new DraftPicksDTO(pick)));

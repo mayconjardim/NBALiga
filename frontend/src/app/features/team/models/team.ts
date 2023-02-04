@@ -69,4 +69,5 @@ export interface Team {
   pointsPerGame: number;
   assistsPerGame: number;
   players: any[];
+  picks: any[];
 }
