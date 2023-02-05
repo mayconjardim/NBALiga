@@ -1,0 +1,15 @@
+@import "../../../../../assets/scss/variables.scss";
+@import "../../../../../assets/scss/teamsColors.scss";
+
+.container {
+  display: flex;
+  width: 98%;
+  height: 6rem;
+  margin: 0.5rem auto;
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+}
