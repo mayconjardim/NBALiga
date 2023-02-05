@@ -55,6 +55,7 @@
       width: 100%;
       table-layout: fixed;
       font-size: 12px;
+      line-height: 80%;
 
       span {
         font-size: 14px;
@@ -67,7 +68,7 @@
       width: calc(100% / 6);
       text-align: center;
 
-      &:nth-child(5) {
+      &:nth-child(6) {
         text-align: center;
         line-height: 50%;
       }
@@ -99,11 +100,14 @@
 
     mat-card-actions {
       table {
-        td:nth-child(4) {
-          display: none;
-        }
-        td:nth-child(5) {
-          font-size: 8px;
+        td {
+          &:nth-child(5) {
+            display: none;
+          }
+          &:nth-child(6) {
+            font-size: 7px;
+            font-weight: 800;
+          }
         }
       }
     }

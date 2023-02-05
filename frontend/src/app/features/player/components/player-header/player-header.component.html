@@ -30,24 +30,24 @@
     <table>
       <tbody>
         <td>
-          <p></p>
           <span>{{ player.pointsPerGame | number : "1.1-1" }}</span>
           <p>PPG</p>
         </td>
         <td>
-          <p></p>
           <span>{{ player.rebsPerGame | number : "1.1-1" }}</span>
           <p>RPG</p>
         </td>
         <td>
-          <p></p>
           <span>{{ player.assistsPerGame | number : "1.1-1" }}</span>
           <p>APG</p>
         </td>
         <td>
-          <p></p>
-          <span>30</span>
-          <p>PER</p>
+          <span>{{ removeLeading(player.playerFgPct) }}</span>
+          <p>FG%</p>
+        </td>
+        <td>
+          <span>{{ removeLeading(player.playerTs) }}</span>
+          <p>TS%</p>
         </td>
         <td>
           <p>

@@ -75,5 +75,7 @@ export interface Player {
   assistsPerGame: number;
   pointsPerGame: number;
   contractLength: number;
+  playerTs: number;
+  playerFgPct: number;
   seasonStats: SeasonStats[];
 }

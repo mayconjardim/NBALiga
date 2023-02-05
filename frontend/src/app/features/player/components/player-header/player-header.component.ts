@@ -66,4 +66,16 @@ export class PlayerHeaderComponent {
     }
     return team;
   }
+
+  removeLeading(numero: any) {
+    if (numero > 0) {
+      let num = numero;
+      let text = num.toString();
+      text = text.replace(/^[0]+/, '');
+      text = text.slice(0, +4);
+      return text;
+    } else {
+      return '-';
+    }
+  }
 }
