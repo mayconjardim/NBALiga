@@ -18,6 +18,11 @@ public class SeasonStatsResource {
         this.seasonStatsService = seasonStatsService;
     }
 
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<List<SeasonStatsDTO>> findStatsById(@PathVariable Long id) {
+        List<SeasonStatsDTO> stats = seasonStatsService.findStatsById(id);
+        return ResponseEntity.ok().body(stats);
+    }
     @GetMapping(value = "/season/{season}")
     public ResponseEntity<List<SeasonStatsDTO>> findAll(@PathVariable Integer season) {
         List<SeasonStatsDTO> stats = seasonStatsService.findAll(season);
