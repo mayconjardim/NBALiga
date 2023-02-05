@@ -188,6 +188,20 @@ public class PlayerDTO implements Serializable {
         return seasonStats.get(seasonStats.size() - 1).getApg();
     }
 
+    public Double getPlayerTs() {
+        if (seasonStats.isEmpty()) {
+            return 0.0;
+        }
+            double totalPointsScored = (seasonStats.get(seasonStats.size() - 1).getFgm()
+                    + 0.5 * (seasonStats.get(seasonStats.size() - 1).getFtm()));
+
+            double totalShotsAttempted = (seasonStats.get(seasonStats.size() - 1).getFga()
+                    + 0.44 * (seasonStats.get(seasonStats.size() - 1).getFta()));
+
+            return totalPointsScored / totalShotsAttempted;
+
+    }
+
 
     public Integer getContractLength() {
         int years = 0;
