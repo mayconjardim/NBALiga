@@ -1,1 +1,63 @@
-<p>player-header works!</p>
+<mat-card class="card {{ teamColors(player.currentTeam) }}">
+  <mat-card-header>
+    <div
+      mat-card-avatar
+      class="card-logo"
+      [ngStyle]="{
+        'background-image':
+          'url(' +
+          playerImg +
+          [player.lastName] +
+          '_' +
+          [player.firstName] +
+          '.png' +
+          ')'
+      }"
+    ></div>
+    <mat-card-title
+      >{{ player.firstName }} <span>{{ player.lastName }}</span>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <img [src]="ratingColors(player.currentRating)" />
+      <img [src]="ratingColors(player.futureRating)" /> •
+      {{ player.currentTeam }} •
+      {{ getPosition(player.positionNumber) }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content> </mat-card-content>
+
+  <mat-card-actions>
+    <table>
+      <tbody>
+        <td>
+          <p></p>
+          <span>{{ player.pointsPerGame | number : "1.1-1" }}</span>
+          <p>PPG</p>
+        </td>
+        <td>
+          <p></p>
+          <span>{{ player.rebsPerGame | number : "1.1-1" }}</span>
+          <p>RPG</p>
+        </td>
+        <td>
+          <p></p>
+          <span>{{ player.assistsPerGame | number : "1.1-1" }}</span>
+          <p>APG</p>
+        </td>
+        <td>
+          <p></p>
+          <span>30</span>
+          <p>PER</p>
+        </td>
+        <td>
+          <p>
+            {{ getHeight(player.height) }}, {{ player.weight }} lbs,
+            {{ player.age }} years
+          </p>
+          <p>{{ getExp(player.experience) }}</p>
+          <p>$ {{ player.contract1 | number }} ({{ player.contractLength }})</p>
+        </td>
+      </tbody>
+    </table>
+  </mat-card-actions>
+</mat-card>

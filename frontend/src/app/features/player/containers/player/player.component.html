@@ -1,3 +1,5 @@
 <div class="container">
-  <player-header></player-header>
+  <ng-container *ngIf="player!">
+    <player-header [player]="player"></player-header
+  ></ng-container>
 </div>

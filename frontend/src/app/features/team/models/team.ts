@@ -1,3 +1,5 @@
+import { Player } from '../../player/models/player';
+
 export interface Team {
   [index: string]: any;
   id?: number;
@@ -69,6 +71,6 @@ export interface Team {
   rebsPerGame: number;
   pointsPerGame: number;
   assistsPerGame: number;
-  players: any[];
+  players: Player[];
   picks: any[];
 }

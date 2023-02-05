@@ -2,6 +2,7 @@
   <mat-card
     class="player-card {{ teamColors(player.currentTeam) }}"
     *ngFor="let player of players"
+    routerLink="/players/{{ player.id }}"
   >
     <mat-card-header>
       <div

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { Team } from '../../models/team';
+import { Player } from 'src/app/features/player/models/player';
 
 @Component({
   selector: 'team-roster',
@@ -9,7 +10,7 @@ import { Team } from '../../models/team';
 })
 export class TeamRosterComponent implements OnInit {
   @Input() team!: Team;
-  players!: any[];
+  players!: Player[];
 
   imgLocation = 'assets/images/players/';
 
@@ -29,11 +30,11 @@ export class TeamRosterComponent implements OnInit {
       case 5:
         return 'Point Guard';
       case 4:
-        return 'Shooting guard';
+        return 'Shooting Guard';
       case 3:
-        return 'Small forward';
+        return 'Small Forward';
       case 2:
-        return 'Power forward';
+        return 'Power Forward';
       default:
         return 'Center';
     }
