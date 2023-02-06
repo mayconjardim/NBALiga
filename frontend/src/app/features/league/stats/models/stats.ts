@@ -1,4 +1,4 @@
-export interface SeasonStats {
+export interface Stats {
   season: number;
   id: number;
   minutes: number;

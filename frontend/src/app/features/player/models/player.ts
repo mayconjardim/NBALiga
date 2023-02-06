@@ -1,4 +1,4 @@
-import { SeasonStats } from './seasonStats';
+import { Stats } from '../../league/stats/models/stats';
 
 export interface Player {
   id: number;
@@ -77,5 +77,5 @@ export interface Player {
   contractLength: number;
   playerTs: number;
   playerFgPct: number;
-  seasonStats: SeasonStats[];
+  seasonStats: Stats[];
 }
