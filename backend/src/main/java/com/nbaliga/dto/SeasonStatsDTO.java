@@ -92,4 +92,50 @@ public class SeasonStatsDTO implements Serializable {
     }
 
 
+    public Double getFGAPg() {
+        return fga.doubleValue() / games;
+    }
+
+    public Double getFGMPg() {
+        return fgm.doubleValue() / games;
+    }
+
+    public Double getThreePAPg() {
+        return threePa.doubleValue() / games;
+    }
+
+    public Double getThreePMPg() {
+        return threePm.doubleValue() / games;
+    }
+
+    public Double getFTAPg() {
+        return fta.doubleValue() / games;
+    }
+
+    public Double getFTMPg() {
+        return ftm.doubleValue() / games;
+    }
+
+    public Double getORebsPg() {
+        return offensiveRebounds.doubleValue() / games;
+    }
+
+    public Double getDRebsPg() {
+        return (rebounds.doubleValue() - offensiveRebounds) / games;
+    }
+
+    public Double getPFouPg() {
+        return fouls.doubleValue() / games;
+    }
+
+    public Double getTOPg() {
+        return turnovers.doubleValue() / games;
+    }
+
+    public Double getPlusMinusPg() {
+        return turnovers.doubleValue() / games;
+    }
+
+
+
 }

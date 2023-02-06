@@ -1,1 +1,154 @@
-<p>player-stats works!</p>
+<h5>Regular Season Averages</h5>
+<div class="container">
+  <table mat-table [dataSource]="playerStats">
+    <ng-container matColumnDef="season" sticky>
+      <th mat-header-cell *matHeaderCellDef>SEASON</th>
+      <td mat-cell *matCellDef="let player">{{ getSeason(player.season) }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="team">
+      <th mat-header-cell *matHeaderCellDef>TEAM</th>
+      <td mat-cell *matCellDef="let player">
+        <img [src]="teamLogo + [player.team] + '.svg'" alt="team logo" />
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="games">
+      <th mat-header-cell *matHeaderCellDef>G</th>
+      <td mat-cell *matCellDef="let player">{{ player.games }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="gamesStarted">
+      <th mat-header-cell *matHeaderCellDef>GS</th>
+      <td mat-cell *matCellDef="let player">{{ player.gamesStarted }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="mpg">
+      <th mat-header-cell *matHeaderCellDef>MIN</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.mpg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ppg">
+      <th mat-header-cell *matHeaderCellDef>PTS</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.ppg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fg">
+      <th mat-header-cell *matHeaderCellDef>FGM-FGA</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.fgmpg | number : "1.1-1" }}-{{
+          player.fgapg | number : "1.1-1"
+        }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fgPct">
+      <th mat-header-cell *matHeaderCellDef>FG%</th>
+      <td mat-cell *matCellDef="let player">
+        {{ removeLeading(player.fgPct) }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="3p">
+      <th mat-header-cell *matHeaderCellDef>3PM-3PA</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.threePMPg | number : "1.1-1" }}-{{
+          player.threePAPg | number : "1.1-1"
+        }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="threePct">
+      <th mat-header-cell *matHeaderCellDef>3P%</th>
+      <td mat-cell *matCellDef="let player">
+        {{ removeLeading(player.threePct) }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ft">
+      <th mat-header-cell *matHeaderCellDef>FTM-FTA</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.ftmpg | number : "1.1-1" }}-{{
+          player.ftapg | number : "1.1-1"
+        }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ftPct">
+      <th mat-header-cell *matHeaderCellDef>FT%</th>
+      <td mat-cell *matCellDef="let player">
+        {{ removeLeading(player.ftPct) }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="orebsPg">
+      <th mat-header-cell *matHeaderCellDef>OR</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.orebsPg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="drebsPg">
+      <th mat-header-cell *matHeaderCellDef>DR</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.drebsPg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="rpg">
+      <th mat-header-cell *matHeaderCellDef>REB</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.rpg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="apg">
+      <th mat-header-cell *matHeaderCellDef>AST</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.apg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="spg">
+      <th mat-header-cell *matHeaderCellDef>STL</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.spg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="bpg">
+      <th mat-header-cell *matHeaderCellDef>BLK</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.bpg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="topg">
+      <th mat-header-cell *matHeaderCellDef>TO</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.topg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pfouPg">
+      <th mat-header-cell *matHeaderCellDef>PF</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.pfouPg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="plusMinusPg">
+      <th mat-header-cell *matHeaderCellDef>+/-</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.plusMinusPg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

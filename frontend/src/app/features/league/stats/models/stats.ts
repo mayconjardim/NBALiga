@@ -34,4 +34,15 @@ export interface Stats {
   dq: number;
   doubleDoubles: number;
   tripleDoubles: number;
+  fgapg: number;
+  fgmpg: number;
+  topg: number;
+  plusMinusPg: number;
+  threePMPg: number;
+  orebsPg: number;
+  ftapg: number;
+  threePAPg: number;
+  drebsPg: number;
+  pfouPg: number;
+  ftmpg: number;
 }

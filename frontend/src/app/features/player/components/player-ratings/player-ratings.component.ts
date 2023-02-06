@@ -31,4 +31,12 @@ export class PlayerRatingsComponent implements OnInit {
     'stealing',
     'shotBlocking',
   ];
+
+  getSeason() {
+    let item = localStorage.getItem('season');
+    let seasonNumber = Number(item);
+    let seasonString = (seasonNumber + 1).toString();
+    seasonString = seasonString.substring(2);
+    return seasonNumber + '-' + seasonString;
+  }
 }

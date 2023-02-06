@@ -1,8 +1,9 @@
+<h5>Player Ratings</h5>
 <div class="container">
   <table mat-table [dataSource]="ratings">
     <ng-container matColumnDef="SEASON" sticky>
       <th mat-header-cell *matHeaderCellDef>SEASON</th>
-      <td mat-cell *matCellDef="let player">{{ season }}</td>
+      <td mat-cell *matCellDef="let player">{{ getSeason() }}</td>
       <td mat-footer-cell *matFooterCellDef>POTENTIAL</td>
     </ng-container>
 
