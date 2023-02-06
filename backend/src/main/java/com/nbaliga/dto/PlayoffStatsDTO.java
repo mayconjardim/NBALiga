@@ -64,6 +64,46 @@ public class PlayoffStatsDTO implements Serializable {
         this.tripleDoubles = entity.getTripleDoubles();
     }
 
+    public Double getPpg() {
+        return points.doubleValue() / games;
+    }
+
+    public Double getApg() {
+        return assists.doubleValue() / games;
+    }
+
+    public Double getRpg() {
+        return rebounds.doubleValue() / games;
+    }
+
+    public Double getORpg() {
+        return offensiveRebounds.doubleValue() / games;
+    }
+
+    public Double getDRpg() {
+        return (rebounds - offensiveRebounds.doubleValue()) / games;
+    }
+
+
+    public Double getSpg() {
+        return steals.doubleValue() / games;
+    }
+
+    public Double getBpg() {
+        return blocks.doubleValue() / games;
+    }
+
+    public Double getFgPct() {
+        return (fgm.doubleValue() / fga);
+    }
+
+    public Double getThreePct() {
+        return (threePm.doubleValue() / threePa);
+    }
+
+    public Double getFTPct() {
+        return (ftm.doubleValue() / fta);
+    }
 
     public Double getFGAPg() {
         return fga.doubleValue() / games;
