@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @EqualsAndHashCode
-public class PlayoffsStatsKey implements Serializable {
+public class PlayoffStatsKey implements Serializable {
 
     private Integer minutes;
     private Integer rebounds;
