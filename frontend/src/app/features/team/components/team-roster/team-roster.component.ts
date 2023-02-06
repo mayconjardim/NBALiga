@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { Team } from '../../models/team';
 import { Player } from 'src/app/features/player/models/player';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'team-roster',
@@ -13,6 +14,9 @@ export class TeamRosterComponent implements OnInit {
   players!: Player[];
 
   imgLocation = 'assets/images/players/';
+  separator = '_';
+
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.players = this.team.players;
