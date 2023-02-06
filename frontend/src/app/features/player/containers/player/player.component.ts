@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Player } from '../../models/player';
 import { ActivatedRoute } from '@angular/router';
 import { Stats } from 'src/app/features/league/stats/models/stats';
+import { PlayoffStats } from 'src/app/features/league/stats/models/playoffStats';
 
 @Component({
   selector: 'player',
@@ -13,6 +14,7 @@ import { Stats } from 'src/app/features/league/stats/models/stats';
 export class PlayerComponent implements OnInit {
   player!: Player;
   playerStats!: Stats[];
+  playerOffStats!: PlayoffStats[];
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +29,10 @@ export class PlayerComponent implements OnInit {
     });
     this.statsService.readOne(id).subscribe((stats) => {
       this.playerStats = stats;
+    });
+
+    this.statsService.readOnePlayoffs(id).subscribe((offStats) => {
+      this.playerOffStats = offStats;
     });
   }
 }

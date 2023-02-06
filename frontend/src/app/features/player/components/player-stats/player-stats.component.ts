@@ -1,3 +1,4 @@
+import { PlayoffStats } from './../../../league/stats/models/playoffStats';
 import { Component, Input } from '@angular/core';
 import { Stats } from 'src/app/features/league/stats/models/stats';
 
@@ -8,6 +9,7 @@ import { Stats } from 'src/app/features/league/stats/models/stats';
 })
 export class PlayerStatsComponent {
   @Input() playerStats!: Stats[];
+  @Input() playerOffStats!: PlayoffStats[];
   teamLogo = 'assets/images/logos/';
 
   displayedColumns: string[] = [

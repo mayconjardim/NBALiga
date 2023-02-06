@@ -1,3 +1,4 @@
+import { PlayoffStats } from './../models/playoffStats';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Stats } from './../models/stats';
 import { Injectable } from '@angular/core';
@@ -26,6 +27,12 @@ export class StatsService {
 
   readOne(id: any) {
     return this.http.get<Stats[]>(`${API_CONFIG.baseUrl}/stats/${id}`);
+  }
+
+  readOnePlayoffs(id: any) {
+    return this.http.get<PlayoffStats[]>(
+      `${API_CONFIG.baseUrl}/playoffstats/${id}`
+    );
   }
 
   private handleError(err: HttpErrorResponse) {

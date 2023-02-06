@@ -105,6 +105,9 @@ public class PlayoffStatsDTO implements Serializable {
         return (ftm.doubleValue() / fta);
     }
 
+    public Double getMpg() {
+        return (minutes.doubleValue() / games);
+    }
     public Double getFGAPg() {
         return fga.doubleValue() / games;
     }
