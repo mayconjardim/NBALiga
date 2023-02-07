@@ -30,6 +30,7 @@ export class PlayerComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.playerService.readOne(id).subscribe((player) => {
       this.player = player;
+      this.getAwards(id);
     });
     this.statsService.readOne(id).subscribe((stats) => {
       this.playerStats = stats;
@@ -38,9 +39,11 @@ export class PlayerComponent implements OnInit {
     this.statsService.readOnePlayoffs(id).subscribe((offStats) => {
       this.playerOffStats = offStats;
     });
+  }
 
+  getAwards(id: any) {
     this.awardService.readOne(id).subscribe((awards) => {
-      let playerAwards = awards.filter((x) => x.player === this.player.name);
+      let playerAwards = awards.filter((x) => x.player == this.player.name);
       this.awards = playerAwards;
     });
   }

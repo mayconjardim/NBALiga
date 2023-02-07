@@ -1,9 +1,7 @@
 package com.nbaliga.services;
 
 import com.nbaliga.dto.AwardsDTO;
-import com.nbaliga.dto.AwardsDTO;
-import com.nbaliga.entities.Awards;
-import com.nbaliga.entities.Awards;
+import com.nbaliga.entities.PlayerAwards;
 import com.nbaliga.repositories.AwardsRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,13 +20,13 @@ public class AwardsService {
 
     @Transactional(readOnly = true)
     public List<AwardsDTO> findAwardsById(Long id) {
-        List<Awards> stats = awardsRepository.findByPlayerId(id);
+        List<PlayerAwards> stats = awardsRepository.findByPlayerId(id);
         return stats.stream().map(x -> new AwardsDTO(x)).collect(Collectors.toList());
     }
     
     @Transactional(readOnly = true)
     public List<AwardsDTO> findAllAwards() {
-        List<Awards> list = awardsRepository.findAll();
-        return list.stream().map(awards -> new AwardsDTO(awards)).collect(Collectors.toList());
+        List<PlayerAwards> list = awardsRepository.findAll();
+        return list.stream().map(playerAwards -> new AwardsDTO(playerAwards)).collect(Collectors.toList());
     }
 }

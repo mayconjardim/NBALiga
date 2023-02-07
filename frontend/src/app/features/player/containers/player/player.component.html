@@ -7,6 +7,10 @@
     <player-ratings [player]="player"></player-ratings
   ></ng-container>
 
+  <ng-container *ngIf="awards && player">
+    <player-awards [awards]="awards"></player-awards
+  ></ng-container>
+
   <ng-container *ngIf="playerStats!">
     <player-stats
       [playerStats]="playerStats"

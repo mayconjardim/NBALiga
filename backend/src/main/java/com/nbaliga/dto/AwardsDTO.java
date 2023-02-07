@@ -1,12 +1,8 @@
 package com.nbaliga.dto;
 
-import com.nbaliga.entities.Awards;
-import com.nbaliga.entities.keys.AwardsKey;
+import com.nbaliga.entities.PlayerAwards;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
 import java.io.Serializable;
 
 @NoArgsConstructor
@@ -30,7 +26,7 @@ public class AwardsDTO implements Serializable {
     private Double spg;
     private Double bpg;
 
-    public AwardsDTO(Awards entity) {
+    public AwardsDTO(PlayerAwards entity) {
         season = entity.getSeason();
         award = entity.getAward();
         playerId = entity.getPlayerId();

@@ -9,9 +9,9 @@ import java.io.Serializable;
 @Getter
 @Setter
 @EqualsAndHashCode
-public class AwardsKey implements Serializable {
+public class PlayAwardsKey implements Serializable {
 
     private Integer season;
     private String award;
-    private Long playerId;
+    private Long player;
 }
