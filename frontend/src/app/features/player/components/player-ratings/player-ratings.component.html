@@ -1,23 +1,33 @@
 <div class="container">
-  <div class="container-chart">
-    <canvas
-      baseChart
-      class="chart"
-      [data]="radarChartData"
-      [options]="radarChartOptions"
-      [type]="radarChartType"
-    >
-    </canvas>
+  <div id="chart">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [stroke]="chartOptions.stroke"
+      [colors]="chartOptions.colors"
+      [dataLabels]="chartOptions.dataLabels"
+      [tooltip]="chartOptions.tooltip"
+      [plotOptions]="chartOptions.plotOptions"
+      [markers]="chartOptions.markers"
+      [yaxis]="chartOptions.yaxis"
+      [fill]="chartOptions.fill"
+      [title]="chartOptions.title"
+    ></apx-chart>
   </div>
 
-  <div class="container-chart">
-    <canvas
-      baseChart
-      class="chart"
-      [data]="radarChartData2"
-      [options]="radarChartOptions"
-      [type]="radarChartType2"
-    >
-    </canvas>
+  <div id="chart">
+    <apx-chart
+      [series]="chartOptions2.series"
+      [chart]="chartOptions2.chart"
+      [xaxis]="chartOptions2.xaxis"
+      [stroke]="chartOptions2.stroke"
+      [colors]="chartOptions2.colors"
+      [dataLabels]="chartOptions2.dataLabels"
+      [tooltip]="chartOptions2.tooltip"
+      [plotOptions]="chartOptions2.plotOptions"
+      [markers]="chartOptions2.markers"
+      [yaxis]="chartOptions2.yaxis"
+    ></apx-chart>
   </div>
 </div>

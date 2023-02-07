@@ -1,6 +1,34 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+
 import { Player } from 'src/app/features/player/models/player';
+import {
+  ApexAxisChartSeries,
+  ApexTitleSubtitle,
+  ApexChart,
+  ApexXAxis,
+  ApexFill,
+  ApexDataLabels,
+  ChartComponent,
+  ApexStroke,
+  ApexPlotOptions,
+  ApexYAxis,
+  ApexMarkers,
+} from 'ng-apexcharts';
+
+export type ChartOptions = {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  title: ApexTitleSubtitle;
+  stroke: ApexStroke;
+  dataLabels: ApexDataLabels;
+  tooltip: any;
+  plotOptions: ApexPlotOptions;
+  fill: ApexFill;
+  colors: string[];
+  yaxis: ApexYAxis;
+  markers: ApexMarkers;
+  xaxis: ApexXAxis;
+};
 
 @Component({
   selector: 'player-ratings',
@@ -12,8 +40,17 @@ export class PlayerRatingsComponent implements OnInit {
   ratings: any[] = [];
   season = localStorage.getItem('season');
 
+  @ViewChild('chart') chart!: ChartComponent;
+  public chartOptions!: Partial<ChartOptions> | any;
+  public chartOptions2!: Partial<ChartOptions> | any;
+
   atributes1: number[] = [];
   atributes2: number[] = [];
+
+  constructor() {
+    this.chartsOptions1();
+    this.chartsOptions2();
+  }
 
   ngOnInit(): void {
     this.ratings.push(this.player);
@@ -38,8 +75,6 @@ export class PlayerRatingsComponent implements OnInit {
       this.player.jumping,
       this.player.stamina
     );
-
-    console.log(this.atributes2);
   }
 
   getSeason() {
@@ -50,73 +85,113 @@ export class PlayerRatingsComponent implements OnInit {
     return seasonNumber + '-' + seasonString;
   }
 
-  public radarChartOptions: ChartConfiguration['options'] = {
-    responsive: true,
-    scales: {
-      r: {
-        ticks: {
-          display: false,
+  chartsOptions1() {
+    this.chartOptions = {
+      series: [
+        {
+          name: 'Current',
+          data: this.atributes1,
+        },
+      ],
+      chart: {
+        height: 190,
+        type: 'radar',
+        toolbar: {
+          tools: {
+            download: false,
+          },
         },
       },
-    },
-    elements: {
-      line: {
-        borderWidth: 2,
-      },
-    },
-
-    plugins: {
       legend: {
-        display: false,
+        show: false,
       },
-      tooltip: {
-        enabled: false,
+      fill: {
+        opacity: 0.1,
       },
-    },
-  };
-  public radarChartLabels: string[] = [
-    'INS',
-    'JPS',
-    'FTS',
-    '3PS',
-    'HND',
-    'PAS',
-    'ORB',
-    'DRB',
-  ];
 
-  public radarChartData: ChartData<'radar'> = {
-    labels: this.radarChartLabels,
-    datasets: [
-      {
-        data: this.atributes1,
+      dataLabels: {
+        enabled: true,
+        style: {
+          fontSize: '8px',
+          fontWeight: 'bold',
+        },
+        background: {
+          enabled: true,
+          foreColor: '#fff',
+          borderRadius: 5,
+          padding: 4,
+          opacity: 0.9,
+          borderColor: '#fff',
+        },
       },
-    ],
-  };
 
-  public radarChartType: ChartType = 'radar';
-
-  //Radar2
-
-  public radarChartLabels2: string[] = [
-    'PSD',
-    'PRD',
-    'STL',
-    'BLK',
-    'QKN',
-    'STR',
-    'JMP',
-    'STA',
-  ];
-
-  public radarChartData2: ChartData<'radar'> = {
-    labels: this.radarChartLabels2,
-    datasets: [
-      {
-        data: this.atributes2,
+      plotOptions: {
+        radar: {
+          size: 65,
+        },
       },
-    ],
-  };
+      colors: ['#FF4560'],
+      xaxis: {
+        categories: ['INS', 'JPS', 'FTS', '3PS', 'HND', 'PAS', 'ORB', 'DRB'],
+      },
+      yaxis: {
+        show: false,
+      },
+    };
+  }
 
-  public radarChartType2: ChartType = 'radar';
+  chartsOptions2() {
+    this.chartOptions2 = {
+      series: [
+        {
+          name: 'Current',
+          data: this.atributes2,
+        },
+      ],
+      chart: {
+        height: 190,
+        type: 'radar',
+        toolbar: {
+          tools: {
+            download: false,
+          },
+        },
+      },
+      legend: {
+        show: false,
+      },
+      fill: {
+        opacity: 0.1,
+      },
+
+      dataLabels: {
+        enabled: true,
+        style: {
+          fontSize: '8px',
+          fontWeight: 'bold',
+        },
+        background: {
+          enabled: true,
+          foreColor: '#fff',
+          borderRadius: 5,
+          padding: 4,
+          opacity: 0.9,
+          borderColor: '#fff',
+        },
+      },
+
+      plotOptions: {
+        radar: {
+          size: 65,
+        },
+      },
+
+      xaxis: {
+        categories: ['PSD', 'PRD', 'STL', 'BLK', 'QKN', 'STR', 'JMP', 'STA'],
+      },
+      yaxis: {
+        show: false,
+      },
+    };
+  }
 }

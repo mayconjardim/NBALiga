@@ -8,7 +8,7 @@ import { PlayerHeaderComponent } from './components/player-header/player-header.
 import { PlayerRatingsComponent } from './components/player-ratings/player-ratings.component';
 import { PlayerStatsComponent } from './components/player-stats/player-stats.component';
 import { PlayerComponent } from './containers/player/player.component';
-import { NgChartsModule } from 'ng2-charts';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 export const routes: Routes = [{ path: '', component: PlayerComponent }];
 
@@ -24,7 +24,7 @@ export const routes: Routes = [{ path: '', component: PlayerComponent }];
     RouterModule.forChild(routes),
     MatCardModule,
     MatTableModule,
-    NgChartsModule,
+    NgApexchartsModule,
   ],
 })
 export class PlayerModule {}

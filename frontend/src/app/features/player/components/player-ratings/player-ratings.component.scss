@@ -5,8 +5,10 @@
   width: 99%;
   display: flex;
 
-  &-chart {
-    width: 190px;
+  #chart {
+    padding: 0;
+    width: 320px;
+    margin-top: 1rem;
   }
 
   @media only screen and (max-width: 480px) {
