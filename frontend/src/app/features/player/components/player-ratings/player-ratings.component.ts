@@ -12,26 +12,35 @@ export class PlayerRatingsComponent implements OnInit {
   ratings: any[] = [];
   season = localStorage.getItem('season');
 
+  atributes1: number[] = [];
+  atributes2: number[] = [];
+
   ngOnInit(): void {
     this.ratings.push(this.player);
-  }
+    this.atributes1.push(
+      this.player.insideScoring,
+      this.player.jumpShot,
+      this.player.freeThrowShot,
+      this.player.threePointShot,
+      this.player.handling,
+      this.player.passing,
+      this.player.offensiveRebounding,
+      this.player.defensiveRebounding
+    );
 
-  displayedColumns: string[] = [
-    'SEASON',
-    'overallRating',
-    'insideScoring',
-    'jumpShot',
-    'freeThrowShot',
-    'threePointShot',
-    'handling',
-    'passing',
-    'offensiveRebounding',
-    'defensiveRebounding',
-    'postDefense',
-    'perimeterDefense',
-    'stealing',
-    'shotBlocking',
-  ];
+    this.atributes2.push(
+      this.player.postDefense,
+      this.player.perimeterDefense,
+      this.player.stealing,
+      this.player.shotBlocking,
+      this.player.quickness,
+      this.player.strength,
+      this.player.jumping,
+      this.player.stamina
+    );
+
+    console.log(this.atributes2);
+  }
 
   getSeason() {
     let item = localStorage.getItem('season');
@@ -46,7 +55,7 @@ export class PlayerRatingsComponent implements OnInit {
     scales: {
       r: {
         ticks: {
-          display: true,
+          display: false,
         },
       },
     },
@@ -78,7 +87,36 @@ export class PlayerRatingsComponent implements OnInit {
 
   public radarChartData: ChartData<'radar'> = {
     labels: this.radarChartLabels,
-    datasets: [{ data: [65, 59, 90, 81, 56, 55, 40] }],
+    datasets: [
+      {
+        data: this.atributes1,
+      },
+    ],
   };
+
   public radarChartType: ChartType = 'radar';
+
+  //Radar2
+
+  public radarChartLabels2: string[] = [
+    'PSD',
+    'PRD',
+    'STL',
+    'BLK',
+    'QKN',
+    'STR',
+    'JMP',
+    'STA',
+  ];
+
+  public radarChartData2: ChartData<'radar'> = {
+    labels: this.radarChartLabels2,
+    datasets: [
+      {
+        data: this.atributes2,
+      },
+    ],
+  };
+
+  public radarChartType2: ChartType = 'radar';
 }
