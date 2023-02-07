@@ -1,3 +1,4 @@
+import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
@@ -9,6 +10,8 @@ import { PlayerRatingsComponent } from './components/player-ratings/player-ratin
 import { PlayerStatsComponent } from './components/player-stats/player-stats.component';
 import { PlayerComponent } from './containers/player/player.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { PlayerAwardsComponent } from './components/player-awards/player-awards.component';
 
 export const routes: Routes = [{ path: '', component: PlayerComponent }];
 
@@ -18,12 +21,14 @@ export const routes: Routes = [{ path: '', component: PlayerComponent }];
     PlayerHeaderComponent,
     PlayerRatingsComponent,
     PlayerStatsComponent,
+    PlayerAwardsComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     MatCardModule,
     MatTableModule,
+    MatExpansionModule,
     NgApexchartsModule,
   ],
 })
