@@ -43,17 +43,35 @@ export class PlayerRatingsComponent implements OnInit {
   @ViewChild('chart') chart!: ChartComponent;
   public chartOptions!: Partial<ChartOptions> | any;
   public chartOptions2!: Partial<ChartOptions> | any;
+  public chartOptions3!: Partial<ChartOptions> | any;
+  public chartOptions4!: Partial<ChartOptions> | any;
 
   atributes1: number[] = [];
   atributes2: number[] = [];
+  personality: number[] = [];
+  overall: number[] = [];
 
   constructor() {
     this.chartsOptions1();
     this.chartsOptions2();
+    this.chartsOptions3();
+    this.chartsOptions4();
   }
 
   ngOnInit(): void {
     this.ratings.push(this.player);
+    this.pushChartValues();
+  }
+
+  getSeason() {
+    let item = localStorage.getItem('season');
+    let seasonNumber = Number(item);
+    let seasonString = (seasonNumber + 1).toString();
+    seasonString = seasonString.substring(2);
+    return seasonNumber + '-' + seasonString;
+  }
+
+  pushChartValues() {
     this.atributes1.push(
       this.player.insideScoring,
       this.player.jumpShot,
@@ -75,14 +93,20 @@ export class PlayerRatingsComponent implements OnInit {
       this.player.jumping,
       this.player.stamina
     );
-  }
 
-  getSeason() {
-    let item = localStorage.getItem('season');
-    let seasonNumber = Number(item);
-    let seasonString = (seasonNumber + 1).toString();
-    seasonString = seasonString.substring(2);
-    return seasonNumber + '-' + seasonString;
+    this.personality.push(
+      this.player.happiness,
+      this.player.loyalty,
+      this.player.greed,
+      this.player.winner
+    );
+
+    this.overall.push(
+      this.player.overallOffense,
+      this.player.overallDefense,
+      this.player.overallPhysical,
+      this.player.overallMental
+    );
   }
 
   chartsOptions1() {
@@ -136,6 +160,8 @@ export class PlayerRatingsComponent implements OnInit {
       },
       yaxis: {
         show: false,
+        min: 0,
+        max: 100,
       },
     };
   }
@@ -191,6 +217,122 @@ export class PlayerRatingsComponent implements OnInit {
       },
       yaxis: {
         show: false,
+        min: 0,
+        max: 100,
+      },
+    };
+  }
+
+  chartsOptions3() {
+    this.chartOptions3 = {
+      series: [
+        {
+          name: 'Current',
+          data: this.personality,
+        },
+      ],
+      chart: {
+        height: 190,
+        type: 'radar',
+        toolbar: {
+          tools: {
+            download: false,
+          },
+        },
+      },
+      legend: {
+        show: false,
+      },
+      fill: {
+        opacity: 0.1,
+      },
+
+      dataLabels: {
+        enabled: true,
+        style: {
+          fontSize: '8px',
+          fontWeight: 'bold',
+        },
+        background: {
+          enabled: true,
+          foreColor: '#fff',
+          borderRadius: 5,
+          padding: 4,
+          opacity: 0.9,
+          borderColor: '#fff',
+        },
+      },
+
+      plotOptions: {
+        radar: {
+          size: 65,
+        },
+      },
+      colors: ['#FF4560'],
+      xaxis: {
+        categories: ['Happiness', 'Loyalty', 'Greed', 'Winner'],
+      },
+      yaxis: {
+        show: false,
+        min: 0,
+        max: 100,
+      },
+    };
+  }
+
+  chartsOptions4() {
+    this.chartOptions4 = {
+      series: [
+        {
+          name: 'Current',
+          data: this.overall,
+        },
+      ],
+      chart: {
+        height: 190,
+        type: 'radar',
+        toolbar: {
+          tools: {
+            download: false,
+          },
+        },
+      },
+      legend: {
+        show: false,
+      },
+      fill: {
+        opacity: 0.1,
+      },
+
+      dataLabels: {
+        enabled: false,
+        style: {
+          fontSize: '8px',
+          fontWeight: 'bold',
+        },
+        background: {
+          enabled: true,
+          foreColor: '#fff',
+          borderRadius: 5,
+          padding: 4,
+          opacity: 0.9,
+          borderColor: '#fff',
+        },
+      },
+
+      plotOptions: {
+        radar: {
+          size: 65,
+        },
+      },
+
+      xaxis: {
+        categories: ['Offense', 'Defense', 'Physical', 'Mental'],
+      },
+      yaxis: {
+        show: false,
+        min: 0,
+        max: 100,
       },
     };
   }

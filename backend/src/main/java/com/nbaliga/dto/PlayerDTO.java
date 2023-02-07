@@ -192,7 +192,7 @@ public class PlayerDTO implements Serializable {
         if (seasonStats.isEmpty()) {
             return 0.0;
         }
-        return seasonStats.get(seasonStats.size() - 1).getFgPct();
+        return seasonStats.get(seasonStats.size() - 1).getFgPct() ;
     }
 
     public Double getPlayerTs() {
@@ -218,6 +218,23 @@ public class PlayerDTO implements Serializable {
         years += (this.contract5 > 0) ? 1 : 0;
         return years;
 
+    }
+
+    public Integer getOverallOffense() {
+        return (insideScoring + jumpShot + freeThrowShot + threePointShot +
+                passing + handling + offensiveRebounding) / 7;
+    }
+
+    public Integer getOverallDefense() {
+        return (defensiveRebounding + postDefense + perimeterDefense + stealing + shotBlocking) / 5;
+    }
+
+    public Integer getOverallPhysical() {
+        return (quickness + strength + jumping + stamina) / 4;
+    }
+
+    public Integer getOverallMental() {
+        return (greed + winner + loyalty + happiness) / 4;
     }
 
 }

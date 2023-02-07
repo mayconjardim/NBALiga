@@ -4,20 +4,24 @@
 .container {
   width: 99%;
   display: flex;
+  justify-content: space-around;
 
   #chart {
     padding: 0;
-    width: 320px;
+    max-width: 250px;
     margin-top: 1rem;
   }
+}
 
-  @media only screen and (max-width: 480px) {
-    .container {
-      width: 100%;
+@media only screen and (max-width: 480px) {
+  .container {
+    width: 100%;
 
-      &-chart {
-        margin: 0 auto;
-      }
+    #chart {
+      max-width: 210px;
+    }
+    &-personality {
+      display: NONE;
     }
   }
 }

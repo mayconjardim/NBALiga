@@ -78,4 +78,8 @@ export interface Player {
   playerTs: number;
   playerFgPct: number;
   seasonStats: Stats[];
+  overallPhysical: number;
+  overallDefense: number;
+  overallMental: number;
+  overallOffense: number;
 }

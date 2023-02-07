@@ -42,7 +42,9 @@
           <p>APG</p>
         </td>
         <td>
-          <span>{{ removeLeading(player.playerFgPct) }}</span>
+          <span>{{
+            removeLeading(player.playerFgPct | number : "1.3-3")
+          }}</span>
           <p>FG%</p>
         </td>
         <td>
