@@ -94,4 +94,5 @@ public class Player implements Serializable {
     @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
     private List<SeasonStats> seasonStats = new ArrayList<>();
 
+
 }

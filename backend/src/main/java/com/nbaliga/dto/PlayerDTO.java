@@ -89,6 +89,8 @@ public class PlayerDTO implements Serializable {
 
     private List<SeasonStatsDTO> seasonStats = new ArrayList<>();
 
+    private List<AwardsDTO> awards = new ArrayList<>();
+
     public PlayerDTO(Player entity) {
         this.id = entity.getId();
         this.firstName = entity.getFirstName();
