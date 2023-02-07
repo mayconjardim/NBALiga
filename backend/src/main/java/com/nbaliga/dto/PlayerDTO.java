@@ -4,7 +4,6 @@ import com.nbaliga.entities.Player;
 import com.nbaliga.entities.SeasonStats;
 import lombok.*;
 
-import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -89,7 +88,7 @@ public class PlayerDTO implements Serializable {
 
     private List<SeasonStatsDTO> seasonStats = new ArrayList<>();
 
-    private List<AwardsDTO> awards = new ArrayList<>();
+    private List<PlayerAwardsDTO> awards = new ArrayList<>();
 
     public PlayerDTO(Player entity) {
         this.id = entity.getId();

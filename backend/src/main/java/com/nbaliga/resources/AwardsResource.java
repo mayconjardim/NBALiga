@@ -1,8 +1,7 @@
 package com.nbaliga.resources;
 
 
-import com.nbaliga.dto.AwardsDTO;
-import com.nbaliga.dto.AwardsDTO;
+import com.nbaliga.dto.PlayerAwardsDTO;
 import com.nbaliga.services.AwardsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,13 +21,13 @@ public class AwardsResource {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<List<AwardsDTO>> findStatsById(@PathVariable Long id) {
-        List<AwardsDTO> stats = awardsService.findAwardsById(id);
+    public ResponseEntity<List<PlayerAwardsDTO>> findStatsById(@PathVariable Long id) {
+        List<PlayerAwardsDTO> stats = awardsService.findAwardsById(id);
         return ResponseEntity.ok().body(stats);
     }
     @GetMapping
-    public ResponseEntity<List<AwardsDTO>> findAllAwards() {
-        List<AwardsDTO> list = awardsService.findAllAwards();
+    public ResponseEntity<List<PlayerAwardsDTO>> findAllAwards() {
+        List<PlayerAwardsDTO> list = awardsService.findAllAwards();
         return ResponseEntity.ok().body(list);
     }
 

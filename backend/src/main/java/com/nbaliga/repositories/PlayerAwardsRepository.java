@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AwardsRepository extends JpaRepository<PlayerAwards, Long> {
+public interface PlayerAwardsRepository extends JpaRepository<PlayerAwards, Long> {
     List<PlayerAwards> findByPlayerId(Long id);
 }
