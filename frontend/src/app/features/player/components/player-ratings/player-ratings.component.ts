@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 import { Player } from 'src/app/features/player/models/player';
 
 @Component({
@@ -39,4 +40,45 @@ export class PlayerRatingsComponent implements OnInit {
     seasonString = seasonString.substring(2);
     return seasonNumber + '-' + seasonString;
   }
+
+  public radarChartOptions: ChartConfiguration['options'] = {
+    responsive: true,
+    scales: {
+      r: {
+        ticks: {
+          display: true,
+        },
+      },
+    },
+    elements: {
+      line: {
+        borderWidth: 2,
+      },
+    },
+
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        enabled: false,
+      },
+    },
+  };
+  public radarChartLabels: string[] = [
+    'INS',
+    'JPS',
+    'FTS',
+    '3PS',
+    'HND',
+    'PAS',
+    'ORB',
+    'DRB',
+  ];
+
+  public radarChartData: ChartData<'radar'> = {
+    labels: this.radarChartLabels,
+    datasets: [{ data: [65, 59, 90, 81, 56, 55, 40] }],
+  };
+  public radarChartType: ChartType = 'radar';
 }

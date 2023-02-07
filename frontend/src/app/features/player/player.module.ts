@@ -1,13 +1,14 @@
-import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
 import { RouterModule, Routes } from '@angular/router';
 
 import { PlayerHeaderComponent } from './components/player-header/player-header.component';
 import { PlayerRatingsComponent } from './components/player-ratings/player-ratings.component';
-import { PlayerComponent } from './containers/player/player.component';
 import { PlayerStatsComponent } from './components/player-stats/player-stats.component';
+import { PlayerComponent } from './containers/player/player.component';
+import { NgChartsModule } from 'ng2-charts';
 
 export const routes: Routes = [{ path: '', component: PlayerComponent }];
 
@@ -23,6 +24,7 @@ export const routes: Routes = [{ path: '', component: PlayerComponent }];
     RouterModule.forChild(routes),
     MatCardModule,
     MatTableModule,
+    NgChartsModule,
   ],
 })
 export class PlayerModule {}
