@@ -12,7 +12,7 @@ public interface PlayoffStatsRepository extends JpaRepository<PlayoffStats, Long
     @Query("SELECT obj FROM PlayoffStats obj WHERE obj.season = :season ORDER BY obj.id ASC")
     List<PlayoffStats> findAllStats(Integer season);
 
-    @Query("SELECT DISTINCT obj FROM PlayoffStats obj WHERE obj.id = :id ORDER BY obj.season ASC")
+    @Query("SELECT DISTINCT obj FROM PlayoffStats obj WHERE obj.id = :id ORDER BY obj.season DESC")
     List<PlayoffStats> findStatsById(Long id);
 
 }

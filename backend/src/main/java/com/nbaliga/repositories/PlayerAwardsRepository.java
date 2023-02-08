@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface PlayerAwardsRepository extends JpaRepository<PlayerAwards, Long> {
     List<PlayerAwards> findByPlayer(Long id);
-    
+
 }
