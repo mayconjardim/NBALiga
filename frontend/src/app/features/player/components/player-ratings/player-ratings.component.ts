@@ -46,7 +46,7 @@ export class PlayerRatingsComponent implements OnInit {
   public chartOptions3!: Partial<ChartOptions> | any;
   public chartOptions4!: Partial<ChartOptions> | any;
 
-  atributes1: number[] = [];
+  atributes1: any[] = [];
   atributes2: number[] = [];
   personality: number[] = [];
   overall: number[] = [];

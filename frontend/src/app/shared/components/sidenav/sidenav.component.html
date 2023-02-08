@@ -21,16 +21,93 @@
     <mat-toolbar color="primary" class="sidenav-logo">
       <span>NBALIGA</span></mat-toolbar
     >
+
     <mat-nav-list class="sidenav-list">
-      <a mat-list-item href="home"><mat-icon>home</mat-icon>Home</a>
-      <a mat-list-item href="#"><mat-icon>emoji_events</mat-icon>Liga</a>
-      <a mat-list-item href="#"><mat-icon>groups</mat-icon>Times</a>
-      <a mat-list-item href="#"><mat-icon>percent</mat-icon>Estatísticas</a>
-      <a mat-list-item href="#"><mat-icon>account_tree</mat-icon>Playoffs</a>
-      <a mat-list-item href="#"
+      <a mat-list-item routerLink="home"><mat-icon>home</mat-icon>Home</a>
+
+      <a mat-list-item [matMenuTriggerFor]="league"
+        ><mat-icon>emoji_events</mat-icon>Liga</a
+      >
+
+      <a mat-list-item [matMenuTriggerFor]="teams"
+        ><mat-icon>groups</mat-icon>Times</a
+      >
+
+      <a mat-list-item routerLink="statistics"
+        ><mat-icon>percent</mat-icon>Estatísticas</a
+      >
+
+      <a mat-list-item [matMenuTriggerFor]="playoffs"
+        ><mat-icon>account_tree</mat-icon>Playoffs</a
+      >
+
+      <a mat-list-item [matMenuTriggerFor]="pos"
         ><mat-icon>business_center</mat-icon>Pós-Temporada</a
       >
-      <a mat-list-item href="#"><mat-icon>login</mat-icon>Login</a>
+
+      <a mat-list-item><mat-icon>login</mat-icon>Login</a>
+
+      <mat-menu #league="matMenu">
+        <a mat-menu-item [ngStyle]="setMyStyles()">
+          <mat-icon>calendar_month</mat-icon>Calendário
+        </a>
+        <a mat-menu-item routerLink="league/draftpicks"
+          ><mat-icon>elevator</mat-icon>Draft Picks</a
+        >
+        <a mat-menu-item routerLink="league/salarycap">
+          <mat-icon>attach_money</mat-icon>Salary Cap
+        </a>
+        <a mat-menu-item routerLink="league/headtohead">
+          <mat-icon>leaderboard</mat-icon>Head-To-Head
+        </a>
+      </mat-menu>
+
+      <mat-menu #teams="matMenu">
+        <a mat-menu-item [matMenuTriggerFor]="east" [ngStyle]="setMyStyles()">
+          <mat-icon>east</mat-icon>East
+        </a>
+        <a mat-menu-item [matMenuTriggerFor]="west">
+          <mat-icon>west</mat-icon>West
+        </a>
+      </mat-menu>
+
+      <mat-menu #east="matMenu" class="mat-menu-style">
+        <p mat-menu-item *ngFor="let team of eastNav">
+          <mat-icon
+            ><img [src]="imgLogo + [team.logo]" alt="team logo"
+          /></mat-icon>
+          <a class="team-link" [routerLink]="'team/' + team.id">{{
+            team.label
+          }}</a>
+        </p>
+      </mat-menu>
+
+      <mat-menu #west="matMenu">
+        <a mat-menu-item *ngFor="let team of westNav">
+          <mat-icon
+            ><img [src]="imgLogo + [team.logo]" alt="team logo"
+          /></mat-icon>
+          <a class="team-link" [routerLink]="'team/' + team.id">{{
+            team.label
+          }}</a>
+        </a>
+      </mat-menu>
+
+      <mat-menu #playoffs="matMenu">
+        <a mat-menu-item [ngStyle]="setMyStyles()" routerLink="playoffs"
+          ><mat-icon>calendar_month</mat-icon>Tabela</a
+        >
+        <a mat-menu-item routerLink="playoffs/stats"
+          ><mat-icon>percent</mat-icon>Estatísticas
+        </a>
+      </mat-menu>
+
+      <mat-menu #pos="matMenu">
+        <a mat-menu-item [ngStyle]="setMyStyles()" routerLink="offseason">
+          <mat-icon>elevator</mat-icon>Draft Classe
+        </a>
+        <a mat-menu-item><mat-icon>dvr</mat-icon>Draft Loteria</a>
+      </mat-menu>
     </mat-nav-list>
   </mat-drawer>
 

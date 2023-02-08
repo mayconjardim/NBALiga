@@ -8,12 +8,16 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { map, Observable } from 'rxjs';
-import { SeasonInfoService } from '../../services/seasonInfo.service';
+
 import { SeasonInfo } from '../../models/seasonInfo';
+import { SeasonInfoService } from '../../services/seasonInfo.service';
+import { westData } from './westData';
+import { eastData } from './eastData';
 
 @Component({
   selector: 'sidenav',
@@ -26,6 +30,7 @@ import { SeasonInfo } from '../../models/seasonInfo';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatMenuModule,
   ],
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
@@ -33,6 +38,9 @@ import { SeasonInfo } from '../../models/seasonInfo';
 export class SidenavComponent implements OnInit {
   @ViewChild('drawer') drawer: any;
   seasonInfo!: SeasonInfo[];
+  eastNav = eastData;
+  westNav = westData;
+  imgLogo = 'assets/images/logos/';
 
   public isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
@@ -74,5 +82,12 @@ export class SidenavComponent implements OnInit {
     if (this.drawer._mode == 'over') {
       this.drawer.close();
     }
+  }
+
+  setMyStyles() {
+    let styles = {
+      width: '210px',
+    };
+    return styles;
   }
 }
