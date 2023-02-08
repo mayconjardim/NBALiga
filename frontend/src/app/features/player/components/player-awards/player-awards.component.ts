@@ -13,7 +13,6 @@ export class PlayerAwardsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAwards();
-    console.log(this.awardFiltered);
   }
 
   getAwards() {
@@ -36,10 +35,11 @@ export class PlayerAwardsComponent implements OnInit {
     }
   }
 
-  awardName(award: string) {
+  awardName(count: number, award: string) {
     if (award == 'National Basketball Association Champion') {
       return 'NBA Champion';
     }
-    return award;
+
+    return count > 1 ? count + ' ' + award : award;
   }
 }

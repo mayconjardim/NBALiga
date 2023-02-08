@@ -2,7 +2,8 @@
   <h5>Awards</h5>
   <div class="container">
     <p *ngFor="let item of awardFiltered">
-      {{ item.count }} {{ awardName(item.award) }}
+      <img src="assets/images/utils/{{ item.award }}.svg" />
+      {{ awardName(item.count, item.award) }}
     </p>
   </div>
 </ng-container>
