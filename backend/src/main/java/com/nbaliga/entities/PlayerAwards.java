@@ -21,7 +21,7 @@ public class PlayerAwards implements Serializable {
     private Integer season;
     @Id
     private String award;
-    private String player;
+    private Long player;
 
 
 }

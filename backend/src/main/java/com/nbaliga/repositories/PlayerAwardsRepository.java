@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface PlayerAwardsRepository extends JpaRepository<PlayerAwards, Long> {
-    List<PlayerAwards> findByPlayerId(Long id);
+    List<PlayerAwards> findByPlayer(Long id);
 }

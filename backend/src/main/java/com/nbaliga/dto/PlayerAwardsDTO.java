@@ -14,7 +14,7 @@ public class PlayerAwardsDTO implements Serializable {
 
     private Integer season;
     private String award;
-    private String player;
+    private Long player;
 
     public PlayerAwardsDTO(PlayerAwards entity) {
         season = entity.getSeason();

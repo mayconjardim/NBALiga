@@ -10,17 +10,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class AwardsService {
+public class PlayerAwardsService {
 
     private final PlayerAwardsRepository playerAwardsRepository;
 
-    public AwardsService(PlayerAwardsRepository playerAwardsRepository) {
+    public PlayerAwardsService(PlayerAwardsRepository playerAwardsRepository) {
         this.playerAwardsRepository = playerAwardsRepository;
     }
 
     @Transactional(readOnly = true)
     public List<PlayerAwardsDTO> findAwardsById(Long id) {
-        List<PlayerAwards> stats = playerAwardsRepository.findByPlayerId(id);
+        List<PlayerAwards> stats = playerAwardsRepository.findByPlayer(id);
         return stats.stream().map(x -> new PlayerAwardsDTO(x)).collect(Collectors.toList());
     }
     
