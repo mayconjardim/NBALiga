@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
-import { Awards } from '../models/awards';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { catchError, of, retry, tap, throwError } from 'rxjs';
 import { API_CONFIG } from 'src/app/config/api.config';
+
+import { PlayerAwards } from '../models/playerAwards';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AwardsService {
-  private awards: Awards[] = [];
+  private awards: PlayerAwards[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -17,7 +18,7 @@ export class AwardsService {
       return of(this.awards);
     }
 
-    return this.http.get<Awards[]>(`${API_CONFIG.baseUrl}/awards`).pipe(
+    return this.http.get<PlayerAwards[]>(`${API_CONFIG.baseUrl}/awards`).pipe(
       tap((awards) => (this.awards = awards)),
       retry(2),
       catchError(this.handleError)
@@ -25,7 +26,7 @@ export class AwardsService {
   }
 
   readOne(id: any) {
-    return this.http.get<Awards[]>(`${API_CONFIG.baseUrl}/awards/${id}`);
+    return this.http.get<PlayerAwards[]>(`${API_CONFIG.baseUrl}/awards/${id}`);
   }
 
   private handleError(err: HttpErrorResponse) {

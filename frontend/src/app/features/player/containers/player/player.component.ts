@@ -6,7 +6,7 @@ import { Player } from '../../models/player';
 import { ActivatedRoute } from '@angular/router';
 import { Stats } from 'src/app/features/league/stats/models/stats';
 import { PlayoffStats } from 'src/app/features/league/stats/models/playoffStats';
-import { Awards } from 'src/app/features/league/awards/models/awards';
+import { PlayerAwards } from 'src/app/features/league/awards/models/playerAwards';
 
 @Component({
   selector: 'player',
@@ -17,7 +17,7 @@ export class PlayerComponent implements OnInit {
   player!: Player;
   playerStats!: Stats[];
   playerOffStats!: PlayoffStats[];
-  awards!: Awards[];
+  awards!: PlayerAwards[];
 
   constructor(
     private route: ActivatedRoute,
@@ -43,8 +43,7 @@ export class PlayerComponent implements OnInit {
 
   getAwards(id: any) {
     this.awardService.readOne(id).subscribe((awards) => {
-      let playerAwards = awards.filter((x) => x.player == this.player.name);
-      this.awards = playerAwards;
+      this.awards = awards;
     });
   }
 }

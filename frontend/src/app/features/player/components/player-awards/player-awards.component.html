@@ -1,4 +1,8 @@
 <ng-container *ngIf="awards.length > 0">
   <h5>Awards</h5>
-  <div class="container"></div>
+  <div class="container">
+    <p *ngFor="let item of awardFiltered">
+      {{ item.count }} {{ awardName(item.award) }}
+    </p>
+  </div>
 </ng-container>
