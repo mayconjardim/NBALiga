@@ -222,20 +222,20 @@ public class PlayerDTO implements Serializable {
     }
 
     public Integer getOverallOffense() {
-        return (insideScoring + jumpShot + freeThrowShot + threePointShot +
+        return ( (insideScoring * 2) + (jumpShot * 2) + freeThrowShot + threePointShot +
                 passing + handling + offensiveRebounding) / 7;
     }
 
     public Integer getOverallDefense() {
-        return (defensiveRebounding + postDefense + perimeterDefense + stealing + shotBlocking) / 5;
+        return (defensiveRebounding + ( postDefense * 2) + (perimeterDefense * 2) + stealing + shotBlocking) / 5;
     }
 
     public Integer getOverallPhysical() {
-        return (quickness + strength + jumping + stamina) / 4;
+        return (quickness +  strength  + jumping +  stamina ) / 4;
     }
 
     public Integer getOverallMental() {
-        return (greed + winner + loyalty + happiness) / 4;
+        return (greed + winner + loyalty + happiness)  / 4;
     }
 
 }
