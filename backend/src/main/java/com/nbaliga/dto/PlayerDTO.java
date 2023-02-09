@@ -227,7 +227,7 @@ public class PlayerDTO implements Serializable {
     }
 
     public Integer getOverallDefense() {
-        return (defensiveRebounding + ( postDefense * 2) + (perimeterDefense * 2) + stealing + shotBlocking) / 5;
+        return (defensiveRebounding + ( postDefense * 2) + (perimeterDefense * 2) + stealing + shotBlocking) / 6;
     }
 
     public Integer getOverallPhysical() {

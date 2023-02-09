@@ -152,9 +152,15 @@ export class PlayerRatingsComponent implements OnInit {
       plotOptions: {
         radar: {
           size: 65,
+          polygons: {
+            strokeColor: '#e9e9e9',
+            fill: {
+              colors: ['#f8f8f8', '#fff'],
+            },
+          },
         },
       },
-      colors: ['#FF4560'],
+      colors: ['#1565c0'],
       xaxis: {
         categories: ['INS', 'JPS', 'FTS', '3PS', 'HND', 'PAS', 'ORB', 'DRB'],
       },
@@ -209,12 +215,19 @@ export class PlayerRatingsComponent implements OnInit {
       plotOptions: {
         radar: {
           size: 65,
+          polygons: {
+            strokeColor: '#e9e9e9',
+            fill: {
+              colors: ['#f8f8f8', '#fff'],
+            },
+          },
         },
       },
-
+      colors: ['#1565c0'],
       xaxis: {
         categories: ['PSD', 'PRD', 'STL', 'BLK', 'QKN', 'STR', 'JMP', 'STA'],
       },
+
       yaxis: {
         show: false,
         min: 0,
@@ -266,9 +279,15 @@ export class PlayerRatingsComponent implements OnInit {
       plotOptions: {
         radar: {
           size: 65,
+          polygons: {
+            strokeColor: '#e9e9e9',
+            fill: {
+              colors: ['#f8f8f8', '#fff'],
+            },
+          },
         },
       },
-      colors: ['#FF4560'],
+      colors: ['#1565c0'],
       xaxis: {
         categories: ['Happiness', 'Loyalty', 'Greed', 'Winner'],
       },
@@ -323,11 +342,19 @@ export class PlayerRatingsComponent implements OnInit {
       plotOptions: {
         radar: {
           size: 65,
+          polygons: {
+            strokeColor: '#e9e9e9',
+            fill: {
+              colors: ['#f8f8f8', '#fff'],
+            },
+          },
         },
       },
-
+      colors: ['#1565c0'],
       xaxis: {
         categories: ['Offense', 'Defense', 'Physical', 'Mental'],
+        min: 0,
+        max: 100,
       },
       yaxis: {
         show: false,
