@@ -33,6 +33,10 @@
         ><mat-icon>groups</mat-icon>Times</a
       >
 
+      <a mat-list-item [matMenuTriggerFor]="players"
+        ><mat-icon>person</mat-icon>Jogadores</a
+      >
+
       <a mat-list-item routerLink="statistics"
         ><mat-icon>percent</mat-icon>Estatísticas</a
       >
@@ -51,6 +55,10 @@
         <a mat-menu-item [ngStyle]="setMyStyles()">
           <mat-icon>calendar_month</mat-icon>Calendário
         </a>
+        <a mat-menu-item [ngStyle]="setMyStyles()">
+          <mat-icon>swap_vert</mat-icon>Transações
+        </a>
+
         <a mat-menu-item routerLink="league/draftpicks"
           ><mat-icon>elevator</mat-icon>Draft Picks</a
         >
@@ -69,6 +77,14 @@
         <a mat-menu-item [matMenuTriggerFor]="west">
           <mat-icon>west</mat-icon>West
         </a>
+      </mat-menu>
+
+      <mat-menu #players="matMenu">
+        <a mat-menu-item [ngStyle]="setMyStyles()">
+          <mat-icon>group_add</mat-icon>Free Agents</a
+        >
+        <a mat-menu-item> <mat-icon>group_remove</mat-icon>Expirantes</a>
+        <a mat-menu-item> <mat-icon>military_tech</mat-icon>Prêmios</a>
       </mat-menu>
 
       <mat-menu #east="matMenu" class="mat-menu-style">
