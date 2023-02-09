@@ -3,7 +3,8 @@ package com.nbaliga.resources;
 
 import com.nbaliga.dto.ScheduleDTO;
 import com.nbaliga.services.ScheduleService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,8 +21,8 @@ public class ScheduleResource {
     }
 
     @GetMapping
-    public ResponseEntity<List<ScheduleDTO>> findAll() {
-        List<ScheduleDTO> schedule = scheduleService.findAll();
+    public ResponseEntity<Page<ScheduleDTO>> findAll(Pageable pageable) {
+        Page<ScheduleDTO> schedule = scheduleService.findAll(pageable);
         return ResponseEntity.ok().body(schedule);
     }
 

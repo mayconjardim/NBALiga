@@ -3,6 +3,8 @@ package com.nbaliga.services;
 import com.nbaliga.dto.ScheduleDTO;
 import com.nbaliga.entities.Schedule;
 import com.nbaliga.repositories.ScheduleRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,9 +21,9 @@ public class ScheduleService {
     }
 
     @Transactional(readOnly = true)
-    public List<ScheduleDTO> findAll() {
-        List<Schedule> schedules = scheduleRepository.findAllSchedule();
-        return schedules.stream().map(x -> new ScheduleDTO(x)).collect(Collectors.toList());
+    public Page<ScheduleDTO> findAll(Pageable pageable) {
+        Page<Schedule> schedules = scheduleRepository.findAllSchedule(pageable);
+        return schedules.map(x -> new ScheduleDTO(x));
     }
 
     @Transactional(readOnly = true)
