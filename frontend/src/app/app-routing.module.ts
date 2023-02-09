@@ -17,6 +17,14 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/player/player.module').then((m) => m.PlayerModule),
   },
+  {
+    path: 'schedule',
+    loadChildren: () =>
+      import('./features/league/schedule/schedule.module').then(
+        (m) => m.ScheduleModule
+      ),
+  },
+
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' },
 ];
