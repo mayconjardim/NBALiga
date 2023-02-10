@@ -1,3 +1,4 @@
+import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -8,6 +9,6 @@ export const routes: Routes = [{ path: '', component: PicksComponent }];
 
 @NgModule({
   declarations: [PicksComponent, PicksListComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes), MatTableModule],
 })
 export class DraftPicksModule {}

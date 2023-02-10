@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface DraftPicksRepository extends JpaRepository<DraftPicks, Long> {
 
-    @Query("SELECT distinct obj FROM DraftPicks obj WHERE obj.year > 0 ORDER BY obj.year")
+    @Query("SELECT distinct obj FROM DraftPicks obj WHERE obj.year > 0 AND obj.round = 1 ORDER BY obj.ownedby")
     List<DraftPicks> findAll();
 
 }

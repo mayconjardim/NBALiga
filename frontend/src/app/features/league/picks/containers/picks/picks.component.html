@@ -1,1 +1,5 @@
-<p>picks works!</p>
+<div class="container">
+  <ng-container *ngIf="picks!">
+    <picks-list [picks]="picks"></picks-list>
+  </ng-container>
+</div>

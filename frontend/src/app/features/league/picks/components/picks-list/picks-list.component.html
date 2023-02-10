@@ -1,1 +1,32 @@
-<p>picks-list works!</p>
+<div class="container">
+  <table mat-table [dataSource]="picks">
+    <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef>YEAR</th>
+      <td mat-cell *matCellDef="let pick">{{ pick.year }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="team">
+      <th mat-header-cell *matHeaderCellDef>FROM</th>
+      <td mat-cell *matCellDef="let pick">
+        <img [src]="teamLogo + [pick.team] + '.svg'" alt="team logo" />
+        {{ pick.team }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="round">
+      <th mat-header-cell *matHeaderCellDef>ROUND</th>
+      <td mat-cell *matCellDef="let pick">{{ pick.round }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="ownedby">
+      <th mat-header-cell *matHeaderCellDef>TEAM</th>
+      <td mat-cell *matCellDef="let pick">
+        <img [src]="teamLogo + [pick.ownedby] + '.svg'" alt="team logo" />
+        {{ pick.ownedby }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
