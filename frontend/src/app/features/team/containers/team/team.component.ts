@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Schedule } from 'src/app/features/league/schedule/models/schedule';
 import { ScheduleService } from 'src/app/features/league/schedule/services/schedule.service';
 
@@ -19,6 +19,7 @@ export class TeamComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private teamService: TeamService,
     private scheduleService: ScheduleService
   ) {}
@@ -44,5 +45,12 @@ export class TeamComponent implements OnInit {
     this.teamService
       .readRank()
       .subscribe((rank: TeamRanking[]) => (this.rank = rank));
+  }
+
+  reloadCurrentRoute() {
+    const currentUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
   }
 }

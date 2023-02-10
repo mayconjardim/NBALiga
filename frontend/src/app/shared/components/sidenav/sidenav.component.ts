@@ -11,7 +11,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { map, Observable } from 'rxjs';
 
 import { SeasonInfo } from '../../models/seasonInfo';
@@ -86,7 +86,7 @@ export class SidenavComponent implements OnInit {
 
   setMyStyles() {
     let styles = {
-      width: '210px',
+      width: '208px',
     };
     return styles;
   }

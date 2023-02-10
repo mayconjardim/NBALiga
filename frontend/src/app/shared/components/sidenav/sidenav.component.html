@@ -88,24 +88,28 @@
       </mat-menu>
 
       <mat-menu #east="matMenu" class="mat-menu-style">
-        <p mat-menu-item *ngFor="let team of eastNav">
+        <a
+          mat-menu-item
+          *ngFor="let team of eastNav"
+          href="teams/{{ team.id }}"
+        >
           <mat-icon
             ><img [src]="imgLogo + [team.logo]" alt="team logo"
           /></mat-icon>
-          <a class="team-link" [routerLink]="'team/' + team.id">{{
-            team.label
-          }}</a>
-        </p>
+          <a class="team-link"> {{ team.label }}</a>
+        </a>
       </mat-menu>
 
       <mat-menu #west="matMenu">
-        <a mat-menu-item *ngFor="let team of westNav">
+        <a
+          mat-menu-item
+          *ngFor="let team of westNav"
+          href="teams/{{ team.id }}"
+        >
           <mat-icon
             ><img [src]="imgLogo + [team.logo]" alt="team logo"
           /></mat-icon>
-          <a class="team-link" [routerLink]="'team/' + team.id">{{
-            team.label
-          }}</a>
+          <a class="team-link">{{ team.label }}</a>
         </a>
       </mat-menu>
 

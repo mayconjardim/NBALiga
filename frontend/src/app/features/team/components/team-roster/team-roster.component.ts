@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Player } from 'src/app/features/player/models/player';
 
 import { Team } from '../../models/team';
-import { Player } from 'src/app/features/player/models/player';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'team-roster',
@@ -16,7 +16,7 @@ export class TeamRosterComponent implements OnInit {
   imgLocation = 'assets/images/players/';
   separator = '_';
 
-  constructor(private http: HttpClient) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.players = this.team.players;
@@ -83,5 +83,12 @@ export class TeamRosterComponent implements OnInit {
       return 'Sixers';
     }
     return team;
+  }
+
+  reloadCurrentRoute() {
+    const currentUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
   }
 }
