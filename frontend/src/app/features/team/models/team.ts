@@ -1,3 +1,4 @@
+import { DraftPicks } from '../../league/picks/models/picks';
 import { Player } from '../../player/models/player';
 
 export interface Team {
@@ -72,5 +73,5 @@ export interface Team {
   pointsPerGame: number;
   assistsPerGame: number;
   players: Player[];
-  picks: any[];
+  picks: DraftPicks[];
 }
