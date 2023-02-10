@@ -29,7 +29,7 @@ public class TeamService {
 
     @Transactional(readOnly = true)
     public List<TeamDTO> findAll() {
-        List<Team> list = teamRepository.findAll();
+        List<Team> list = teamRepository.listAll();
         return list.stream().map(team -> new TeamDTO(team)).collect(Collectors.toList());
     }
 

@@ -8,13 +8,13 @@ import { TeamService } from 'src/app/features/team/services/team.service';
   styleUrls: ['./finances.component.scss'],
 })
 export class FinancesComponent {
-  team!: Team[];
+  teams!: Team[];
 
   constructor(private teamService: TeamService) {}
 
   ngOnInit(): void {
-    this.teamService.read().subscribe((team) => {
-      this.team = team;
+    this.teamService.read().subscribe((teams) => {
+      this.teams = teams;
     });
   }
 }

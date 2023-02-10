@@ -195,6 +195,9 @@ public class TeamDTO implements Serializable {
         return "L" + Math.abs(streak);
     }
 
+    public Integer getCapSpace() {
+        return 101962352 - this.totalSalary + 0;
+    }
 
 
 }

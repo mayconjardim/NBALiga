@@ -1,0 +1,33 @@
+@import "../../../../../../assets/scss/variables.scss";
+@import "../../../../../../assets/scss/teamsColors.scss";
+
+.container {
+  width: 98%;
+  margin: 0.5rem auto;
+
+  table {
+    font-size: 11px;
+    border: 1px solid #ececec;
+
+    img {
+      width: 30px;
+      margin-right: 0.2rem;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+  }
+
+  a {
+    color: #1565c0;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+}

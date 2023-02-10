@@ -72,6 +72,7 @@ export interface Team {
   rebsPerGame: number;
   pointsPerGame: number;
   assistsPerGame: number;
+  capSpace: number;
   players: Player[];
   picks: DraftPicks[];
 }
