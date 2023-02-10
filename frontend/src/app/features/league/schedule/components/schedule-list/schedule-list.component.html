@@ -1,1 +1,62 @@
-<p>schedule-list works!</p>
+<div class="container">
+  <mat-card *ngFor="let game of schedule" class="container-card">
+    <mat-card-header>
+      <mat-card-subtitle>{{ getGameType(game.day) }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <table>
+        <tbody>
+          <tr>
+            <th></th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>T</th>
+          </tr>
+          <tr>
+            <td>
+              <img [src]="teamLogo + [game.home] + '.png'" alt="team logo" />{{
+                game.home
+              }}
+            </td>
+            <td>{{ game.homeQ1 }}</td>
+            <td>{{ game.homeQ2 }}</td>
+            <td>{{ game.homeQ3 }}</td>
+            <td>{{ game.homeQ4 }}</td>
+            <td
+              [ngStyle]="{
+                color: game.homeScore > game.awayScore ? 'green' : 'red'
+              }"
+            >
+              {{ game.homeScore }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img [src]="teamLogo + [game.away] + '.svg'" alt="team logo" />{{
+                game.away
+              }}
+            </td>
+            <td>{{ game.awayQ1 }}</td>
+            <td>{{ game.awayQ2 }}</td>
+            <td>{{ game.awayQ3 }}</td>
+            <td>{{ game.awayQ4 }}</td>
+            <td
+              [ngStyle]="{
+                color: game.awayScore > game.homeScore ? 'green' : 'red'
+              }"
+            >
+              {{ game.awayScore }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-stroked-button color="primary">Box Score</button>
+      <button mat-stroked-button color="primary">PBP</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

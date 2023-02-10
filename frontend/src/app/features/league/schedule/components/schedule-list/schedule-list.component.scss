@@ -1,0 +1,48 @@
+@import "../../../../../../assets/scss/variables.scss";
+@import "../../../../../../assets/scss/teamsColors.scss";
+
+.container {
+  margin: 0.5rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  &-card {
+    margin: 0.5rem;
+    width: 14rem;
+    font-size: 11px;
+
+    table {
+      td:nth-child(1) {
+        width: 6rem;
+        white-space: nowrap;
+      }
+
+      img {
+        margin-right: 0.2rem;
+        width: 20px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    justify-content: first baseline;
+    &-card {
+      padding: 0;
+      width: 12rem;
+      margin: 0.4rem;
+      font-size: 9px;
+
+      td:nth-child(1) {
+        width: 4.5rem;
+        white-space: nowrap;
+      }
+
+      button {
+        font-size: 9px;
+      }
+    }
+  }
+}

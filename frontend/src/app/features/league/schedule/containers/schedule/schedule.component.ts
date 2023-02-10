@@ -1,6 +1,7 @@
 import { Schedule } from 'src/app/features/league/schedule/models/schedule';
 import { ScheduleService } from 'src/app/features/league/schedule/services/schedule.service';
 import { Component, OnInit } from '@angular/core';
+import { SchedulePaged } from '../../models/schedulePaged';
 
 @Component({
   selector: 'schedule',
@@ -8,13 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./schedule.component.scss'],
 })
 export class ScheduleComponent implements OnInit {
-  shedule!: Schedule[];
+  schedule!: Schedule[];
 
   constructor(private sheduleService: ScheduleService) {}
 
   ngOnInit(): void {
     this.sheduleService
       .read()
-      .subscribe((shedule: Schedule[]) => (this.shedule = shedule));
+      .subscribe((shedule: SchedulePaged) => (this.schedule = shedule.content));
   }
 }
