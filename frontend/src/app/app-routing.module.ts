@@ -31,6 +31,13 @@ const routes: Routes = [
         (m) => m.DraftPicksModule
       ),
   },
+  {
+    path: 'finances',
+    loadChildren: () =>
+      import('./features/league/finances/finances.module').then(
+        (m) => m.FinancesModule
+      ),
+  },
 
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' },

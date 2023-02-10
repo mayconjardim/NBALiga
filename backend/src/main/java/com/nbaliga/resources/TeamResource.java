@@ -28,9 +28,9 @@ public class TeamResource {
         return ResponseEntity.ok().body(dto);
     }
     @GetMapping
-    public ResponseEntity<Page<TeamDTO>> findAll(Pageable pageable) {
-        Page<TeamDTO> page = teamService.findAllPaged(pageable);
-        return ResponseEntity.ok().body(page);
+    public ResponseEntity<List<TeamDTO>> findAll() {
+        List<TeamDTO> list = teamService.findAll();
+        return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "rankings")

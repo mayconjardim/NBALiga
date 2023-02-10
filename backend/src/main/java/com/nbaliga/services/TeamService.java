@@ -4,8 +4,6 @@ import com.nbaliga.dto.TeamDTO;
 import com.nbaliga.dto.TeamRankingsDTO;
 import com.nbaliga.entities.Team;
 import com.nbaliga.repositories.TeamRepository;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,9 +28,9 @@ public class TeamService {
     }
 
     @Transactional(readOnly = true)
-    public Page<TeamDTO> findAllPaged(Pageable pageable) {
-        Page<Team> page = teamRepository.findAll(pageable);
-        return page.map(team -> new TeamDTO(team));
+    public List<TeamDTO> findAll() {
+        List<Team> list = teamRepository.findAll();
+        return list.stream().map(team -> new TeamDTO(team)).collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
