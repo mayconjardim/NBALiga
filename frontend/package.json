@@ -23,6 +23,7 @@
     "@material/density": "^15.0.0-canary.684e33d25.0",
     "apexcharts": "^3.37.0",
     "ng-apexcharts": "^1.7.4",
+    "ngx-order-pipe": "^2.2.0",
     "ngx-pagination": "^6.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

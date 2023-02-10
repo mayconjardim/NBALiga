@@ -1,1 +1,5 @@
-<p>finances works!</p>
+<div class="container">
+  <ng-container *ngIf="team!">
+    <finances-list [team]="team"></finances-list>
+  </ng-container>
+</div>
