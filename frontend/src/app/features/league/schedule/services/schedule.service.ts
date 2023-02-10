@@ -1,20 +1,20 @@
-import { Injectable } from '@angular/core';
-import { Schedule } from '../models/schedule';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { catchError, of, retry, tap, throwError } from 'rxjs';
 import { API_CONFIG } from 'src/app/config/api.config';
-import { SchedulePaged } from '../models/schedulePaged';
+
+import { Schedule } from '../models/schedule';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ScheduleService {
-  private schedules!: SchedulePaged;
+  private schedules!: Schedule[];
 
   constructor(private http: HttpClient) {}
 
   read() {
-    return this.http.get<SchedulePaged>(`${API_CONFIG.baseUrl}/schedules`).pipe(
+    return this.http.get<Schedule[]>(`${API_CONFIG.baseUrl}/schedules`).pipe(
       tap((schedules) => (this.schedules = schedules)),
       retry(2),
       catchError(this.handleError)

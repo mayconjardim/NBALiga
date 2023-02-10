@@ -1,62 +1,91 @@
+<h5>PRESEASON</h5>
 <div class="container">
-  <mat-card *ngFor="let game of schedule" class="container-card">
-    <mat-card-header>
-      <mat-card-subtitle>{{ getGameType(game.day) }}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <table>
-        <tbody>
+  <ng-container *ngFor="let day of getUniqueDays(preseason)">
+    <table cellspacing="0" cellpadding="0">
+      <thead>
+        <tr>
+          <th>
+            <span id="{{ day }}">{{
+              getGameTypeName(day) + " DAY" + day
+            }}</span>
+          </th>
+          <th></th>
+          <th>RESULT</th>
+          <th>PLAYER OF THE GAME</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let game of gamesByDayPre(day)">
+          <td>
+            <img [src]="teamLogo + [game.home] + '.svg'" />{{ game.home }}
+          </td>
+          <td>
+            at <img [src]="teamLogo + [game.away] + '.svg'" />{{ game.away }}
+          </td>
+          <td>{{ game.homeScore }} - {{ game.awayScore }}</td>
+          <td>{{ game.playerOfGame }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+</div>
+<h5>REGULAR SEASON</h5>
+<div class="container">
+  <ng-container *ngFor="let day of getUniqueDays(regular)">
+    <table cellspacing="0" cellpadding="0">
+      <thead>
+        <tr>
+          <th>
+            <span>{{ getGameTypeName(day) + " DAY" + day }}</span>
+          </th>
+          <th></th>
+          <th>RESULT</th>
+          <th>PLAYER OF THE GAME</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let game of gamesByDayReg(day)">
+          <td>
+            <img [src]="teamLogo + [game.home] + '.svg'" />{{ game.home }}
+          </td>
+          <td>
+            at <img [src]="teamLogo + [game.away] + '.svg'" />{{ game.away }}
+          </td>
+          <td>{{ game.homeScore }} - {{ game.awayScore }}</td>
+          <td>{{ game.playerOfGame }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+</div>
+<ng-container *ngIf="playoffs.length">
+  <h5>PLAYOFFS</h5>
+  <div class="container">
+    <ng-container *ngFor="let day of getUniqueDays(regular)">
+      <table cellspacing="0" cellpadding="0">
+        <thead>
           <tr>
+            <th>
+              <span>{{ getGameTypeName(day) + " DAY" + day }}</span>
+            </th>
             <th></th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>T</th>
+            <th>RESULT</th>
+            <th>PLAYER OF THE GAME</th>
           </tr>
-          <tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let game of gamesByDayOff(day)">
             <td>
-              <img [src]="teamLogo + [game.home] + '.png'" alt="team logo" />{{
-                game.home
-              }}
+              <img [src]="teamLogo + [game.home] + '.svg'" />{{ game.home }}
             </td>
-            <td>{{ game.homeQ1 }}</td>
-            <td>{{ game.homeQ2 }}</td>
-            <td>{{ game.homeQ3 }}</td>
-            <td>{{ game.homeQ4 }}</td>
-            <td
-              [ngStyle]="{
-                color: game.homeScore > game.awayScore ? 'green' : 'red'
-              }"
-            >
-              {{ game.homeScore }}
-            </td>
-          </tr>
-          <tr>
             <td>
-              <img [src]="teamLogo + [game.away] + '.svg'" alt="team logo" />{{
-                game.away
-              }}
+              at <img [src]="teamLogo + [game.away] + '.svg'" />{{ game.away }}
             </td>
-            <td>{{ game.awayQ1 }}</td>
-            <td>{{ game.awayQ2 }}</td>
-            <td>{{ game.awayQ3 }}</td>
-            <td>{{ game.awayQ4 }}</td>
-            <td
-              [ngStyle]="{
-                color: game.awayScore > game.homeScore ? 'green' : 'red'
-              }"
-            >
-              {{ game.awayScore }}
-            </td>
+            <td>{{ game.homeScore }} - {{ game.awayScore }}</td>
+            <td>{{ game.playerOfGame }}</td>
           </tr>
         </tbody>
       </table>
-    </mat-card-content>
-
-    <mat-card-actions>
-      <button mat-stroked-button color="primary">Box Score</button>
-      <button mat-stroked-button color="primary">PBP</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+    </ng-container>
+  </div>
+</ng-container>

@@ -62,7 +62,9 @@ export class SidenavComponent implements OnInit {
     this.seasonInfoService.read().subscribe((response) => {
       this.seasonInfo = response;
       const season = this.seasonInfo[0].season;
+      const seasonDay = this.seasonInfo[0].seasonDay.toString();
       localStorage.setItem('season', season);
+      localStorage.setItem('seasonDay', seasonDay);
     });
   }
 

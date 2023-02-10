@@ -21,8 +21,8 @@ public class ScheduleResource {
     }
 
     @GetMapping
-    public ResponseEntity<Page<ScheduleDTO>> findAll(Pageable pageable) {
-        Page<ScheduleDTO> schedule = scheduleService.findAll(pageable);
+    public ResponseEntity<List<ScheduleDTO>> findAll() {
+        List<ScheduleDTO> schedule = scheduleService.findAll();
         return ResponseEntity.ok().body(schedule);
     }
 
@@ -31,9 +31,5 @@ public class ScheduleResource {
         List<ScheduleDTO> schedule = scheduleService.findSchedulesByTeam(team);
         return ResponseEntity.ok().body(schedule);
     }
-
-
-
-
 
 }

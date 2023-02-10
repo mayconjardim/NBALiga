@@ -14,7 +14,7 @@ import java.util.List;
 public interface ScheduleRepository extends JpaRepository<Schedule, String> {
 
     @Query("SELECT obj FROM Schedule obj ORDER BY obj.day ASC")
-    Page<Schedule> findAllSchedule(Pageable pagable);
+    List<Schedule> findAllSchedule();
 
     @Query("SELECT DISTINCT obj FROM Schedule obj WHERE obj.home = :team OR obj.away = :team"
             + "  ORDER BY obj.day ASC")

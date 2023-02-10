@@ -5,44 +5,43 @@
   margin: 0.5rem auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  &-card {
+  justify-content: first baseline;
+  font-size: 11px;
+  text-align: left;
+
+  table {
+    width: 98%;
     margin: 0.5rem;
-    width: 14rem;
-    font-size: 11px;
+    border: 0;
+    white-space: nowrap;
 
-    table {
-      td:nth-child(1) {
-        width: 6rem;
-        white-space: nowrap;
-      }
+    img {
+      width: 30px;
+      margin-right: 0.2rem;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
 
-      img {
-        margin-right: 0.2rem;
-        width: 20px;
-        vertical-align: middle;
+    thead {
+      background-color: #1565c0;
+      color: $white;
+      span {
+        margin-left: 0.5rem;
       }
+      border: 1px solid red;
+    }
+
+    td {
+      width: calc(100% / 4);
+      font-weight: 800;
+      background-color: #ececec;
+      border: 1px solid #ececec;
     }
   }
 }
 
 @media only screen and (max-width: 480px) {
   .container {
-    justify-content: first baseline;
-    &-card {
-      padding: 0;
-      width: 12rem;
-      margin: 0.4rem;
-      font-size: 9px;
-
-      td:nth-child(1) {
-        width: 4.5rem;
-        white-space: nowrap;
-      }
-
-      button {
-        font-size: 9px;
-      }
-    }
+    font-size: 9px;
   }
 }

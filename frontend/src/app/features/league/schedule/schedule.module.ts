@@ -1,11 +1,12 @@
-import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ScheduleComponent } from './containers/schedule/schedule.component';
-import { ScheduleListComponent } from './components/schedule-list/schedule-list.component';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { NgxPaginationModule } from 'ngx-pagination';
+import { RouterModule, Routes } from '@angular/router';
+
+import { ScheduleListComponent } from './components/schedule-list/schedule-list.component';
+import { ScheduleComponent } from './containers/schedule/schedule.component';
+
 export const routes: Routes = [{ path: '', component: ScheduleComponent }];
 
 @NgModule({
@@ -15,7 +16,6 @@ export const routes: Routes = [{ path: '', component: ScheduleComponent }];
     RouterModule.forChild(routes),
     MatCardModule,
     MatButtonModule,
-    NgxPaginationModule,
   ],
 })
 export class ScheduleModule {}

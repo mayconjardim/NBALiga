@@ -21,9 +21,9 @@ public class ScheduleService {
     }
 
     @Transactional(readOnly = true)
-    public Page<ScheduleDTO> findAll(Pageable pageable) {
-        Page<Schedule> schedules = scheduleRepository.findAllSchedule(pageable);
-        return schedules.map(x -> new ScheduleDTO(x));
+    public List<ScheduleDTO> findAll() {
+        List<Schedule> schedules = scheduleRepository.findAllSchedule();
+        return schedules.stream().map(x -> new ScheduleDTO(x)).collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
