@@ -24,6 +24,13 @@ const routes: Routes = [
         (m) => m.ScheduleModule
       ),
   },
+  {
+    path: 'picks',
+    loadChildren: () =>
+      import('./features/league/picks/picks.module').then(
+        (m) => m.DraftPicksModule
+      ),
+  },
 
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' },
