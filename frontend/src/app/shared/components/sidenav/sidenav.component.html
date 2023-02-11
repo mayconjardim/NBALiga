@@ -33,7 +33,7 @@
         ><mat-icon>groups</mat-icon>Times</a
       >
 
-      <a mat-list-item [matMenuTriggerFor]="players"
+      <a mat-list-item routerLink="players"
         ><mat-icon>person</mat-icon>Jogadores</a
       >
 
@@ -65,6 +65,8 @@
         <a mat-menu-item routerLink="finances">
           <mat-icon>attach_money</mat-icon>Salary Cap
         </a>
+
+        <a mat-menu-item> <mat-icon>military_tech</mat-icon>Prêmios</a>
       </mat-menu>
 
       <mat-menu #teams="matMenu">
@@ -74,14 +76,6 @@
         <a mat-menu-item [matMenuTriggerFor]="west">
           <mat-icon>west</mat-icon>West
         </a>
-      </mat-menu>
-
-      <mat-menu #players="matMenu">
-        <a mat-menu-item [ngStyle]="setMyStyles()">
-          <mat-icon>group_add</mat-icon>Free Agents</a
-        >
-        <a mat-menu-item> <mat-icon>group_remove</mat-icon>Expirantes</a>
-        <a mat-menu-item> <mat-icon>military_tech</mat-icon>Prêmios</a>
       </mat-menu>
 
       <mat-menu #east="matMenu" class="mat-menu-style">

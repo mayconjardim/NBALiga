@@ -86,7 +86,7 @@ export class PlayerHeaderComponent {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(PlayerAwardsComponent, {
+    this.dialog.open(PlayerAwardsComponent, {
       data: this.awards,
     });
   }

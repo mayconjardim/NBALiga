@@ -44,6 +44,10 @@ export class PlayerAwardsComponent implements OnInit {
       return count > 1 ? count + ' ' + ' NBA Champion' : ' NBA Champion';
     }
 
-    return count > 1 ? count + ' ' + award : award;
+    if (award == 'NBA Playoff MVP') {
+      return count > 1 ? count + ' ' + 'x NBA Finals MVP' : ' NBA Finals MVP';
+    }
+
+    return count > 1 ? count + 'x ' + award : award;
   }
 }

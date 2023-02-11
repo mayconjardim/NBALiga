@@ -46,7 +46,7 @@ export class PlayerRatingsComponent implements OnInit {
   public chartOptions3!: Partial<ChartOptions> | any;
   public chartOptions4!: Partial<ChartOptions> | any;
 
-  atributes1: any[] = [];
+  atributes1: number[] = [];
   atributes2: number[] = [];
   personality: number[] = [];
   overall: number[] = [];
@@ -120,47 +120,30 @@ export class PlayerRatingsComponent implements OnInit {
       chart: {
         height: 190,
         type: 'radar',
+
         toolbar: {
           tools: {
             download: false,
           },
         },
       },
-      legend: {
-        show: false,
-      },
-      fill: {
-        opacity: 0.1,
+
+      markers: {
+        size: 0,
       },
 
       dataLabels: {
         enabled: true,
+
         style: {
           fontSize: '8px',
-          fontWeight: 'bold',
         },
         background: {
-          enabled: true,
-          foreColor: '#fff',
           borderRadius: 5,
-          padding: 4,
-          opacity: 0.9,
-          borderColor: '#fff',
+          borderWidth: 1,
+          borderColor: '#000',
         },
       },
-
-      plotOptions: {
-        radar: {
-          size: 65,
-          polygons: {
-            strokeColor: '#e9e9e9',
-            fill: {
-              colors: ['#f8f8f8', '#fff'],
-            },
-          },
-        },
-      },
-      colors: ['#1565c0'],
       xaxis: {
         categories: ['INS', 'JPS', 'FTS', '3PS', 'HND', 'PAS', 'ORB', 'DRB'],
       },
@@ -180,58 +163,8 @@ export class PlayerRatingsComponent implements OnInit {
           data: this.atributes2,
         },
       ],
-      chart: {
-        height: 190,
-        type: 'radar',
-        toolbar: {
-          tools: {
-            download: false,
-          },
-        },
-      },
-      legend: {
-        show: false,
-      },
-      fill: {
-        opacity: 0.1,
-      },
-
-      dataLabels: {
-        enabled: true,
-        style: {
-          fontSize: '8px',
-          fontWeight: 'bold',
-        },
-        background: {
-          enabled: true,
-          foreColor: '#fff',
-          borderRadius: 5,
-          padding: 4,
-          opacity: 0.9,
-          borderColor: '#fff',
-        },
-      },
-
-      plotOptions: {
-        radar: {
-          size: 65,
-          polygons: {
-            strokeColor: '#e9e9e9',
-            fill: {
-              colors: ['#f8f8f8', '#fff'],
-            },
-          },
-        },
-      },
-      colors: ['#1565c0'],
       xaxis: {
         categories: ['PSD', 'PRD', 'STL', 'BLK', 'QKN', 'STR', 'JMP', 'STA'],
-      },
-
-      yaxis: {
-        show: false,
-        min: 0,
-        max: 100,
       },
     };
   }
@@ -244,57 +177,9 @@ export class PlayerRatingsComponent implements OnInit {
           data: this.personality,
         },
       ],
-      chart: {
-        height: 190,
-        type: 'radar',
-        toolbar: {
-          tools: {
-            download: false,
-          },
-        },
-      },
-      legend: {
-        show: false,
-      },
-      fill: {
-        opacity: 0.1,
-      },
 
-      dataLabels: {
-        enabled: true,
-        style: {
-          fontSize: '8px',
-          fontWeight: 'bold',
-        },
-        background: {
-          enabled: true,
-          foreColor: '#fff',
-          borderRadius: 5,
-          padding: 4,
-          opacity: 0.9,
-          borderColor: '#fff',
-        },
-      },
-
-      plotOptions: {
-        radar: {
-          size: 65,
-          polygons: {
-            strokeColor: '#e9e9e9',
-            fill: {
-              colors: ['#f8f8f8', '#fff'],
-            },
-          },
-        },
-      },
-      colors: ['#1565c0'],
       xaxis: {
         categories: ['Happiness', 'Loyalty', 'Greed', 'Winner'],
-      },
-      yaxis: {
-        show: false,
-        min: 0,
-        max: 100,
       },
     };
   }
@@ -310,6 +195,12 @@ export class PlayerRatingsComponent implements OnInit {
       chart: {
         height: 190,
         type: 'radar',
+        dropShadow: {
+          enabled: true,
+          blur: 1,
+          left: 1,
+          top: 1,
+        },
         toolbar: {
           tools: {
             download: false,
@@ -319,24 +210,13 @@ export class PlayerRatingsComponent implements OnInit {
       legend: {
         show: false,
       },
-      fill: {
-        opacity: 0.1,
+
+      markers: {
+        size: 0,
       },
 
       dataLabels: {
         enabled: false,
-        style: {
-          fontSize: '8px',
-          fontWeight: 'bold',
-        },
-        background: {
-          enabled: true,
-          foreColor: '#fff',
-          borderRadius: 5,
-          padding: 4,
-          opacity: 0.9,
-          borderColor: '#fff',
-        },
       },
 
       plotOptions: {
@@ -351,13 +231,14 @@ export class PlayerRatingsComponent implements OnInit {
         },
       },
       colors: ['#1565c0'],
-      xaxis: {
-        categories: ['Offense', 'Defense', 'Physical', 'Mental'],
+      yaxis: {
+        show: false,
         min: 0,
         max: 100,
       },
-      yaxis: {
-        show: false,
+
+      xaxis: {
+        categories: ['Offense', 'Defense', 'Physical', 'Mental'],
         min: 0,
         max: 100,
       },
