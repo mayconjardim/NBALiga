@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-
-import { PlayerAwards } from '../../../league/awards/models/playerAwards';
+import { PlayerAwards } from 'src/app/features/league/awards/models/playerAwards';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'player-awards',
@@ -8,8 +8,12 @@ import { PlayerAwards } from '../../../league/awards/models/playerAwards';
   styleUrls: ['./player-awards.component.scss'],
 })
 export class PlayerAwardsComponent implements OnInit {
-  @Input() awards!: PlayerAwards[];
   awardFiltered!: any[];
+
+  constructor(
+    public dialogRef: MatDialogRef<PlayerAwardsComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: PlayerAwards[]
+  ) {}
 
   ngOnInit(): void {
     this.getAwards();
@@ -17,7 +21,7 @@ export class PlayerAwardsComponent implements OnInit {
 
   getAwards() {
     const awardCounts = new Map<string, number>();
-    for (const award of this.awards) {
+    for (const award of this.data) {
       if (awardCounts.has(award.award)) {
         awardCounts.set(award.award, awardCounts.get(award.award)! + 1);
       } else {
@@ -25,7 +29,7 @@ export class PlayerAwardsComponent implements OnInit {
       }
     }
 
-    this.awardFiltered = this.awards.filter(
+    this.awardFiltered = this.data.filter(
       (award, index, self) =>
         self.findIndex((t) => t.award === award.award) === index
     );

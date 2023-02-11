@@ -1,5 +1,8 @@
+import { PlayerAwardsComponent } from './../player-awards/player-awards.component';
 import { Component, Input } from '@angular/core';
 import { Player } from '../../models/player';
+import { PlayerAwards } from 'src/app/features/league/awards/models/playerAwards';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'player-header',
@@ -8,8 +11,11 @@ import { Player } from '../../models/player';
 })
 export class PlayerHeaderComponent {
   @Input() player!: Player;
+  @Input() awards!: PlayerAwards[];
   playerImg = 'assets/images/players/';
   teamLogo = 'assets/images/logos/';
+
+  constructor(public dialog: MatDialog) {}
 
   getPosition(position: number) {
     switch (position) {
@@ -77,5 +83,11 @@ export class PlayerHeaderComponent {
     } else {
       return '-';
     }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(PlayerAwardsComponent, {
+      data: this.awards,
+    });
   }
 }

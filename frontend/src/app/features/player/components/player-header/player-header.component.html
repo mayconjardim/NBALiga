@@ -15,7 +15,13 @@
       }"
     ></div>
     <mat-card-title
-      >{{ player.firstName }} <span>{{ player.lastName }}</span>
+      >{{ player.firstName }}
+      <span
+        >{{ player.lastName }}
+        <ng-container *ngIf="awards.length > 0">
+          <button mat-icon-button color="accent" (click)="openDialog()">
+            <img src="assets/images/utils/medal.svg" /></button></ng-container
+      ></span>
     </mat-card-title>
     <mat-card-subtitle>
       <img [src]="ratingColors(player.currentRating)" />

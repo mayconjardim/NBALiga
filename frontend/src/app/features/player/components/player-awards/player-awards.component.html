@@ -1,9 +1,8 @@
-<ng-container *ngIf="awards.length > 0">
-  <h5>Awards</h5>
-  <div class="container">
-    <p *ngFor="let award of awardFiltered">
-      <img src="assets/images/utils/{{ award.award }}.svg" />
-      {{ awardName(award.count, award.award) }}
-    </p>
-  </div>
-</ng-container>
+<h5 mat-dialog-title>Awards</h5>
+
+<div mat-dialog-content class="container">
+  <p *ngFor="let award of awardFiltered">
+    <img src="assets/images/utils/{{ award.award }}.svg" />
+    {{ awardName(award.count, award.award) }}
+  </p>
+</div>

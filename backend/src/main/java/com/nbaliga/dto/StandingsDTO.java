@@ -82,6 +82,9 @@ public class StandingsDTO implements Serializable {
         if (streak > 0) {
             return "W" +  streak;
         }
+        else if (streak == 0) {
+            return "-";
+        } else
             return "L" + Math.abs(streak);
 
     }
