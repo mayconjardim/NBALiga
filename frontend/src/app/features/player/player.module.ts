@@ -14,8 +14,12 @@ import { PlayerHeaderComponent } from './components/player-header/player-header.
 import { PlayerRatingsComponent } from './components/player-ratings/player-ratings.component';
 import { PlayerStatsComponent } from './components/player-stats/player-stats.component';
 import { PlayerComponent } from './containers/player/player.component';
+import { PlayerListComponent } from './containers/player-list/player-list.component';
 
-export const routes: Routes = [{ path: '', component: PlayerComponent }];
+export const routes: Routes = [
+  { path: '', component: PlayerListComponent },
+  { path: ':id', component: PlayerComponent },
+];
 
 @NgModule({
   declarations: [
@@ -24,6 +28,7 @@ export const routes: Routes = [{ path: '', component: PlayerComponent }];
     PlayerRatingsComponent,
     PlayerStatsComponent,
     PlayerAwardsComponent,
+    PlayerListComponent,
   ],
   imports: [
     CommonModule,

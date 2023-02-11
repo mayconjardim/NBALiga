@@ -13,7 +13,7 @@ const routes: Routes = [
       import('./features/team/team.module').then((m) => m.TeamModule),
   },
   {
-    path: 'players/:id',
+    path: 'players',
     loadChildren: () =>
       import('./features/player/player.module').then((m) => m.PlayerModule),
   },
