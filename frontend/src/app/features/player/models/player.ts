@@ -59,8 +59,8 @@ export interface Player {
   pot_blocking: string;
   currentRating: string;
   futureRating: string;
-  overallRating: string;
-  overallPotential: string;
+  overallRating: number;
+  overallPotential: number;
   championships: number;
   playerOfGame: number;
   playerOfWeek: number;

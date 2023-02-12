@@ -73,8 +73,8 @@ public class PlayerDTO implements Serializable {
     private String pot_blocking;
     private String currentRating;
     private String futureRating;
-    private String overallRating;
-    private String overallPotential;
+    private Integer overallRating;
+    private Integer overallPotential;
     private Integer championships;
     private Integer playerOfGame;
     private Integer playerOfWeek;

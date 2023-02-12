@@ -3,10 +3,7 @@ package com.nbaliga.entities;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -78,8 +75,8 @@ public class Player implements Serializable {
     private String pot_blocking;
     private String currentRating;
     private String futureRating;
-    private String overallRating;
-    private String overallPotential;
+    private Integer overallRating;
+    private Integer overallPotential;
     private Integer championships;
     private Integer playerOfGame;
     private Integer playerOfWeek;

@@ -28,7 +28,7 @@ public class PlayerService {
 
     @Transactional(readOnly = true)
     public Page<PlayerDTO> findAllPaged(Pageable pageable) {
-        Page<Player> page = playerRepository.findAll(pageable);
+        Page<Player> page = playerRepository.listAll(pageable);
         return page.map(Player -> new PlayerDTO(Player));
     }
 }

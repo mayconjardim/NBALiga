@@ -8,7 +8,7 @@
     <ng-container matColumnDef="name" sticky>
       <th mat-header-cell *matHeaderCellDef>NAME</th>
       <td mat-cell *matCellDef="let player" sticky>
-        <a routerLink="players/{{ player.id }}">{{ player.name }}</a>
+        <a routerLink="{{ player.id }}">{{ player.name }}</a>
       </td>
     </ng-container>
 
