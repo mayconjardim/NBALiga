@@ -13,6 +13,14 @@ body {
   margin: 0.5rem auto;
   overflow-y: auto;
 
+  &-options {
+    display: flex;
+    justify-content: center;
+    mat-form-field {
+      margin: 0 0.5rem;
+    }
+  }
+
   table {
     width: 100%;
     border: 1px solid #ececec;

@@ -7,6 +7,7 @@ import lombok.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -219,6 +220,35 @@ public class PlayerDTO implements Serializable {
         years += (this.contract5 > 0) ? 1 : 0;
         return years;
 
+    }
+
+    public String getPositionName() {
+        switch (positionNumber) {
+            case 5:
+                return "Point Guard";
+            case 4:
+                return "Shooting Guard";
+            case 3:
+                return "Small Forward";
+            case 2:
+                return "Power Forward";
+            default:
+                return "Center";
+        }
+    }
+
+    public String getPlayerTeam() {
+        if (Objects.equals(currentTeam, "FA")) {
+            return "Free Agent";
+        } else
+        return currentTeam;
+    }
+
+    public String getExpiring() {
+        if (contract1 > 0 && contract2 == 0) {
+            return "Expiring";
+        } else
+            return "Contract";
     }
 
     public Integer getOverallOffense() {

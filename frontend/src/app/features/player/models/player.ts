@@ -82,6 +82,9 @@ export interface Player {
   overallDefense: number;
   overallMental: number;
   overallOffense: number;
+  positionName: string;
+  playerTeam: string;
+  expiring: string;
 }
 
 export interface PlayerPageable {

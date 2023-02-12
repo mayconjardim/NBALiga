@@ -20,8 +20,9 @@ export class PlayerListComponent implements OnInit {
 
   displayedColumns = [
     'name',
-    'team',
+    'playerTeam',
     'age',
+    'positionName',
     'overallRating',
     'overallPotential',
     'salary',
@@ -65,6 +66,27 @@ export class PlayerListComponent implements OnInit {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
     } else {
       this._liveAnnouncer.announce('Sorting cleared');
+    }
+  }
+
+  viewFilter(event: Event) {
+    console.log(event);
+    const filterValue = event.toString();
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  getPosition(position: number) {
+    switch (position) {
+      case 5:
+        return 'PG';
+      case 4:
+        return 'SG';
+      case 3:
+        return 'SF';
+      case 2:
+        return 'PF';
+      default:
+        return 'C';
     }
   }
 
