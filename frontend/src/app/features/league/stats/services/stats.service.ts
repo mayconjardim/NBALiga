@@ -13,16 +13,18 @@ export class StatsService {
 
   constructor(private http: HttpClient) {}
 
-  read() {
+  read(season: number) {
     if (this.stats.length) {
       return of(this.stats);
     }
 
-    return this.http.get<Stats[]>(`${API_CONFIG.baseUrl}/stats`).pipe(
-      tap((stats) => (this.stats = stats)),
-      retry(2),
-      catchError(this.handleError)
-    );
+    return this.http
+      .get<Stats[]>(`${API_CONFIG.baseUrl}/stats/season/${season}`)
+      .pipe(
+        tap((stats) => (this.stats = stats)),
+        retry(2),
+        catchError(this.handleError)
+      );
   }
 
   readOne(id: any) {

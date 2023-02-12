@@ -70,7 +70,6 @@ export class PlayerListComponent implements OnInit {
   }
 
   viewFilter(event: Event) {
-    console.log(event);
     const filterValue = event.toString();
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }

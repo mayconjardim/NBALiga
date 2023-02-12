@@ -1,21 +1,19 @@
+<div class="options">
+  <mat-form-field appearance="fill">
+    <mat-select placeholder="View" (selectionChange)="viewFilter($event.value)">
+      <mat-option value="Draft">Draft</mat-option>
+      <mat-option value="Free Agent">Free Agents</mat-option>
+      <mat-option value="Expiring">Expiring</mat-option>
+      <mat-option value="Point Guard">Point Guard</mat-option>
+      <mat-option value="Shooting Guard">Shooting Guard</mat-option>
+      <mat-option value="Small Forward">Small Forward</mat-option>
+      <mat-option value="Power Forward">Power Forward</mat-option>
+      <mat-option value="Center">Center</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
 <div class="container">
-  <div class="container-options">
-    <mat-form-field appearance="fill">
-      <mat-select
-        placeholder="View"
-        (selectionChange)="viewFilter($event.value)"
-      >
-        <mat-option value="Draft">Draft</mat-option>
-        <mat-option value="Free Agent">Free Agents</mat-option>
-        <mat-option value="Expiring">Expiring</mat-option>
-        <mat-option value="Point Guard">Point Guard</mat-option>
-        <mat-option value="Shooting Guard">Shooting Guard</mat-option>
-        <mat-option value="Small Forward">Small Forward</mat-option>
-        <mat-option value="Power Forward">Power Forward</mat-option>
-        <mat-option value="Center">Center</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
   <table
     mat-table
     [dataSource]="dataSource"

@@ -8,18 +8,19 @@ body {
   padding: 0;
 }
 
+.options {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  mat-form-field {
+    margin: 0 0.5rem;
+  }
+}
+
 .container {
   width: 99%;
   margin: 0.5rem auto;
   overflow-y: auto;
-
-  &-options {
-    display: flex;
-    justify-content: center;
-    mat-form-field {
-      margin: 0 0.5rem;
-    }
-  }
 
   table {
     width: 100%;
