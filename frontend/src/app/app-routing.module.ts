@@ -39,6 +39,12 @@ const routes: Routes = [
       ),
   },
 
+  {
+    path: 'stats',
+    loadChildren: () =>
+      import('./features/league/stats/stats.module').then((m) => m.StatsModule),
+  },
+
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' },
 ];
