@@ -9,7 +9,7 @@
       <th mat-header-cell *matHeaderCellDef>OPP</th>
       <td mat-cell *matCellDef="let game">
         <img
-          [src]="teamLogo + [getPicHomeOrAway(game.away, game.home)] + '.svg'"
+          [src]="teamLogo + [getPicHomeOrAway(game.away, game.home)] + '.png'"
           alt="team logo"
         />
         {{ getHomeOrAway(game.away, game.home) }}

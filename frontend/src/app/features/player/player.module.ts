@@ -1,9 +1,12 @@
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule, Routes } from '@angular/router';
@@ -13,8 +16,8 @@ import { PlayerAwardsComponent } from './components/player-awards/player-awards.
 import { PlayerHeaderComponent } from './components/player-header/player-header.component';
 import { PlayerRatingsComponent } from './components/player-ratings/player-ratings.component';
 import { PlayerStatsComponent } from './components/player-stats/player-stats.component';
-import { PlayerComponent } from './containers/player/player.component';
 import { PlayerListComponent } from './containers/player-list/player-list.component';
+import { PlayerComponent } from './containers/player/player.component';
 
 export const routes: Routes = [
   { path: '', component: PlayerListComponent },
@@ -38,7 +41,10 @@ export const routes: Routes = [
     MatTooltipModule,
     MatButtonModule,
     MatIconModule,
+    MatPaginatorModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatSortModule,
     NgApexchartsModule,
   ],
 })

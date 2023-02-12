@@ -1,3 +1,4 @@
+import { PlayerPageable } from './../models/player';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, of, retry, tap, throwError } from 'rxjs';
@@ -9,20 +10,18 @@ import { Player } from '../models/player';
   providedIn: 'root',
 })
 export class PlayerService {
-  private players: Player[] = [];
+  private players!: PlayerPageable;
 
   constructor(private http: HttpClient) {}
 
   read() {
-    if (this.players.length) {
-      return of(this.players);
-    }
-
-    return this.http.get<Player[]>(`${API_CONFIG.baseUrl}/players`).pipe(
-      tap((players) => (this.players = players)),
-      retry(2),
-      catchError(this.handleError)
-    );
+    return this.http
+      .get<PlayerPageable>(`${API_CONFIG.baseUrl}/players?size=1000`)
+      .pipe(
+        tap((players) => (this.players = players)),
+        retry(2),
+        catchError(this.handleError)
+      );
   }
 
   readOne(id: any) {

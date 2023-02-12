@@ -1,1 +1,284 @@
-<p>player-list works!</p>
+<div class="container">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    matSort
+    (matSortChange)="announceSortChange($event)"
+  >
+    <ng-container matColumnDef="name" sticky>
+      <th mat-header-cell *matHeaderCellDef>NAME</th>
+      <td mat-cell *matCellDef="let player" sticky>
+        <a routerLink="players/{{ player.id }}">{{ player.name }}</a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="team">
+      <th mat-header-cell *matHeaderCellDef>TEAM</th>
+      <td mat-cell *matCellDef="let player">
+        <img [src]="teamLogo + player.currentTeam + '.png'" alt="team logo" />
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef>AGE</th>
+      <td mat-cell *matCellDef="let player">{{ player.age }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="overallRating">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by overallRating"
+      >
+        CUR
+      </th>
+      <td mat-cell *matCellDef="let player">
+        <img [src]="ratingColors(player.currentRating)" />
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="overallPotential">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by overallPotential"
+      >
+        FUT
+      </th>
+      <td mat-cell *matCellDef="let player">
+        <img [src]="ratingColors(player.futureRating)" />
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="salary">
+      <th mat-header-cell *matHeaderCellDef>SAL</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.contract1 | currency : "USD" : "symbol" : "1.0" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="insideScoring">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by inside Scoring"
+      >
+        INS
+      </th>
+      <td mat-cell *matCellDef="let player">{{ player.insideScoring }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="jumpShot">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by jumpShot"
+      >
+        JPS
+      </th>
+      <td mat-cell *matCellDef="let player">{{ player.jumpShot }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="freeThrowShot">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by freeThrowShot"
+      >
+        FTS
+      </th>
+      <td mat-cell *matCellDef="let player">{{ player.freeThrowShot }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="threePointShot">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by threePointShot"
+      >
+        3PS
+      </th>
+      <td mat-cell *matCellDef="let player">{{ player.threePointShot }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="handling">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by handling"
+      >
+        HND
+      </th>
+      <td mat-cell *matCellDef="let player">{{ player.handling }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="passing">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by passing"
+      >
+        PAS
+      </th>
+      <td mat-cell *matCellDef="let player">{{ player.passing }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="offensiveRebounding">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by offensiveRebounding"
+      >
+        ORB
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.offensiveRebounding }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="defensiveRebounding">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by defensiveRebounding"
+      >
+        DRB
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.defensiveRebounding }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="postDefense">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by postDefense"
+      >
+        PSD
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.postDefense }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="perimeterDefense">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by perimeterDefense"
+      >
+        PRD
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.perimeterDefense }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="stealing">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by stealing"
+      >
+        STL
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.stealing }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="shotBlocking">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by shotBlocking"
+      >
+        BLK
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.shotBlocking }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quickness">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by quickness"
+      >
+        QKN
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.quickness }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="strength">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by strength"
+      >
+        STR
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.strength }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="jumping">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by jumping"
+      >
+        JMP
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.jumping }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="stamina">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by stamina"
+      >
+        STA
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.stamina }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    [pageSizeOptions]="[30, 50, 100, 200]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
+</div>
