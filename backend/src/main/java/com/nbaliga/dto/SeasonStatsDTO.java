@@ -55,6 +55,7 @@ public class SeasonStatsDTO implements Serializable {
     private Integer tripleDoubles;
     private String playerName;
     private Integer playerPosition;
+
     public SeasonStatsDTO(SeasonStats entity) {
         this.id = entity.getId();
         this.season = entity.getSeason();

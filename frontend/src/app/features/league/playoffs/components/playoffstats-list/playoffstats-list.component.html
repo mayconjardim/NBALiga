@@ -1,0 +1,184 @@
+<div class="container">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    matSort
+    (matSortChange)="announceSortChange($event)"
+  >
+    <ng-container matColumnDef="playerName" sticky>
+      <th mat-header-cell *matHeaderCellDef>NAME</th>
+      <td mat-cell *matCellDef="let player">
+        <a routerLink="/players/{{ player.id }}">{{ player.playerName }}</a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="team">
+      <th mat-header-cell *matHeaderCellDef>TEAM</th>
+      <td mat-cell *matCellDef="let player">
+        <img [src]="teamLogo + player.team + '.png'" alt="team logo" />
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="playerPosition">
+      <th mat-header-cell *matHeaderCellDef>POS</th>
+      <td mat-cell *matCellDef="let player">
+        {{ getPosition(player.playerPosition) }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="games">
+      <th mat-header-cell *matHeaderCellDef>GP</th>
+      <td mat-cell *matCellDef="let player">{{ player.games }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="mpg">
+      <th mat-header-cell *matHeaderCellDef>MPG</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.mpg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ppg">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by PPG"
+      >
+        PPG
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.ppg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="rpg">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by RPG"
+      >
+        RPG
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.rpg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="apg">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by APG"
+      >
+        APG
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.apg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="spg">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by SPG"
+      >
+        SPG
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.spg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="bpg">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by BPG"
+      >
+        BPG
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.bpg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="topg">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by TPG"
+      >
+        TPG
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.topg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fgPct">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by fgPct"
+      >
+        FG%
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ removeLeading(player.fgPct | number : "1.3-3") }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ftPct">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by ftPct"
+      >
+        FT%
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ removeLeading(player.ftpct | number : "1.3-3") }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="threePct">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by threePct"
+      >
+        3P%
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ removeLeading(player.threePct | number : "1.3-3") }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="plusMinusPg">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by plusMinusPg"
+      >
+        +/-
+      </th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.plusMinusPg | number : "1.1-1" }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

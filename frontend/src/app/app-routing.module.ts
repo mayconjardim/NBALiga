@@ -45,6 +45,14 @@ const routes: Routes = [
       import('./features/league/stats/stats.module').then((m) => m.StatsModule),
   },
 
+  {
+    path: 'playoffs',
+    loadChildren: () =>
+      import('./features/league/playoffs/playoffs.module').then(
+        (m) => m.PlayoffsModule
+      ),
+  },
+
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' },
 ];

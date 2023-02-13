@@ -1,5 +1,5 @@
-import { PlayoffStats } from '../../../league/stats/models/playoffStats';
 import { Component, Input } from '@angular/core';
+import { PlayoffStats } from 'src/app/features/league/playoffs/models/playoffstats';
 import { Stats } from 'src/app/features/league/stats/models/stats';
 
 @Component({

@@ -1,3 +1,4 @@
+import { PlayoffsService } from './../../../league/playoffs/services/playoffs.service';
 import { AwardsService } from './../../../league/awards/services/awards.service';
 import { StatsService } from './../../../league/stats/services/stats.service';
 import { PlayerService } from './../../services/player.service';
@@ -5,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
 import { Player } from '../../models/player';
 import { ActivatedRoute } from '@angular/router';
 import { Stats } from 'src/app/features/league/stats/models/stats';
-import { PlayoffStats } from 'src/app/features/league/stats/models/playoffStats';
+
 import { PlayerAwards } from 'src/app/features/league/awards/models/playerAwards';
+import { PlayoffStats } from 'src/app/features/league/playoffs/models/playoffstats';
 
 @Component({
   selector: 'player',
@@ -23,6 +25,7 @@ export class PlayerComponent implements OnInit {
     private route: ActivatedRoute,
     private playerService: PlayerService,
     private statsService: StatsService,
+    private playoffService: PlayoffsService,
     private awardService: AwardsService
   ) {}
 
@@ -36,7 +39,7 @@ export class PlayerComponent implements OnInit {
       this.playerStats = stats;
     });
 
-    this.statsService.readOnePlayoffs(id).subscribe((offStats) => {
+    this.playoffService.readOnePlayoffs(id).subscribe((offStats) => {
       this.playerOffStats = offStats;
     });
   }

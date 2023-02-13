@@ -9,7 +9,8 @@ import java.util.List;
 
 @Repository
 public interface PlayoffStatsRepository extends JpaRepository<PlayoffStats, Long> {
-    @Query("SELECT obj FROM PlayoffStats obj WHERE obj.season = :season ORDER BY obj.id ASC")
+    @Query("SELECT obj FROM PlayoffStats obj WHERE obj.season = :season " +
+            " ORDER BY (obj.points / obj.games) DESC")
     List<PlayoffStats> findAllStats(Integer season);
 
     @Query("SELECT DISTINCT obj FROM PlayoffStats obj WHERE obj.id = :id ORDER BY obj.season DESC")

@@ -1,0 +1,26 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { RouterModule, Routes } from '@angular/router';
+import { PlayoffstatsComponent } from './containers/playoffstats/playoffstats.component';
+import { PlayoffstatsListComponent } from './components/playoffstats-list/playoffstats-list.component';
+
+export const routes: Routes = [
+  { path: 'stats', component: PlayoffstatsComponent },
+];
+
+@NgModule({
+  declarations: [PlayoffstatsComponent, PlayoffstatsListComponent],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    MatTableModule,
+    MatSortModule,
+  ],
+})
+export class PlayoffsModule {}
