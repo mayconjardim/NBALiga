@@ -9,13 +9,19 @@ import { MatTableModule } from '@angular/material/table';
 import { RouterModule, Routes } from '@angular/router';
 import { PlayoffstatsComponent } from './containers/playoffstats/playoffstats.component';
 import { PlayoffstatsListComponent } from './components/playoffstats-list/playoffstats-list.component';
+import { PlayoffsComponent } from './containers/playoffs/playoffs.component';
 
 export const routes: Routes = [
+  { path: '', component: PlayoffsComponent },
   { path: 'stats', component: PlayoffstatsComponent },
 ];
 
 @NgModule({
-  declarations: [PlayoffstatsComponent, PlayoffstatsListComponent],
+  declarations: [
+    PlayoffstatsComponent,
+    PlayoffstatsListComponent,
+    PlayoffsComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

@@ -39,7 +39,7 @@ export class PlayerComponent implements OnInit {
       this.playerStats = stats;
     });
 
-    this.playoffService.readOnePlayoffs(id).subscribe((offStats) => {
+    this.playoffService.readOnePlayoffStats(id).subscribe((offStats) => {
       this.playerOffStats = offStats;
     });
   }
