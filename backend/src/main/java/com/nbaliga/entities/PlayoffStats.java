@@ -1,6 +1,8 @@
 package com.nbaliga.entities;
 
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -46,7 +48,7 @@ public class PlayoffStats implements Serializable {
     private Integer doubleDoubles;
     private Integer tripleDoubles;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id", insertable = false, updatable = false)
     private Player player;
 

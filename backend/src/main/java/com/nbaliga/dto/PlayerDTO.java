@@ -1,5 +1,6 @@
 package com.nbaliga.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.nbaliga.entities.Player;
 import com.nbaliga.entities.SeasonStats;
 import lombok.*;
@@ -87,6 +88,7 @@ public class PlayerDTO implements Serializable {
     private Integer contract5;
     private Integer birdYears;
 
+    @JsonIgnore
     private List<SeasonStatsDTO> seasonStats = new ArrayList<>();
 
     private List<PlayerAwardsDTO> awards = new ArrayList<>();

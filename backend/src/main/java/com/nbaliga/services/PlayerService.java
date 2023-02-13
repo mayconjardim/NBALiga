@@ -8,7 +8,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class PlayerService {
@@ -22,13 +24,15 @@ public class PlayerService {
     @Transactional(readOnly = true)
     public PlayerDTO findById(Long id) throws Exception {
         Optional<Player> obj = playerRepository.findById(id);
+
         Player entity = obj.orElseThrow(() -> new Exception("Jogador não encontrado!"));
         return new PlayerDTO(entity);
     }
 
     @Transactional(readOnly = true)
     public Page<PlayerDTO> findAllPaged(Pageable pageable) {
-        Page<Player> page = playerRepository.listAll(pageable);
+        Page<Player> page = playerRepository.findAll(pageable);
+       playerRepository.listAll(page.stream().collect(Collectors.toList()));
         return page.map(Player -> new PlayerDTO(Player));
     }
 }

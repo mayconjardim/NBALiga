@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface TeamRepository extends JpaRepository<Team, Long> {
 
-    @Query("SELECT distinct obj FROM Team obj WHERE obj.isHuman = 1")
+    @Query("SELECT distinct obj FROM Team obj JOIN FETCH obj.players  WHERE obj.isHuman = 1")
     List<Team> listAll();
 
 }

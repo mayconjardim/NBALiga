@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Long> {
 
-    @Query("SELECT distinct obj FROM Player obj ORDER BY obj.overallRating DESC")
-    Page<Player> listAll(Pageable pageable);
+    @Query("SELECT distinct obj FROM Player obj JOIN FETCH obj.seasonStats ORDER BY obj.overallRating DESC")
+    List<Player> listAll(List<Player> players);
 
 }

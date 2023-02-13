@@ -1,6 +1,7 @@
 package com.nbaliga.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -88,7 +89,8 @@ public class Player implements Serializable {
     private Integer contract5;
     private Integer birdYears;
 
-    @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
     private List<SeasonStats> seasonStats = new ArrayList<>();
+
 
 }

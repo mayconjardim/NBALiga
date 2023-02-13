@@ -90,12 +90,11 @@ public class Team implements Serializable {
     private Integer confRank;
     private String arenaName;
 
-    @OneToMany(mappedBy = "currentTeamId")
+    @OneToMany(mappedBy = "currentTeamId", fetch = FetchType.LAZY)
     private List<Player> players = new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "ownedby", referencedColumnName = "name")
-    @Fetch(FetchMode.JOIN)
     @OrderBy("year ASC, round")
     private List<DraftPicks> picks = new ArrayList<>();
 
