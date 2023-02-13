@@ -1,1 +1,5 @@
-<p>stats works!</p>
+<div class="container">
+  <ng-container *ngIf="stats!">
+    <stats-list [stats]="stats"></stats-list>
+  </ng-container>
+</div>

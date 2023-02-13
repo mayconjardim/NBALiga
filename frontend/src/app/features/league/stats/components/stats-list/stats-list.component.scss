@@ -1,0 +1,40 @@
+@import "../../../../../../assets/scss/variables.scss";
+@import "../../../../../../assets/scss/teamsColors.scss";
+
+.container {
+  width: 99%;
+  margin: 0.5rem auto;
+  overflow-y: auto;
+
+  table {
+    width: 100%;
+    border: 1px solid #ececec;
+    white-space: nowrap;
+
+    a {
+      color: #1565c0;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    th {
+      font-size: 10px;
+    }
+
+    td {
+      font-size: 10px;
+
+      img {
+        max-width: 25px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .container {
+      width: 100%;
+    }
+  }
+}

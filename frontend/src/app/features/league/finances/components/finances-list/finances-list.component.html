@@ -3,7 +3,7 @@
     <ng-container matColumnDef="team">
       <th mat-header-cell *matHeaderCellDef>TEAM</th>
       <td mat-cell *matCellDef="let team">
-        <img [src]="teamLogo + [team.name] + '.svg'" />
+        <img [src]="teamLogo + [team.name] + '.png'" />
         <a routerLink="teams/{{ team.id }}">{{ team.teamName }}</a>
       </td>
     </ng-container>

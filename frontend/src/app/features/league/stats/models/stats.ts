@@ -45,4 +45,6 @@ export interface Stats {
   drebsPg: number;
   pfouPg: number;
   ftmpg: number;
+  playerName: string;
+  playerPosition: number;
 }

@@ -1,5 +1,6 @@
 package com.nbaliga.dto;
 
+import com.nbaliga.entities.Player;
 import com.nbaliga.entities.SeasonStats;
 import com.nbaliga.entities.keys.SeasonStatsKey;
 import lombok.*;
@@ -52,7 +53,8 @@ public class SeasonStatsDTO implements Serializable {
     private Integer dq;
     private Integer doubleDoubles;
     private Integer tripleDoubles;
-
+    private String playerName;
+    private Integer playerPosition;
     public SeasonStatsDTO(SeasonStats entity) {
         this.id = entity.getId();
         this.season = entity.getSeason();
@@ -89,6 +91,8 @@ public class SeasonStatsDTO implements Serializable {
         this.dq = entity.getDq();
         this.doubleDoubles = entity.getDoubleDoubles();
         this.tripleDoubles = entity.getTripleDoubles();
+        this.playerName = entity.getPlayer().getName();
+        this.playerPosition = entity.getPlayer().getPositionNumber();
     }
 
 
@@ -135,7 +139,6 @@ public class SeasonStatsDTO implements Serializable {
     public Double getPlusMinusPg() {
         return turnovers.doubleValue() / games;
     }
-
 
 
 }
