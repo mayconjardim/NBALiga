@@ -10,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PlayoffstatsComponent } from './containers/playoffstats/playoffstats.component';
 import { PlayoffstatsListComponent } from './components/playoffstats-list/playoffstats-list.component';
 import { PlayoffsComponent } from './containers/playoffs/playoffs.component';
+import { PlayoffBracketComponent } from './components/playoff-bracket/playoff-bracket.component';
 
 export const routes: Routes = [
   { path: '', component: PlayoffsComponent },
@@ -21,6 +22,7 @@ export const routes: Routes = [
     PlayoffstatsComponent,
     PlayoffstatsListComponent,
     PlayoffsComponent,
+    PlayoffBracketComponent,
   ],
   imports: [
     CommonModule,
