@@ -1,4 +1,4 @@
-import { PlayoffStats } from './../models/playoffStats';
+import { PlayoffStats } from '../models/playoffStats';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Stats } from './../models/stats';
 import { Injectable } from '@angular/core';

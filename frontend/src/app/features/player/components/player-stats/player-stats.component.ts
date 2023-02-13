@@ -1,4 +1,4 @@
-import { PlayoffStats } from './../../../league/stats/models/playoffStats';
+import { PlayoffStats } from '../../../league/stats/models/playoffStats';
 import { Component, Input } from '@angular/core';
 import { Stats } from 'src/app/features/league/stats/models/stats';
 
