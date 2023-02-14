@@ -2,52 +2,52 @@ export const westData = [
   {
     id: '11',
     label: 'Golden State Warriors',
-    logo: 'Warriors.svg',
+    logo: 'Warriors.png',
   },
   {
     id: '12',
     label: 'Houston Rockets',
-    logo: 'Rockets.svg',
+    logo: 'Rockets.png',
   },
   {
     id: '14',
     label: 'Los Angeles Clippers',
-    logo: 'Clippers.svg',
+    logo: 'Clippers.png',
   },
   {
     id: '15',
     label: 'Los Angeles Lakers',
-    logo: 'Lakers.svg',
+    logo: 'Lakers.png',
   },
 
   {
     id: '16',
     label: 'Memphis Grizzlies',
-    logo: 'Grizzlies.svg',
+    logo: 'Grizzlies.png',
   },
   {
     id: '19',
     label: 'Minnesota Timberwolves',
-    logo: 'Timberwolves.svg',
+    logo: 'Timberwolves.png',
   },
   {
     id: '23',
     label: 'Portland TrailBlazers',
-    logo: 'TrailBlazers.svg',
+    logo: 'TrailBlazers.png',
   },
   {
     id: '24',
     label: 'San Antonio Spurs',
-    logo: 'Spurs.svg',
+    logo: 'Spurs.png',
   },
   {
     id: '27',
     label: 'Seattle SuperSonics',
-    logo: 'SuperSonics.svg',
+    logo: 'SuperSonics.png',
   },
   {
     id: '26',
     label: 'Utah Jazz',
-    logo: 'Jazz.svg',
+    logo: 'Jazz.png',
   },
 ];

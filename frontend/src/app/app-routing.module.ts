@@ -53,6 +53,14 @@ const routes: Routes = [
       ),
   },
 
+  {
+    path: 'offseason',
+    loadChildren: () =>
+      import('./features/league/offseason/offseason.module').then(
+        (m) => m.OffseasonModule
+      ),
+  },
+
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' },
 ];

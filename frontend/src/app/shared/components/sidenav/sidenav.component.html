@@ -81,8 +81,8 @@
           *ngFor="let team of eastNav"
           href="teams/{{ team.id }}"
         >
-          <mat-icon
-            ><img [src]="imgLogo + [team.logo]" alt="team logo"
+          <mat-icon>
+            <img [src]="imgLogo + [team.logo]" alt="team logo"
           /></mat-icon>
           <a class="team-link"> {{ team.label }}</a>
         </a>
@@ -94,8 +94,8 @@
           *ngFor="let team of westNav"
           href="teams/{{ team.id }}"
         >
-          <mat-icon
-            ><img [src]="imgLogo + [team.logo]" alt="team logo"
+          <mat-icon>
+            <img [src]="imgLogo + [team.logo]" alt="team logo"
           /></mat-icon>
           <a class="team-link">{{ team.label }}</a>
         </a>
@@ -111,10 +111,12 @@
       </mat-menu>
 
       <mat-menu #pos="matMenu">
-        <a mat-menu-item [ngStyle]="setMyStyles()" routerLink="offseason">
+        <a mat-menu-item [ngStyle]="setMyStyles()">
           <mat-icon>elevator</mat-icon>Draft Classe
         </a>
-        <a mat-menu-item><mat-icon>dvr</mat-icon>Draft Loteria</a>
+        <a mat-menu-item routerLink="offseason/lottery"
+          ><mat-icon>dvr</mat-icon>Draft Loteria</a
+        >
       </mat-menu>
     </mat-nav-list>
   </mat-drawer>
