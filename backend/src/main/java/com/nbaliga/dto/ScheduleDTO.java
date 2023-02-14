@@ -1,11 +1,13 @@
 package com.nbaliga.dto;
 
+import com.nbaliga.entities.PlayerGameStats;
 import com.nbaliga.entities.Schedule;
 import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,6 +27,8 @@ public class ScheduleDTO implements Serializable {
     private Integer playerOfGameId;
     private String playerOfGame;
 
+    private Set<PlayerGameStatsDTO> gameStats;
+
     public ScheduleDTO(Schedule entity) {
         super();
         day = entity.getDay();
@@ -39,6 +43,9 @@ public class ScheduleDTO implements Serializable {
         playerOfGame = entity.getPlayerOfGame();
     }
 
-
+    public ScheduleDTO(Schedule entity, Set<PlayerGameStats> playerGameStats) {
+        this(entity);
+        playerGameStats.forEach(gs -> this.gameStats.add(new PlayerGameStatsDTO(gs)));
+    }
 
 }

@@ -4,11 +4,10 @@ import com.nbaliga.entities.keys.PlayerGameStatsKey;
 import com.nbaliga.entities.keys.SeasonStatsKey;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -25,7 +24,6 @@ public class PlayerGameStats implements Serializable {
     private Integer seasonDay;
     private Integer league;
     private String team;
-
     @Id
     private Integer opponent;
     private Integer minutes;
@@ -33,8 +31,10 @@ public class PlayerGameStats implements Serializable {
     private Integer fga;
     private Integer ftm;
     private Integer fta;
+
     @Column(name = "3PM")
     private Integer threePm;
+
     @Column(name = "3PA")
     private Integer threePa;
     private Integer offensiveRebounds;
@@ -49,5 +49,7 @@ public class PlayerGameStats implements Serializable {
     private Integer position;
     private Integer starter;
 
+    @ManyToMany(mappedBy = "playerGameStats")
+    private Set<Schedule> schedule;
 
 }

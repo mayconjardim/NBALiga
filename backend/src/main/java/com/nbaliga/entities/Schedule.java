@@ -3,10 +3,9 @@ package com.nbaliga.entities;
 import com.nbaliga.entities.keys.ScheduleKey;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,5 +30,8 @@ public class Schedule implements Serializable {
     private Integer playerOfGameId;
     private String playerOfGame;
 
+    @ManyToMany
+    @JoinColumn(name = "day", referencedColumnName = "day")
+    private Set<PlayerGameStats> playerGameStats;
 
 }

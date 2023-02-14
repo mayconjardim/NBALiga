@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ScheduleRepository extends JpaRepository<Schedule, String> {
@@ -19,6 +20,8 @@ public interface ScheduleRepository extends JpaRepository<Schedule, String> {
     @Query("SELECT DISTINCT obj FROM Schedule obj WHERE obj.home = :team OR obj.away = :team"
             + "  ORDER BY obj.day ASC")
     List<Schedule> findSchedulesByTeam(String team);
+
+    Optional<Schedule> findByBoxName(String boxName);
 
 
 }
