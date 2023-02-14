@@ -37,7 +37,6 @@ public class ScheduleDTO implements Serializable {
         boxName = entity.getBoxName();
         playerOfGameId = entity.getPlayerOfGameId();
         playerOfGame = entity.getPlayerOfGame();
-
     }
 
 
