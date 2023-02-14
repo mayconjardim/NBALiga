@@ -28,16 +28,16 @@ public class ScheduleDTO implements Serializable {
 
     public ScheduleDTO(Schedule entity) {
         super();
-        this.day = entity.getDay();
-        this.home = entity.getHome();
-        this.away = entity.getAway();
-        this.league = entity.getLeague();
-        this.type = entity.getType();
-        this.homeScore = entity.getHomeScore();
-        this.awayScore = entity.getAwayScore();
-        this.boxName = entity.getBoxName();
-        this.playerOfGameId = entity.getPlayerOfGameId();
-        this.playerOfGame = entity.getPlayerOfGame();
+        day = entity.getDay();
+        home = entity.getHome();
+        away = entity.getAway();
+        league = entity.getLeague();
+        type = entity.getType();
+        homeScore = entity.getHomeScore();
+        awayScore = entity.getAwayScore();
+        boxName = entity.getBoxName();
+        playerOfGameId = entity.getPlayerOfGameId();
+        playerOfGame = entity.getPlayerOfGame();
 
     }
 

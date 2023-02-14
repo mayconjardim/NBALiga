@@ -22,11 +22,11 @@ public class ChampsDTO implements Serializable {
     private Integer loserWins;
 
     public ChampsDTO(Champs entity) {
-        this.season = entity.getSeason();
-        this.league = entity.getLeague();
-        this.champ = entity.getChamp();
-        this.loser = entity.getLoser();
-        this.champWins = entity.getChampWins();
-        this.loserWins = entity.getLoserWins();
+        season = entity.getSeason();
+        league = entity.getLeague();
+        champ = entity.getChamp();
+        loser = entity.getLoser();
+        champWins = entity.getChampWins();
+        loserWins = entity.getLoserWins();
     }
 }

@@ -24,13 +24,13 @@ public class PlayoffsDTO implements Serializable {
     private Integer wins2;
 
     public PlayoffsDTO(Playoffs entity) {
-        this.seriesId = entity.getSeriesId();
-        this.league = entity.getLeague();
-        this.complete = entity.getComplete();
-        this.team1 = entity.getTeam1();
-        this.team2 = entity.getTeam2();
-        this.wins1 = entity.getWins1();
-        this.wins2 = entity.getWins2();
+        seriesId = entity.getSeriesId();
+        league = entity.getLeague();
+        complete = entity.getComplete();
+        team1 = entity.getTeam1();
+        team2 = entity.getTeam2();
+        wins1 = entity.getWins1();
+        wins2 = entity.getWins2();
     }
 
 }
