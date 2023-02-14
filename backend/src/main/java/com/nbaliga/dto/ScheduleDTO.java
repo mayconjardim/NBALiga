@@ -25,7 +25,6 @@ public class ScheduleDTO implements Serializable {
     private Integer playerOfGameId;
     private String playerOfGame;
 
-
     public ScheduleDTO(Schedule entity) {
         super();
         day = entity.getDay();
@@ -40,6 +39,7 @@ public class ScheduleDTO implements Serializable {
         playerOfGame = entity.getPlayerOfGame();
 
     }
+
 
 
 }
