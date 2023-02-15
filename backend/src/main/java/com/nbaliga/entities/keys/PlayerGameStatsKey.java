@@ -2,6 +2,7 @@ package com.nbaliga.entities.keys;
 
 import lombok.*;
 
+import javax.persistence.Id;
 import java.io.Serializable;
 
 @NoArgsConstructor
@@ -13,6 +14,7 @@ public class PlayerGameStatsKey implements Serializable {
 
     private Long id;
     private Integer seasonDay;
-    private Integer opponent;
+    private String team;
+    private String opponent;
 
 }

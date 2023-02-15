@@ -21,7 +21,7 @@ public interface ScheduleRepository extends JpaRepository<Schedule, String> {
             + "  ORDER BY obj.day ASC")
     List<Schedule> findSchedulesByTeam(String team);
 
-    Optional<Schedule> findByBoxName(String boxName);
 
+    Optional<Schedule> findByBoxName(String boxName);
 
 }

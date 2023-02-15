@@ -18,7 +18,7 @@ public class PlayerGameStatsDTO implements Serializable {
     private Integer seasonDay;
     private Integer league;
     private String team;
-    private Integer opponent;
+    private String opponent;
     private Integer minutes;
     private Integer fgm;
     private Integer fga;
@@ -63,6 +63,7 @@ public class PlayerGameStatsDTO implements Serializable {
         position = entity.getPosition();
         starter = entity.getStarter();
     }
+
 
 
 }

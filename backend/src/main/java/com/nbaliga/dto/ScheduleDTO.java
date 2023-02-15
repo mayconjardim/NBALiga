@@ -7,6 +7,8 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -27,7 +29,7 @@ public class ScheduleDTO implements Serializable {
     private Integer playerOfGameId;
     private String playerOfGame;
 
-    private Set<PlayerGameStatsDTO> gameStats;
+    List<PlayerGameStatsDTO> playerGameStats = new ArrayList<>();
 
     public ScheduleDTO(Schedule entity) {
         super();
@@ -43,9 +45,9 @@ public class ScheduleDTO implements Serializable {
         playerOfGame = entity.getPlayerOfGame();
     }
 
-    public ScheduleDTO(Schedule entity, Set<PlayerGameStats> playerGameStats) {
+    public ScheduleDTO(Schedule entity, List<PlayerGameStats> playerGameStats) {
         this(entity);
-        playerGameStats.forEach(gs -> this.gameStats.add(new PlayerGameStatsDTO(gs)));
+        playerGameStats.forEach(gs -> this.playerGameStats.add(new PlayerGameStatsDTO(gs)));
     }
 
 }

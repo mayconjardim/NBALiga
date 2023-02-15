@@ -1,15 +1,10 @@
 package com.nbaliga.entities;
 
-import com.nbaliga.dto.SeasonStatsDTO;
 import com.nbaliga.entities.keys.SeasonStatsKey;
 import lombok.*;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor

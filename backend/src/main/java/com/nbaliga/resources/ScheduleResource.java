@@ -1,6 +1,7 @@
 package com.nbaliga.resources;
 
 
+import com.nbaliga.dto.PlayerDTO;
 import com.nbaliga.dto.ScheduleDTO;
 import com.nbaliga.services.ScheduleService;
 import org.springframework.data.domain.Page;
@@ -30,6 +31,12 @@ public class ScheduleResource {
     public ResponseEntity<List<ScheduleDTO>> findSchedulesByTeam(@PathVariable String team) {
         List<ScheduleDTO> schedule = scheduleService.findSchedulesByTeam(team);
         return ResponseEntity.ok().body(schedule);
+    }
+
+    @GetMapping(value = "/boxscore/{boxName}")
+    public ResponseEntity<ScheduleDTO> findByBoxName(@PathVariable String boxName) throws Exception {
+        ScheduleDTO dto = scheduleService.findByBoxName(boxName);
+        return ResponseEntity.ok().body(dto);
     }
 
 }

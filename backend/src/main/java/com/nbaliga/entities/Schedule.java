@@ -2,10 +2,13 @@ package com.nbaliga.entities;
 
 import com.nbaliga.entities.keys.ScheduleKey;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,8 +33,10 @@ public class Schedule implements Serializable {
     private Integer playerOfGameId;
     private String playerOfGame;
 
-    @ManyToMany
-    @JoinColumn(name = "day", referencedColumnName = "day")
-    private Set<PlayerGameStats> playerGameStats;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "seasonDay")
+    @JoinColumn(name = "team")
+    @Fetch(FetchMode.SELECT)
+    private List<PlayerGameStats> playerGameStats = new ArrayList<>();
 
 }
