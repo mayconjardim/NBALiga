@@ -39,7 +39,9 @@
         }"
       >
         {{ getWinner(game.away, game.home, game.awayScore, game.homeScore) }}
-        <a routerLink="#"> {{ game.awayScore }} - {{ game.homeScore }}</a>
+        <a routerLink="/boxscore/{{ game.boxName }}">
+          {{ game.awayScore }} - {{ game.homeScore }}</a
+        >
       </td>
     </ng-container>
 
