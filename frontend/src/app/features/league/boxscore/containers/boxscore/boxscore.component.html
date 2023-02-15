@@ -1,5 +1,11 @@
 <div class="container">
   <ng-container *ngIf="game!">
-    <boxscore-table [game]="game"></boxscore-table>
+    <boxscore-table
+      [game]="game"
+      [homeStarter]="homeStarter"
+      [homeBench]="homeBench"
+      [awayStarter]="awayStarter"
+      [awayBench]="awayBench"
+    ></boxscore-table>
   </ng-container>
 </div>

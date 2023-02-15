@@ -22,4 +22,5 @@ export interface PlayerGameStats {
   plusMinus: number;
   position: number;
   starter: number;
+  playerName: string;
 }
