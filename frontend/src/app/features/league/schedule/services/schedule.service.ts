@@ -25,6 +25,12 @@ export class ScheduleService {
     return this.http.get<Schedule[]>(`${API_CONFIG.baseUrl}/schedules/${team}`);
   }
 
+  readOneBoxScore(boxscore: any) {
+    return this.http.get<Schedule>(
+      `${API_CONFIG.baseUrl}/schedules/boxscore/${boxscore}`
+    );
+  }
+
   private handleError(err: HttpErrorResponse) {
     if (err.error instanceof ErrorEvent) {
       console.warn('Cliente', err.message);
