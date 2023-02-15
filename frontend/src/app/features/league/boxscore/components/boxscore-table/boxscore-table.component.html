@@ -1,1 +1,54 @@
-<p>boxscore-table works!</p>
+<div class="container">
+  <div class="container-header {{ game.home }}">
+    <div class="away">
+      <span>{{ game.away }}</span>
+      <img [src]="imgLogo + game.away + '.svg'" />
+      <span>{{ game.awayScore }}</span>
+    </div>
+    <div class="score">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>T</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>{{ game.awayQ1 }}</td>
+            <td>{{ game.awayQ2 }}</td>
+            <td>{{ game.awayQ3 }}</td>
+            <td>{{ game.awayQ4 }}</td>
+            <td>{{ game.awayScore }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>{{ game.homeQ1 }}</td>
+            <td>{{ game.homeQ2 }}</td>
+            <td>{{ game.homeQ3 }}</td>
+            <td>{{ game.homeQ4 }}</td>
+            <td>{{ game.homeScore }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="home">
+      <span>{{ game.homeScore }}</span>
+      <img [src]="imgLogo + game.home + '.svg'" />
+      <span>{{ game.home }}</span>
+    </div>
+  </div>
+
+  <div class="container-body">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+      <mat-tab label="Boxscore"> </mat-tab>
+
+      <mat-tab label="Play By Play"></mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
