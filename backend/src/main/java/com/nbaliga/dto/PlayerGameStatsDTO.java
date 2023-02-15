@@ -38,6 +38,9 @@ public class PlayerGameStatsDTO implements Serializable {
     private Integer position;
     private Integer starter;
 
+    private String playerFirstName;
+    private String playerLastName;
+
     public PlayerGameStatsDTO(PlayerGameStats entity) {
         id = entity.getId();
         seasonDay = entity.getSeasonDay();
@@ -62,8 +65,16 @@ public class PlayerGameStatsDTO implements Serializable {
         plusMinus = entity.getPlusMinus();
         position = entity.getPosition();
         starter = entity.getStarter();
+        playerFirstName = entity.getPlayer().getFirstName();
+        playerLastName = entity.getPlayer().getLastName();
     }
 
-
-
+    public String getPlayerName() {
+        String[] nameParts = playerFirstName.split(" ");
+        StringBuilder abbreviatedName = new StringBuilder();
+        for (String part : nameParts) {
+            abbreviatedName.append(part.charAt(0)).append(". ");
+        }
+        return abbreviatedName.toString().trim() + " " +  playerLastName;
+    }
 }

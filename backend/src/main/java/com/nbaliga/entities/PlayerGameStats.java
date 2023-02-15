@@ -3,10 +3,7 @@ package com.nbaliga.entities;
 import com.nbaliga.entities.keys.PlayerGameStatsKey;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @NoArgsConstructor
@@ -46,4 +43,9 @@ public class PlayerGameStats implements Serializable {
     private Integer plusMinus;
     private Integer position;
     private Integer starter;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id", insertable = false, updatable = false)
+    private Player player;
+
 }
