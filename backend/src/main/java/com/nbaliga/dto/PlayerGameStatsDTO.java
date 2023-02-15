@@ -18,7 +18,7 @@ public class PlayerGameStatsDTO implements Serializable {
     private Integer seasonDay;
     private Integer league;
     private String team;
-    private String opponent;
+    private Integer opponent;
     private Integer minutes;
     private Integer fgm;
     private Integer fga;

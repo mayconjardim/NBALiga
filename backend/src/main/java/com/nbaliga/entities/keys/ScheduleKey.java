@@ -15,5 +15,5 @@ public class ScheduleKey implements Serializable {
     private Integer day;
     private String home;
 
-
+    private String away;
 }

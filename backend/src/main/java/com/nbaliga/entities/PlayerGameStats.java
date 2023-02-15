@@ -25,7 +25,6 @@ public class PlayerGameStats implements Serializable {
     private Integer league;
     @Id
     private String team;
-    @Id
     private Integer opponent;
     private Integer minutes;
     private Integer fgm;
@@ -47,6 +46,4 @@ public class PlayerGameStats implements Serializable {
     private Integer plusMinus;
     private Integer position;
     private Integer starter;
-
-
 }
