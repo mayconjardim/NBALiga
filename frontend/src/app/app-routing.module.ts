@@ -61,6 +61,14 @@ const routes: Routes = [
       ),
   },
 
+  {
+    path: 'boxscore/:id',
+    loadChildren: () =>
+      import('./features/league/boxscore/boxscore.module').then(
+        (m) => m.BoxscoreModule
+      ),
+  },
+
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' },
 ];
