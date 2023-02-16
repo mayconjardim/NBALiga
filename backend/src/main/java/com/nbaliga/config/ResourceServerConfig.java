@@ -22,14 +22,14 @@ import java.util.Arrays;
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
+    @Autowired
+    private JwtTokenStore tokenStore;
 
-    private final JwtTokenStore tokenStore;
+    private static final String[] PUBLIC = { "/oauth/token", "/champs/**"
+            , "/picks/**", "/awards/**", "/playergamestats/**", "/players/**", "/playoffs/**", "/playoffstats/**"
+            , "/schedules/**", "/seasoninfo/**", "/stats/**", "/standings/**", "/teams/**", "/users"
+    };
 
-    private static final String[] PUBLIC = { "/oauth/token", "/h2-console/**" };
-
-    public ResourceServerConfig(JwtTokenStore tokenStore) {
-        this.tokenStore = tokenStore;
-    }
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {

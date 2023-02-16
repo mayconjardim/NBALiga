@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(value = "*")
+
 @RestController
 @RequestMapping(value = "/players")
 public class PlayerResource {

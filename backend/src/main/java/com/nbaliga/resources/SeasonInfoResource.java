@@ -3,13 +3,12 @@ package com.nbaliga.resources;
 import com.nbaliga.dto.SeasonInfoDTO;
 import com.nbaliga.services.SeasonInfoService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-@CrossOrigin(value = "*")
+
 @RestController
 @RequestMapping(value = "/seasoninfo")
 public class SeasonInfoResource {
