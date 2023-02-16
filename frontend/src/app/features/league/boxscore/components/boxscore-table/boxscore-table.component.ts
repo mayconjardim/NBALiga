@@ -31,4 +31,19 @@ export class BoxscoreTableComponent {
   ];
 
   imgLogo = 'assets/images/logos/';
+
+  getPosition(position: number) {
+    switch (position) {
+      case 5:
+        return 'PG';
+      case 4:
+        return 'SG';
+      case 3:
+        return 'SF';
+      case 2:
+        return 'PF';
+      default:
+        return 'C';
+    }
+  }
 }
