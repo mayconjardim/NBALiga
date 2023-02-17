@@ -1,6 +1,8 @@
 package com.nbaliga.services;
 
+import com.nbaliga.dto.RoleDTO;
 import com.nbaliga.dto.UserDTO;
+import com.nbaliga.entities.Role;
 import com.nbaliga.entities.User;
 import com.nbaliga.repositories.RoleRepository;
 import com.nbaliga.repositories.UserRepository;
@@ -12,25 +14,58 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 public class UserService implements UserDetailsService {
 
+    private final BCryptPasswordEncoder passwordEncoder;
+
     private final UserRepository userRepository;
 
     private final RoleRepository roleRepository;
 
-    public UserService( UserRepository userRepository, RoleRepository roleRepository) {
+    public UserService(UserRepository userRepository, RoleRepository roleRepository, BCryptPasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Transactional(readOnly = true)
     public List<UserDTO> findAll(){
         List<User> list = userRepository.findAll();
         return list.stream().map(x-> new UserDTO(x)).collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public UserDTO findById(Long id) {
+        Optional<User> obj = userRepository.findById(id);
+        User entity = obj.orElseThrow(()-> new EntityNotFoundException("Entity not found"));
+        return new UserDTO(entity);
+    }
+
+    @Transactional
+    public UserDTO insert(UserDTO dto) {
+        User entity = new User();
+        copyDtoToEntity(dto, entity);
+        entity.setPassword(passwordEncoder.encode(dto.getPassword()));
+        entity = userRepository.save(entity);
+        return new UserDTO(entity);
+    }
+
+    private void copyDtoToEntity(UserDTO dto, User entity) {
+
+        entity.setUser(dto.getUser());
+        entity.setTeam(dto.getTeam());
+
+        entity.getRoles().clear();
+        for (RoleDTO roleDTO: dto.getRoles()) {
+            Role role = roleRepository.getOne(roleDTO.getId());
+            entity.getRoles().add(role);
+        }
     }
 
     @Override

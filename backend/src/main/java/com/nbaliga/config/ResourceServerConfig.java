@@ -1,12 +1,12 @@
 package com.nbaliga.config;
 
-import org.hibernate.cfg.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
@@ -18,8 +18,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 @Configuration
 @EnableResourceServer
@@ -31,11 +29,11 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Value("${cors.origins}")
     private String corsOrigins;
 
-    private static final String[] PUBLIC = { "/oauth/token", "/champs/**"
-            , "/picks/**", "/awards/**", "/playergamestats/**", "/players/**", "/playoffs/**", "/playoffstats/**"
-            , "/schedules/**", "/seasoninfo/**", "/stats/**", "/standings/**", "/teams/**", "/users"
-    };
+    private static final String[] PUBLIC = {"/oauth/token", "/champs/**", "/picks/**", "/awards/**",
+            "/playergamestats/**", "/players/**", "/playoffs/**", "/playoffstats/**", "/schedules/**",
+            "/seasoninfo/**", "/stats/**", "/standings/**", "/teams/**"};
 
+    private static final String[] ADMIN = {"/users/**"};
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
@@ -45,9 +43,10 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
 
-
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         http.authorizeRequests()
                 .antMatchers(PUBLIC).permitAll()
+                .antMatchers(ADMIN).hasRole("ADMIN")
                 .anyRequest().authenticated();
 
         http.cors().configurationSource(corsConfigurationSource());
@@ -71,8 +70,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Bean
     FilterRegistrationBean<CorsFilter> corsFilter() {
-        FilterRegistrationBean<CorsFilter> bean
-                = new FilterRegistrationBean<>(new CorsFilter(corsConfigurationSource()));
+        FilterRegistrationBean<CorsFilter> bean = new FilterRegistrationBean<>(new CorsFilter(corsConfigurationSource()));
         bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
         return bean;
     }
