@@ -1,3 +1,3 @@
 export const API_CONFIG = {
-  baseUrl: 'https://112d-45-170-113-151.sa.ngrok.io',
+  baseUrl: 'http://192.168.1.68:8080',
 };

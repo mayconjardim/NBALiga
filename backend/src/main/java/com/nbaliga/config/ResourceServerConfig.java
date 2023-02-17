@@ -2,6 +2,7 @@ package com.nbaliga.config;
 
 import org.hibernate.cfg.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,6 +27,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Autowired
     private JwtTokenStore tokenStore;
+
+    @Value("${cors.origins}")
+    private String corsOrigins;
 
     private static final String[] PUBLIC = { "/oauth/token", "/champs/**"
             , "/picks/**", "/awards/**", "/playergamestats/**", "/players/**", "/playoffs/**", "/playoffstats/**"
@@ -52,8 +56,10 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
 
+        String[] origins = corsOrigins.split(",");
+
         CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.setAllowedOrigins(List.of("http://localhost:4200","https://771f-45-170-113-151.sa.ngrok.io"));
+        corsConfig.setAllowedOriginPatterns(Arrays.asList(origins));
         corsConfig.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "DELETE", "PATCH"));
         corsConfig.setAllowCredentials(true);
         corsConfig.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "nbaliga": {
+      "hosting": {
+        "frontend": [
+          "nbaliga"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "nbaliga"
+  }
+}

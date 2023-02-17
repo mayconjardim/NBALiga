@@ -3,10 +3,7 @@ package com.nbaliga.entities;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -91,7 +88,7 @@ public class Player implements Serializable {
     private Integer contract5;
     private Integer birdYears;
 
-    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<SeasonStats> seasonStats = new ArrayList<>();
 
 
