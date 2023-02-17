@@ -4,6 +4,7 @@ import com.nbaliga.dto.TeamDTO;
 import com.nbaliga.dto.TeamRankingsDTO;
 import com.nbaliga.entities.Team;
 import com.nbaliga.repositories.TeamRepository;
+import com.nbaliga.services.exceptions.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,9 +22,9 @@ public class TeamService {
     }
 
     @Transactional(readOnly = true)
-    public TeamDTO findById(Long id) throws Exception {
+    public TeamDTO findById(Long id) {
         Optional<Team> obj = teamRepository.findById(id);
-        Team entity = obj.orElseThrow(() -> new Exception("Time não encontrado"));
+        Team entity = obj.orElseThrow(() -> new ResourceNotFoundException("Time não encontrado"));
         return new TeamDTO(entity, entity.getPlayers(), entity.getPicks());
     }
 

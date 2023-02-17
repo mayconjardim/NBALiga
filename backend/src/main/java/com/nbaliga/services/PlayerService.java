@@ -3,6 +3,7 @@ package com.nbaliga.services;
 import com.nbaliga.dto.PlayerDTO;
 import com.nbaliga.entities.Player;
 import com.nbaliga.repositories.PlayerRepository;
+import com.nbaliga.services.exceptions.ResourceNotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -22,9 +23,9 @@ public class PlayerService {
     }
 
     @Transactional(readOnly = true)
-    public PlayerDTO findById(Long id) throws Exception {
+    public PlayerDTO findById(Long id) {
         Optional<Player> obj = playerRepository.findById(id);
-        Player entity = obj.orElseThrow(() -> new Exception("Jogador não encontrado!"));
+        Player entity = obj.orElseThrow(() -> new ResourceNotFoundException("Jogador não encontrado!"));
         return new PlayerDTO(entity);
     }
 

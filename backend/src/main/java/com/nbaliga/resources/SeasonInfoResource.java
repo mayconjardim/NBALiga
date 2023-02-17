@@ -25,7 +25,4 @@ public class SeasonInfoResource {
         return ResponseEntity.ok().body(info);
     }
 
-
-
-
 }

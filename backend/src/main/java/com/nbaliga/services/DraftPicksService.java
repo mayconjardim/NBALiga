@@ -3,6 +3,7 @@ package com.nbaliga.services;
 import com.nbaliga.dto.DraftPicksDTO;
 import com.nbaliga.entities.DraftPicks;
 import com.nbaliga.repositories.DraftPicksRepository;
+import com.nbaliga.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,7 +26,7 @@ public class DraftPicksService {
         Optional<DraftPicks> obj = draftPicksRepository.findById(id);
         DraftPicks entity = null;
         try {
-            entity = obj.orElseThrow( () -> new Exception("Time não encontrado!") );
+            entity = obj.orElseThrow( () -> new ResourceNotFoundException("Time não encontrado!") );
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

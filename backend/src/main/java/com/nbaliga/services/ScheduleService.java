@@ -3,6 +3,7 @@ package com.nbaliga.services;
 import com.nbaliga.dto.ScheduleDTO;
 import com.nbaliga.entities.Schedule;
 import com.nbaliga.repositories.ScheduleRepository;
+import com.nbaliga.services.exceptions.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,9 +33,9 @@ public class ScheduleService {
     }
 
     @Transactional(readOnly = true)
-    public ScheduleDTO findByBoxName(String boxName) throws Exception {
+    public ScheduleDTO findByBoxName(String boxName) {
         Optional<Schedule> obj = scheduleRepository.findByBoxName(boxName);
-        Schedule entity = obj.orElseThrow(() -> new Exception("Jogador não encontrado!"));
+        Schedule entity = obj.orElseThrow(() -> new ResourceNotFoundException("Jogador não encontrado!"));
         return new ScheduleDTO(entity);
     }
 

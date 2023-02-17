@@ -6,6 +6,7 @@ import com.nbaliga.entities.Role;
 import com.nbaliga.entities.User;
 import com.nbaliga.repositories.RoleRepository;
 import com.nbaliga.repositories.UserRepository;
+import com.nbaliga.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -43,7 +44,7 @@ public class UserService implements UserDetailsService {
     @Transactional(readOnly = true)
     public UserDTO findById(Long id) {
         Optional<User> obj = userRepository.findById(id);
-        User entity = obj.orElseThrow(()-> new EntityNotFoundException("Entity not found"));
+        User entity = obj.orElseThrow(()-> new ResourceNotFoundException("Entity not found"));
         return new UserDTO(entity);
     }
 
