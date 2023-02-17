@@ -6,8 +6,11 @@ import com.nbaliga.entities.Role;
 import com.nbaliga.entities.User;
 import com.nbaliga.repositories.RoleRepository;
 import com.nbaliga.repositories.UserRepository;
+import com.nbaliga.services.exceptions.DatabaseException;
 import com.nbaliga.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -56,6 +59,32 @@ public class UserService implements UserDetailsService {
         entity = userRepository.save(entity);
         return new UserDTO(entity);
     }
+
+
+    @Transactional
+    public UserDTO update(Long id, UserDTO dto) {
+
+        try {
+            User entity = userRepository.getReferenceById(id);
+            copyDtoToEntity(dto, entity);
+            entity = userRepository.save(entity);
+            return new UserDTO(entity);
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException("Id não encontrado " + id);
+        }
+    }
+
+
+    public void delete(Long id) {
+        try {
+            userRepository.deleteById(id);
+        } catch (EmptyResultDataAccessException e) {
+            throw new ResourceNotFoundException("id não existe " + id);
+        } catch (DataIntegrityViolationException e) {
+            throw new DatabaseException("Violação de integridade no banco");
+        }
+    }
+
 
     private void copyDtoToEntity(UserDTO dto, User entity) {
 
