@@ -76,6 +76,14 @@ const routes: Routes = [
       import('./private/login/login.module').then((m) => m.LoginModule),
   },
 
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./private/dashboard/dashboard.module').then(
+        (m) => m.DashboardModule
+      ),
+  },
+
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' },
 ];

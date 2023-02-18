@@ -50,7 +50,7 @@ export class LoginComponent {
       response['Team']
     );
     this.toast.success('Logado com sucesso!', 'Login');
-    this.router.navigate(['']);
+    this.router.navigate(['dashboard']);
   }
 
   handleFailedLogin() {
