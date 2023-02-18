@@ -1,3 +1,4 @@
+import { LoginComponent } from './private/login/components/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -67,6 +68,12 @@ const routes: Routes = [
       import('./features/league/boxscore/boxscore.module').then(
         (m) => m.BoxscoreModule
       ),
+  },
+
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./private/login/login.module').then((m) => m.LoginModule),
   },
 
   { path: '', pathMatch: 'full', redirectTo: 'home' },

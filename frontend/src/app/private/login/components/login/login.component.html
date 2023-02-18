@@ -1,1 +1,40 @@
-<p>login works!</p>
+<div class="container">
+  <mat-card>
+    <mat-card-content>
+      <h1>NBALIGA</h1>
+
+      <div class="full">
+        <mat-form-field>
+          <input
+            [formControl]="user"
+            [(ngModel)]="creds.user"
+            required
+            name="user"
+            matInput
+            placeholder="User"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="full">
+        <mat-form-field>
+          <input
+            [formControl]="password"
+            [(ngModel)]="creds.password"
+            required
+            name="password"
+            matInput
+            type="password"
+            placeholder="Password"
+          />
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button [disabled]="!validForm()" mat-raised-button color="primary">
+        Login
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
