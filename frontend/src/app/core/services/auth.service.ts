@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   httpOptions = {
     headers: new HttpHeaders({
-      Authorization: 'Basic bmJhbGlnYTpuYmFsaWdh',
+      Authorization: API_CONFIG.Token,
       Accept: '*/*',
     }),
   };
@@ -39,5 +39,9 @@ export class AuthService {
     localStorage.setItem('userName', User);
     localStorage.setItem('userId', UserId);
     localStorage.setItem('team', Team);
+  }
+
+  logout() {
+    localStorage.clear();
   }
 }

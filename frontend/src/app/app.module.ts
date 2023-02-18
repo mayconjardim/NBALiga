@@ -7,9 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
 import { ToastrModule } from 'ngx-toastr';
+import { DashboardComponent } from './private/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DashboardComponent],
   providers: [],
   bootstrap: [AppComponent],
   imports: [
