@@ -8,7 +8,6 @@ import com.nbaliga.repositories.RoleRepository;
 import com.nbaliga.repositories.UserRepository;
 import com.nbaliga.services.exceptions.DatabaseException;
 import com.nbaliga.services.exceptions.ResourceNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -79,7 +78,7 @@ public class UserService implements UserDetailsService {
         try {
             userRepository.deleteById(id);
         } catch (EmptyResultDataAccessException e) {
-            throw new ResourceNotFoundException("id não existe " + id);
+            throw new ResourceNotFoundException("Id não existe " + id);
         } catch (DataIntegrityViolationException e) {
             throw new DatabaseException("Violação de integridade no banco");
         }
