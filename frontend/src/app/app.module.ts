@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,11 @@ import { SidenavComponent } from './shared/components/sidenav/sidenav.component'
     HttpClientModule,
     BrowserAnimationsModule,
     SidenavComponent,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      closeButton: true,
+      progressBar: true,
+    }),
   ],
 })
 export class AppModule {}

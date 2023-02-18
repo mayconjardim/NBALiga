@@ -32,7 +32,12 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <button [disabled]="!validForm()" mat-raised-button color="primary">
+      <button
+        (click)="login()"
+        [disabled]="!validForm()"
+        mat-raised-button
+        color="primary"
+      >
         Login
       </button>
     </mat-card-actions>
