@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { API_CONFIG } from 'src/app/config/api.config';
+import { API_CONFIG } from 'src/app/core/config/api.config';
 
 import { PlayerGameStats } from './../models/playerGameStats';
 

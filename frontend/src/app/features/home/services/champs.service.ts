@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, of, retry, tap, throwError } from 'rxjs';
 
 import { Champs } from '../models/champs';
-import { API_CONFIG } from './../../../config/api.config';
+import { API_CONFIG } from '../../../core/config/api.config';
 
 @Injectable({
   providedIn: 'root',

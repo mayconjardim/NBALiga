@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { DraftPicks } from './../models/picks';
 import { Injectable } from '@angular/core';
 import { catchError, of, retry, tap, throwError } from 'rxjs';
-import { API_CONFIG } from 'src/app/config/api.config';
+import { API_CONFIG } from 'src/app/core/config/api.config';
 
 @Injectable({
   providedIn: 'root',

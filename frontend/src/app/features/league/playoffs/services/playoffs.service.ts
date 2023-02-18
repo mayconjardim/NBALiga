@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PlayoffStats } from '../models/playoffstats';
 import { catchError, of, retry, tap, throwError } from 'rxjs';
-import { API_CONFIG } from 'src/app/config/api.config';
+import { API_CONFIG } from 'src/app/core/config/api.config';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Playoffs } from '../models/playoffs';
 

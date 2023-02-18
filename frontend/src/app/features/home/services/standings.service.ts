@@ -1,4 +1,4 @@
-import { API_CONFIG } from './../../../config/api.config';
+import { API_CONFIG } from '../../../core/config/api.config';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Standings } from './../models/standings';
 import { Injectable } from '@angular/core';
