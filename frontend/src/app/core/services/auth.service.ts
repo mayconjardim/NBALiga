@@ -2,11 +2,14 @@ import { API_CONFIG } from 'src/app/core/config/api.config';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Creds } from './../../private/login/models/creds';
 import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  jwtService: JwtHelperService = new JwtHelperService();
+
   httpOptions = {
     headers: new HttpHeaders({
       Authorization: API_CONFIG.Token,
@@ -39,6 +42,14 @@ export class AuthService {
     localStorage.setItem('userName', User);
     localStorage.setItem('userId', UserId);
     localStorage.setItem('team', Team);
+  }
+
+  isAuthenticated() {
+    let token = localStorage.getItem('token');
+    if (token != null) {
+      return !this.jwtService.isTokenExpired(token);
+    }
+    return false;
   }
 
   logout() {
