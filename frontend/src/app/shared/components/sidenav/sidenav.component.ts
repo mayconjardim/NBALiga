@@ -18,6 +18,8 @@ import { SeasonInfo } from '../../models/seasonInfo';
 import { SeasonInfoService } from '../../services/seasonInfo.service';
 import { westData } from './westData';
 import { eastData } from './eastData';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'sidenav',
@@ -50,7 +52,10 @@ export class SidenavComponent implements OnInit {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private seasonInfoService: SeasonInfoService
+    private seasonInfoService: SeasonInfoService,
+    private router: Router,
+    private authService: AuthService,
+    private toast: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -66,6 +71,17 @@ export class SidenavComponent implements OnInit {
       localStorage.setItem('season', season);
       localStorage.setItem('seasonDay', seasonDay);
     });
+  }
+
+  public isAuth() {
+    return this.authService.isAuthenticated();
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['login']);
+    this.toast.info('Deslogado com sucesso!', 'Logout');
+    window.location.reload();
   }
 
   get isHandset(): boolean {

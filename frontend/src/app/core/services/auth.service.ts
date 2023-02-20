@@ -1,8 +1,9 @@
-import { API_CONFIG } from 'src/app/core/config/api.config';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Creds } from './../../private/login/models/creds';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { API_CONFIG } from 'src/app/core/config/api.config';
+
+import { Creds } from './../../private/login/models/creds';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ export class AuthService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      Authorization: API_CONFIG.Token,
+      Authorization: 'Basic bmJhbGlnYTpuYmFsaWdh',
       Accept: '*/*',
     }),
   };

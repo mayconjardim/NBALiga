@@ -49,7 +49,16 @@
         ><mat-icon>business_center</mat-icon>Pós-Temporada</a
       >
 
-      <a mat-list-item routerLink="login"><mat-icon>login</mat-icon>Login</a>
+      <ng-container *ngIf="!isAuth()">
+        <a mat-list-item routerLink="login"><mat-icon>login</mat-icon>Login</a>
+      </ng-container>
+
+      <ng-container *ngIf="isAuth()">
+        <a mat-list-item routerLink="dashboard"
+          ><mat-icon>dashboard_customize</mat-icon>Dashboard</a
+        >
+        <a mat-list-item (click)="logout()"><mat-icon>login</mat-icon>Logout</a>
+      </ng-container>
 
       <mat-menu #league="matMenu">
         <a mat-menu-item [ngStyle]="setMyStyles()">
