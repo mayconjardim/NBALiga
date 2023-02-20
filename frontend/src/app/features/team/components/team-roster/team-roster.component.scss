@@ -62,7 +62,9 @@
 @media only screen and (max-width: 480px) {
   .container {
     justify-content: space-between;
+
     .player-card {
+      width: 11.5rem;
       margin: 0.2rem;
     }
   }
