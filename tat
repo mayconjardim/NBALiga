@@ -1,0 +1,521 @@
+[33mcommit e915974e7d0da3ebc23867e30c2464747d5473b2[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 20 21:07:24 2023 -0300
+
+    Frontend -> Rotation Container Component
+
+[33mcommit b07d90d8741138c021dea9cbff1f0711f23738b7[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 20 21:05:00 2023 -0300
+
+    Frontend -> Rotation Module
+
+[33mcommit e61e07674c7dee7e8793bc3175fb1e700d76a16c[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sun Feb 19 23:09:47 2023 -0300
+
+    Backend -> Trade Machine Cors
+
+[33mcommit f783ad54f6e75aa3ad859985259b6bb237bd6404[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sun Feb 19 22:12:04 2023 -0300
+
+    Frontend -> Team Roster Mobile Player Card fix
+
+[33mcommit 94138da6ff562aaec861e17c70b15a2f619dfa69[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sun Feb 19 21:32:14 2023 -0300
+
+    Frontend -> Home-Standings Alinhando tabelas de classificação no mobile
+
+[33mcommit 1c8f9d6f89963c9a94d75abe6ea8dd0c18b3b7d6[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sat Feb 18 21:31:11 2023 -0300
+
+    Frontend -> Dashboard HTML, CSS e TS
+
+[33mcommit f504da6071ebe65ff3e873882e053fe349e71e6c[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sat Feb 18 16:40:36 2023 -0300
+
+    Frontend -> Auth Guard
+
+[33mcommit f3be6eca8b68b18d7cfbae4a7209430ae54d49bf[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sat Feb 18 16:29:48 2023 -0300
+
+    Frontend -> Dashboard Component
+
+[33mcommit 78509d0c8edd2d6fe959b23c945c01ee1243ecad[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sat Feb 18 16:11:24 2023 -0300
+
+    Frontend -> Auth Service Logica de Login e Autenticação
+
+[33mcommit ff4c3bf54bcd1a86631176c6b3241620cf297d76[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sat Feb 18 15:28:29 2023 -0300
+
+    Frontend -> Auth Service
+
+[33mcommit 6eebfafad598c6894b8a35a68582f4838fde08d7[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sat Feb 18 15:12:47 2023 -0300
+
+    Frontend -> NGX Toaser instalado!
+
+[33mcommit 59cced643eca541805a6ccd82a959b58545e8f46[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sat Feb 18 15:11:47 2023 -0300
+
+    Frontend -> Login Component HTML, CSS e Formulario de login
+
+[33mcommit 4d949b5f06894b7a4dd1462f2a978c3e6901bf5d[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sat Feb 18 14:20:33 2023 -0300
+
+    Frontend -> Login Component
+
+[33mcommit 9fbf880631908d5682004101325fb0e2435d475f[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sat Feb 18 14:17:09 2023 -0300
+
+    Backend -> Alterando endereço para CORS
+
+[33mcommit d85a5f96f4ac77852193b84b4923eb6ae2c53027[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 17 22:44:09 2023 -0300
+
+    Backend -> JwtTokenEnhancer
+
+[33mcommit f2d9fe763d023288b7427568c29d77d7bd574ab8[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 17 19:44:52 2023 -0300
+
+    Backend -> User Update e Delete
+
+[33mcommit 12972868b26673745948b3d46296c1463340d52d[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 17 17:56:14 2023 -0300
+
+    Backend -> Exceções personalizadas
+
+[33mcommit e435ed522aacc95b05c87058a560497f0474f7e7[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 17 17:25:14 2023 -0300
+
+    Backend -> User service findById e Insert
+
+[33mcommit 352b7300ff47b99ba6ae9eaa4f9443fb6f22a7e4[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 17 11:45:34 2023 -0300
+
+    Backend -> Deploy
+
+[33mcommit 55b542e558b7c76da2354905a7c1ef7b70960b97[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 16 17:48:35 2023 -0300
+
+    Backend -> Reajustando ResourceServerConfig
+
+[33mcommit 377b1dd75247717879b758bb0a3f82b2df327a66[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 16 16:35:35 2023 -0300
+
+    Backend -> Liberando endpoints
+
+[33mcommit 783a8432395ba7e2dba252519033d4db0f905589[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 16 16:25:59 2023 -0300
+
+    Backend -> Configurações de segurança e profile de dev
+
+[33mcommit a29f63d4409bd8cd1f2858c85c88a9722d8304ea[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 16 16:03:36 2023 -0300
+
+    Backend -> User Resource
+
+[33mcommit 582393793883c821a4fd794a253244d0024648c8[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 16 16:00:49 2023 -0300
+
+    Backend -> User Service com UserDetails e findAll
+
+[33mcommit bfe558b815c87309d86018f0a605e9955a21e9dd[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 16 15:44:59 2023 -0300
+
+    Backend -> User e Role Repository
+
+[33mcommit 2679578fe0fa345f5777e715461ef1e4b13e98e5[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 16 15:42:36 2023 -0300
+
+    Backend -> Role DTO
+
+[33mcommit 43c19d8d3692528bde0c7fee8227c085d79dd995[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 16 15:41:13 2023 -0300
+
+    Backend -> User DTO
+
+[33mcommit 11ed2ab2baea86b4211d56a808555d404f788308[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 16 15:38:07 2023 -0300
+
+    Backend -> Implementando UserDetails
+
+[33mcommit b755c12a33ca8af0a66280036cce3a1e22ee58f8[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 16 15:36:09 2023 -0300
+
+    Backend -> Associação Muito-para-Muitos entre User e Role
+
+[33mcommit f1179f26377a9504b7593b97835e28a8d88f5faf[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 16 15:33:28 2023 -0300
+
+    Backend -> User e Role entity
+
+[33mcommit 1fca28743a8ea32718bc879ff33d0bde137a17d5[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 16 15:14:19 2023 -0300
+
+    Backend -> Spring Security e Validation instalado
+
+[33mcommit 2a13b7b283c779c503e8be106e219c11bc9cccc7[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 16 12:32:25 2023 -0300
+
+    Frontend -> BoxScore table refaturado
+
+[33mcommit e469acf67d97cd2bd2e1dd4c3c8b502fc2709e55[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Wed Feb 15 20:20:07 2023 -0300
+
+    Frontend -> Boxscore Table HTML, CSS e TS
+
+[33mcommit 2cb0fb687d2199cca3fc9cc647b7012b597030b0[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Wed Feb 15 18:02:58 2023 -0300
+
+    Backend -> Assosiação muitos para um entre PlayerGamesStats e Player
+
+[33mcommit fc54e62c89bacd098d5fc88b6d39fb86754a34cb[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Wed Feb 15 17:52:44 2023 -0300
+
+    Frontend -> Boxscore getBoxStats
+
+[33mcommit b99073a2cd6041988c5da4905d56b300d168865e[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Wed Feb 15 15:35:05 2023 -0300
+
+    Frontend -> Boxscore-Table Component
+
+[33mcommit fa523992d046f3123f6891d375c27a8bff6c751e[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Wed Feb 15 14:54:35 2023 -0300
+
+    Frontend -> Boxscore Container Component
+
+[33mcommit 6ee9728ce8170552dae46d3cbe6f76cfdfe182f4[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Wed Feb 15 14:34:06 2023 -0300
+
+    Frontend -> Boxscore service e PlayerGameStats Model
+
+[33mcommit a54e54ca66911112c84b7007ff2d7876dc3739c6[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Wed Feb 15 14:05:51 2023 -0300
+
+    Backend -> PlayerGameStats Resource e Service. findPlayerByTeam OK!
+
+[33mcommit 7f49c7d01d580a9df9330a13a9199886f21c9d9a[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Tue Feb 14 21:14:43 2023 -0300
+
+    Backend -> Refaturando Identação das classes
+
+[33mcommit 5c93809cebe19e7f20c661d5970aee8be198ec63[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Tue Feb 14 18:00:47 2023 -0300
+
+    Backend -> Relacionamento many-to-many entre Schedule e PlayerGameStats, FindByBoxName em Schedule Repository
+
+[33mcommit f880676b6b73785f636ac12c9a89c240fcd2a699[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Tue Feb 14 17:35:13 2023 -0300
+
+    Backend -> PlayerGameStats Repository
+
+[33mcommit 6f0eb4d515b09edc4e9002a660eb1814ca61501c[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Tue Feb 14 17:32:32 2023 -0300
+
+    Backend -> PlayerGameStats Key
+
+[33mcommit c2ceba49acbf3455743bdd4170c146500d6b9116[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Tue Feb 14 17:26:44 2023 -0300
+
+    Backend -> PlayerGameStats DTO
+
+[33mcommit 2ffbfd0781b0a2b2002323ad68ccb93fbde1af42[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Tue Feb 14 17:13:33 2023 -0300
+
+    Backend -> PlayerGameStats Entity
+
+[33mcommit 79f13aae9cebe3d7c0194db1570e6ddc0af67312[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Tue Feb 14 15:55:05 2023 -0300
+
+    Frontend -> Draft Lottery List, HTML e CSS
+
+[33mcommit a62a40f82a5078021fb2e3d213568a440226d939[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Tue Feb 14 00:05:14 2023 -0300
+
+    Frontend -> Draft Lottery List Component
+
+[33mcommit d1cf2c0124734731878598c288834a7143a3ad12[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 13 23:57:56 2023 -0300
+
+    Frontend -> Draft Lottery Container Component
+
+[33mcommit 34441542ea2e0c605c7c306434186a57fb42a591[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 13 23:54:28 2023 -0300
+
+    Frontend -> Offseason Module
+
+[33mcommit a3d7819889687b8471cabae1c6a3793a57aa9b20[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 13 19:51:09 2023 -0300
+
+    Frontend -> Playoff Bracket Component HTML, CSS e TS
+
+[33mcommit efbb85658fc03e15963cb71c699be3a39967f108[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 13 17:10:20 2023 -0300
+
+    Frontend -> Playoff Bracket Component
+
+[33mcommit 41973eb1ede222b94b5648893edd49b90e94bc41[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 13 16:36:06 2023 -0300
+
+    Frontend -> Playoff Container Component
+
+[33mcommit 6b4a0dc85c05940323024e626fcddfcbcb0c6ed9[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 13 16:10:12 2023 -0300
+
+    Backend -> Playoffs Resource e Service, findAll OK!
+
+[33mcommit 6104bb26417e513c2de12de2cfe759edc765c198[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 13 16:06:16 2023 -0300
+
+    Backend -> Playoffs Repository
+
+[33mcommit 519286d25b4f86d16fb4a154989fb4b62c7119c8[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 13 16:05:27 2023 -0300
+
+    Backend -> Playoffs DTO
+
+[33mcommit 8a359c0c07b5220a326d3c6b040098971a551138[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 13 16:04:27 2023 -0300
+
+    Backend -> Playoffs Entity
+
+[33mcommit 8b1320ceafd26e5d698b5d04280aca8b61fe64c6[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 13 15:46:21 2023 -0300
+
+    Frontend -> Refaturando CSS Pick List component
+
+[33mcommit 09af67a3e035448d16453e1f286c567fc11934b8[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 13 15:22:19 2023 -0300
+
+    Backend -> Refaturando repositorios para resolver N+1
+
+[33mcommit dac729542cef950a42cab48b5a7c91469334a1eb[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 13 13:46:44 2023 -0300
+
+    Frontend -> Playoffs Stats Component HTML, CSS e TS
+
+[33mcommit 652fed675658ff3894523d850b9272d1695561a2[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Mon Feb 13 10:38:06 2023 -0300
+
+    Frontend -> Playoffs Stats Container
+
+[33mcommit f513759c737d2fca7ca9f385fe57936ca9f7846a[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sun Feb 12 23:04:01 2023 -0300
+
+    Frontend -> Stats List Component HTML, CSS e TS
+
+[33mcommit 1674c7dc2288a0afcc7b2809652a3b6b4c905261[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sun Feb 12 19:02:43 2023 -0300
+
+    Frontend -> Stats List Component
+
+[33mcommit f6d5d414af8a20cd19e34d7cf96666b8bec58910[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sun Feb 12 17:59:21 2023 -0300
+
+    Frontend -> Stats Container Component
+
+[33mcommit 87bc63f416bef4656a0858306bdaa2c010695c21[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sun Feb 12 17:58:48 2023 -0300
+
+    Frontend -> Stats Container component
+
+[33mcommit 39684bc7a91f22e6cd965361dc278da2ed41a0ab[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sun Feb 12 16:47:37 2023 -0300
+
+    Frontend -> Player List Component Filter
+
+[33mcommit 82c4477300ba1da26694a959b30ad723f6440f0a[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sat Feb 11 23:53:48 2023 -0300
+
+    Backend -> Player Order by overallRating
+
+[33mcommit dfb466840eaac4e3bc6161d1aba0dcdcff0d0128[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sat Feb 11 23:09:13 2023 -0300
+
+    Frontend -> Player List component HTML, CSS e TS
+
+[33mcommit 7c0309e07b1c26d1fea62262165a2324fb86da28[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sat Feb 11 20:16:30 2023 -0300
+
+    Frontend -> Player List Container component
+
+[33mcommit d116df3a4e6016e783107eeb84d645ceec8ebed8[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Sat Feb 11 17:02:59 2023 -0300
+
+    Frontend -> Refaturando Player Ratings component charts
+
+[33mcommit b16ce657703f9b743b2c1d2fa2a5983e90059f5a[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 10 22:54:51 2023 -0300
+
+    Frontend -> Refaturando Player Awards para Dialog
+
+[33mcommit f8d29fc82f26306d7c89215f4adf43e466c54538[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 10 18:05:35 2023 -0300
+
+    Frontend -> Finances-list HTML, CSS e TS
+
+[33mcommit f2ccdcbaa6b16695c2a293035788d9fdecc5fc17[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 10 17:05:29 2023 -0300
+
+    Frontend -> NGX Order pipe instalado
+
+[33mcommit 48556845ee61372bc4787d1edf2eb24aca437bb9[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 10 16:51:39 2023 -0300
+
+    Frontend -> Finances List Component e Rotas
+
+[33mcommit 6914e589232a3d0d4711dcf4a03d497b9e2c8a14[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 10 16:39:58 2023 -0300
+
+    Frontend -> Finances Container component e module
+
+[33mcommit 5e3f513bf25b6c1be504a12e5cf094f4a13381ef[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 10 16:31:52 2023 -0300
+
+    Frontend -> DraftPicks component HTML, CSS e TS
+
+[33mcommit 591bc02acdcf7d15e6df2f1b08991f5419136f27[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 10 16:06:49 2023 -0300
+
+    Frontend -> DraftPicks List Component e Rotas
+
+[33mcommit f3855eada1d20d86e0f7248eff842d8a440542a9[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 10 15:59:09 2023 -0300
+
+    Frontend -> DraftPicks Container Component
+
+[33mcommit 1d65bd24e58a26880382fcf60c9ea3b4a08bbfca[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 10 15:55:50 2023 -0300
+
+    Frontend -> DraftPicks Service
+
+[33mcommit 15f57f33a6ab8f3479cd11542a41871b88fb6de8[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 10 15:53:05 2023 -0300
+
+    Frontend -> DraftPicks Module e Model
+
+[33mcommit 78c40420847718e8f73a85cfc32fda235492d9ca[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 10 14:59:57 2023 -0300
+
+    Frontend -> Refaturando Schedule
+
+[33mcommit 34019ebd1b1b923118002d1b5fb24b9e4f30c3e4[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Fri Feb 10 10:22:33 2023 -0300
+
+    Frontend -> NGX Pagination instalado
+
+[33mcommit aa75b69c724bf651cae37cc8808656470bc362b8[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 9 23:07:20 2023 -0300
+
+    Frontend -> Fix Sidenav Team refresh
+
+[33mcommit 0f3eec0e47e0dddd0f5b04c44bd01d7309520051[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 9 21:28:25 2023 -0300
+
+    Frontend -> Schedule-list component HTML, CSS e TS
+
+[33mcommit 9ccfac84de4d3072cbb80e4a2adfff8a4f8f7321[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 9 11:31:51 2023 -0300
+
+    Backend -> Trocando List para Page em Schedule
+
+[33mcommit ac225ec03cc5c4ed03916bae38ebbd9788d26f59[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Thu Feb 9 11:10:12 2023 -0300
+
+    Frontend -> Schedule list component
+
+[33mcommit f67887c0422d88edd8b32efb7994313052545645[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Wed Feb 8 22:29:17 2023 -0300
+
+    Frontend -> Schedule container component
+
+[33mcommit 00058cc091350054298f18f98ae47edf600f398a[m
+Author: Maycon Jardim <mayconsmill@gmail.com>
+Date:   Wed Feb 8 22:09:41 2023 -0300
+
+    Frontend -> Schedule module
