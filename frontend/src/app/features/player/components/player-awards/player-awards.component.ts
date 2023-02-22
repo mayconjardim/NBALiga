@@ -41,7 +41,7 @@ export class PlayerAwardsComponent implements OnInit {
 
   awardName(count: number, award: string) {
     if (award == 'National Basketball Association Champion') {
-      return count > 1 ? count + ' ' + ' NBA Champion' : ' NBA Champion';
+      return count > 1 ? count + 'x' + ' NBA Champion' : ' NBA Champion';
     }
 
     if (award == 'NBA Playoff MVP') {

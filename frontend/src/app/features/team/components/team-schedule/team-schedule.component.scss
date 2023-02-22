@@ -31,3 +31,11 @@
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 360px) {
+  .container {
+    table {
+      font-size: 10px;
+    }
+  }
+}
