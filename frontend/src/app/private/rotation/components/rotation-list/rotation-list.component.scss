@@ -1,0 +1,103 @@
+@import "../../../../../assets/scss/variables.scss";
+@import "../../../../../assets/scss/teamsColors.scss";
+
+.container {
+  max-width: 80%;
+  margin: 0.5rem;
+  min-height: 80px;
+  display: block;
+  overflow: hidden;
+  font-size: 12px;
+
+  &-box {
+    border: solid 1px #ccc;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+
+    margin-bottom: 10px;
+    border-radius: 4px;
+
+    &-index {
+      width: 1.5rem;
+      background-color: #1565c0;
+      color: white;
+      text-align: center;
+    }
+
+    &-players {
+      margin-left: 0.2rem;
+      width: 9rem;
+
+      img {
+        margin-left: 0.1rem;
+      }
+    }
+
+    .checkbox {
+      display: flex;
+      vertical-align: bottom;
+      text-align: center;
+      font-size: 8px;
+      font-weight: 800;
+
+      &-positions {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-options {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.5rem;
+      }
+    }
+
+    .select {
+      margin: 0.5rem 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    max-width: 100%;
+    margin: 0.5rem;
+    font-size: 10px;
+
+    &-box {
+      &-players {
+        width: 8rem;
+        margin-left: 0.2rem;
+        font-size: 9px;
+        font-weight: 800;
+
+        img {
+          margin-left: 0.1rem;
+          vertical-align: middle;
+        }
+      }
+
+      .checkbox {
+        display: flex;
+        vertical-align: bottom;
+        text-align: center;
+        font-size: 8px;
+        font-weight: 800;
+
+        &-positions {
+          display: flex;
+          flex-direction: column;
+        }
+
+        &-options {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

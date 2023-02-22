@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-rotation',
+  selector: 'rotation',
   templateUrl: './rotation.component.html',
-  styleUrls: ['./rotation.component.scss']
+  styleUrls: ['./rotation.component.scss'],
 })
-export class RotationComponent {
-
-}
+export class RotationComponent {}

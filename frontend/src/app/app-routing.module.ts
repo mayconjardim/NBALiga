@@ -87,6 +87,15 @@ const routes: Routes = [
       ),
   },
 
+  {
+    path: 'rotation',
+    canActivate: [AuthGuard],
+    loadChildren: () =>
+      import('./private/rotation/rotation.module').then(
+        (m) => m.RotationModule
+      ),
+  },
+
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' },
 ];

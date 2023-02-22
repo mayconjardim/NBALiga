@@ -1,1 +1,49 @@
-<p>rotation-list works!</p>
+<div cdkDropList class="container" (cdkDropListDropped)="drop($event)">
+  <div class="container-box" *ngFor="let movie of movies; index as i" cdkDrag>
+    <div class="container-box-index">{{ getRotationPosition(i + 1) }}</div>
+    <div class="container-box-players">
+      <img src="assets/images/utils/aa.png" />
+      <img src="assets/images/utils/aa.png" />
+      {{ movie }}
+    </div>
+
+    <div class="checkbox">
+      <div class="checkbox-positions">
+        <label>C</label>
+        <input type="checkbox" />
+      </div>
+      <div class="checkbox-positions">
+        <label>PF</label>
+        <input type="checkbox" />
+      </div>
+      <div class="checkbox-positions">
+        <label>SF</label>
+        <input type="checkbox" />
+      </div>
+      <div class="checkbox-positions">
+        <label>SG</label>
+        <input type="checkbox" />
+      </div>
+
+      <div class="checkbox-positions">
+        <label>PG</label>
+        <input type="checkbox" />
+      </div>
+
+      <div class="checkbox-options">
+        <label>KEY</label>
+        <input type="checkbox" />
+      </div>
+      <div class="checkbox-options">
+        <label>DE-ACT</label>
+        <input type="checkbox" />
+      </div>
+
+      <div class="select">
+        <select>
+          <option value="1">1</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
