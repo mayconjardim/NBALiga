@@ -12,6 +12,10 @@
     display: flex;
     flex-wrap: wrap;
 
+    img {
+      width: 30px;
+    }
+
     mat-form-field,
     button {
       width: 100%;
